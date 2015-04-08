@@ -1,4 +1,11 @@
-raspberrypi-firmware (1.20150214-2) UNRELEASED; urgency=medium
+raspberrypi-firmware (1.20150421-1) unstable; urgency=low
+
+  * firmware as of 6cc27e02dde4f1e02cfddb3d0f23d54be87680cb
+  * Make vc-sm and vcio subsystems writable by video group
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 27 Apr 2015 09:56:44 +0100
+
+raspberrypi-firmware (1.20150214-2) unstable; urgency=medium
 
   * Fix for incorrect NOOBS images
 
