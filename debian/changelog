@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20150513~141027-1) stable; urgency=low
+
+  * Firmware as of c7ec740caa359634d197249297ea597067e70180
+
+ -- rpf automated nightly builder <rpf@autonightly.invalid>  Thu, 14 May 2015 14:46:12 +0100
+
 raspberrypi-firmware (1.20150421-1) unstable; urgency=low
 
   * firmware as of 6cc27e02dde4f1e02cfddb3d0f23d54be87680cb
