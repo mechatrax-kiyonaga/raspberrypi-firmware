@@ -1,8 +1,8 @@
-raspberrypi-firmware (1.20150513~141027-1) stable; urgency=low
+raspberrypi-firmware (1.20150820-1) wheezy; urgency=medium
 
-  * Firmware as of c7ec740caa359634d197249297ea597067e70180
+  * firmware as of bbf5495c0424fe38d795111007e93f8763b88bcc
 
- -- rpf automated nightly builder <rpf@autonightly.invalid>  Thu, 14 May 2015 14:46:12 +0100
+ -- Serge Schneider <serge@raspberrypi.org>  Fri, 21 Aug 2015 17:16:06 +0100
 
 raspberrypi-firmware (1.20150421-1) unstable; urgency=low
 
