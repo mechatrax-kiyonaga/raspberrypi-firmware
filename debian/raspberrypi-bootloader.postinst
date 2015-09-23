@@ -128,6 +128,9 @@ sync
 rm -f /boot/overlays/pwm-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pwm-overlay.dtb
 sync
+rm -f /boot/overlays/raspidac3-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/raspidac3-overlay.dtb
+sync
 rm -f /boot/overlays/rpi-dac-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-dac-overlay.dtb
 sync
@@ -145,6 +148,18 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-sense-o
 sync
 rm -f /boot/overlays/sdhost-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdhost-overlay.dtb
+sync
+rm -f /boot/overlays/sdio-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdio-overlay.dtb
+sync
+rm -f /boot/overlays/smi-dev-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-dev-overlay.dtb
+sync
+rm -f /boot/overlays/smi-nand-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-nand-overlay.dtb
+sync
+rm -f /boot/overlays/smi-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-overlay.dtb
 sync
 rm -f /boot/overlays/spi-bcm2708-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi-bcm2708-overlay.dtb
