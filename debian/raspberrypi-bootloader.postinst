@@ -56,6 +56,9 @@ sync
 rm -f /boot/overlays/ads7846-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads7846-overlay.dtb
 sync
+rm -f /boot/overlays/at86rf233-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/at86rf233-overlay.dtb
+sync
 rm -f /boot/overlays/bmp085_i2c-sensor-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/bmp085_i2c-sensor-overlay.dtb
 sync
@@ -64,6 +67,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dht11-overl
 sync
 rm -f /boot/overlays/enc28j60-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/enc28j60-overlay.dtb
+sync
+rm -f /boot/overlays/gpio-ir-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-ir-overlay.dtb
 sync
 rm -f /boot/overlays/gpio-poweroff-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-poweroff-overlay.dtb
@@ -85,6 +91,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28a-overl
 sync
 rm -f /boot/overlays/hy28b-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28b-overlay.dtb
+sync
+rm -f /boot/overlays/i2c-gpio-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-gpio-overlay.dtb
 sync
 rm -f /boot/overlays/i2c-rtc-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-rtc-overlay.dtb
@@ -116,6 +125,12 @@ sync
 rm -f /boot/overlays/piscreen-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen-overlay.dtb
 sync
+rm -f /boot/overlays/piscreen2r-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen2r-overlay.dtb
+sync
+rm -f /boot/overlays/pitft28-capacitive-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-capacitive-overlay.dtb
+sync
 rm -f /boot/overlays/pitft28-resistive-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-resistive-overlay.dtb
 sync
@@ -130,6 +145,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pwm-overlay
 sync
 rm -f /boot/overlays/raspidac3-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/raspidac3-overlay.dtb
+sync
+rm -f /boot/overlays/rpi-backlight-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-backlight-overlay.dtb
 sync
 rm -f /boot/overlays/rpi-dac-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-dac-overlay.dtb
@@ -175,6 +193,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tinylcd35-o
 sync
 rm -f /boot/overlays/uart1-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/uart1-overlay.dtb
+sync
+rm -f /boot/overlays/vc4-kms-v3d-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vc4-kms-v3d-overlay.dtb
 sync
 rm -f /boot/overlays/vga666-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vga666-overlay.dtb
