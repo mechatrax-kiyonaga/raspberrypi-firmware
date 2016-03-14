@@ -32,6 +32,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rp
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rpi-b.dtb /boot/bcm2708-rpi-b.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rpi-cm.dtb /boot/bcm2708-rpi-cm.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2709-rpi-2-b.dtb /boot/bcm2709-rpi-2-b.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2710-rpi-3-b.dtb /boot/bcm2710-rpi-3-b.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bootcode.bin /boot/bootcode.bin
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/fixup.dat /boot/fixup.dat
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/fixup_cd.dat /boot/fixup_cd.dat
@@ -59,6 +60,8 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/h
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/hy28b-overlay.dtb /boot/overlays/hy28b-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-gpio-overlay.dtb /boot/overlays/i2c-gpio-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-rtc-overlay.dtb /boot/overlays/i2c-rtc-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c0-bcm2708-overlay.dtb /boot/overlays/i2c0-bcm2708-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c1-bcm2708-overlay.dtb /boot/overlays/i2c1-bcm2708-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2s-mmap-overlay.dtb /boot/overlays/i2s-mmap-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/iqaudio-dac-overlay.dtb /boot/overlays/iqaudio-dac-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/iqaudio-dacplus-overlay.dtb /boot/overlays/iqaudio-dacplus-overlay.dtb
@@ -67,6 +70,8 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/m
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp2515-can1-overlay.dtb /boot/overlays/mcp2515-can1-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mmc-overlay.dtb /boot/overlays/mmc-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mz61581-overlay.dtb /boot/overlays/mz61581-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-disable-bt-overlay.dtb /boot/overlays/pi3-disable-bt-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-miniuart-bt-overlay.dtb /boot/overlays/pi3-miniuart-bt-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen-overlay.dtb /boot/overlays/piscreen-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen2r-overlay.dtb /boot/overlays/piscreen2r-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pitft28-capacitive-overlay.dtb /boot/overlays/pitft28-capacitive-overlay.dtb
@@ -74,6 +79,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/p
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pps-gpio-overlay.dtb /boot/overlays/pps-gpio-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pwm-2chan-overlay.dtb /boot/overlays/pwm-2chan-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pwm-overlay.dtb /boot/overlays/pwm-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/qca7000-overlay.dtb /boot/overlays/qca7000-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/raspidac3-overlay.dtb /boot/overlays/raspidac3-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-backlight-overlay.dtb /boot/overlays/rpi-backlight-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-dac-overlay.dtb /boot/overlays/rpi-dac-overlay.dtb
