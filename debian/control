@@ -46,7 +46,27 @@ Description: Miscellaneous Raspberry Pi utilities
 Package: raspberrypi-bootloader
 Section: admin
 Architecture: armel armhf
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, raspberrypi-kernel
 Description: Raspberry Pi bootloader
- This package contains the Raspberry Pi bootloader (plus, temporarily, a
- kernel).
+ This package contains the Raspberry Pi firmware and bootloader.
+
+Package: raspberrypi-kernel
+Section: kernel
+Architecture: armel armhf
+Depends: ${misc:Depends}
+Breaks: raspberrypi-bootloader (<<1.20160324-1)
+Replaces: raspberrypi-bootloader (<<1.20160324-1)
+Provides: linux-image
+Description: Raspberry Pi bootloader
+ This package contains the Raspberry Pi Linux kernel.
+
+Package: raspberrypi-kernel-headers
+Section: kernel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: linux-headers
+Description: Header files for the Raspberry Pi Linux kernel
+ This package provides the architecture-specific kernel header files for
+ the Raspberry Pi Linux kernel, generally used for building out-of-tree
+ kernel modules.
+
