@@ -101,6 +101,9 @@ sync
 rm -f /boot/overlays/mz61581-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mz61581-overlay.dtb
 sync
+rm -f /boot/overlays/pi3-act-led-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-act-led-overlay.dtb
+sync
 rm -f /boot/overlays/pi3-disable-bt-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-disable-bt-overlay.dtb
 sync
@@ -194,15 +197,18 @@ sync
 rm -f /boot/overlays/w1-gpio-pullup-overlay.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/w1-gpio-pullup-overlay.dtb
 sync
+rm -f /boot/overlays/wittypi-overlay.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi-overlay.dtb
+sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.19+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.1.19-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.1.19+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.19+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.1.19+
+if [ -d "/etc/kernel/postinst.d/4.1.20+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.1.20+
 fi
-if [ -d "/etc/kernel/postinst.d/4.1.19-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.19-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.1.19-v7+
+if [ -d "/etc/kernel/postinst.d/4.1.20-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.1.20-v7+
 fi
 #DEBHELPER#

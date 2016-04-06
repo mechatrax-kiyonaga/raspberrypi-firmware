@@ -35,6 +35,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/m
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp2515-can1-overlay.dtb /boot/overlays/mcp2515-can1-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mmc-overlay.dtb /boot/overlays/mmc-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mz61581-overlay.dtb /boot/overlays/mz61581-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-act-led-overlay.dtb /boot/overlays/pi3-act-led-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-disable-bt-overlay.dtb /boot/overlays/pi3-disable-bt-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-miniuart-bt-overlay.dtb /boot/overlays/pi3-miniuart-bt-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen-overlay.dtb /boot/overlays/piscreen-overlay.dtb
@@ -66,15 +67,16 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/v
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/vga666-overlay.dtb /boot/overlays/vga666-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w1-gpio-overlay.dtb /boot/overlays/w1-gpio-overlay.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w1-gpio-pullup-overlay.dtb /boot/overlays/w1-gpio-pullup-overlay.dtb
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/wittypi-overlay.dtb /boot/overlays/wittypi-overlay.dtb
 export INITRD=No
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.19+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.1.19-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.1.19+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.19+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.1.19+
+if [ -d "/etc/kernel/preinst.d/4.1.20+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.1.20+
 fi
-if [ -d "/etc/kernel/preinst.d/4.1.19-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.19-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.1.19-v7+
+if [ -d "/etc/kernel/preinst.d/4.1.20-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.1.20-v7+
 fi
 #DEBHELPER#
