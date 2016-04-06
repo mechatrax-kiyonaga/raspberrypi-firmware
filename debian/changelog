@@ -1,3 +1,10 @@
+raspberrypi-firmware (1.20160405-2) jessie; urgency=medium
+
+  * firmware as of c06550099b9593192d6e2cc7e6446a6b4380d3f4
+  * add /usr/bin/dtoverlay symlink
+
+ -- Serge Schneider <serge@raspberrypi.org>  Wed, 06 Apr 2016 17:21:18 +0100
+
 raspberrypi-firmware (1.20160405-1) jessie; urgency=medium
 
   * firmware as of c06550099b9593192d6e2cc7e6446a6b4380d3f4

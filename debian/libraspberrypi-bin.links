@@ -6,3 +6,5 @@
 /opt/vc/bin/vcdbg /usr/bin/vcdbg
 /opt/vc/bin/vcgencmd /usr/bin/vcgencmd
 /opt/vc/bin/vchiq_test /usr/bin/vchiq_test
+/opt/vc/bin/dtoverlay /usr/bin/dtoverlay
+/opt/vc/bin/dtoverlay /usr/bin/dtparam
