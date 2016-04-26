@@ -8,3 +8,4 @@
 /opt/vc/bin/vchiq_test /usr/bin/vchiq_test
 /opt/vc/bin/dtoverlay /usr/bin/dtoverlay
 /opt/vc/bin/dtoverlay /usr/bin/dtparam
+/opt/vc/bin/dtmerge /usr/bin/dtmerge

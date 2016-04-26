@@ -26,189 +26,228 @@ sync
 rm -f /boot/overlays/README
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/README
 sync
-rm -f /boot/overlays/ads7846-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads7846-overlay.dtb
+rm -f /boot/overlays/ads7846.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads7846.dtbo
 sync
-rm -f /boot/overlays/at86rf233-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/at86rf233-overlay.dtb
+rm -f /boot/overlays/akkordion-iqdacplus.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/akkordion-iqdacplus.dtbo
 sync
-rm -f /boot/overlays/bmp085_i2c-sensor-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/bmp085_i2c-sensor-overlay.dtb
+rm -f /boot/overlays/at86rf233.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/at86rf233.dtbo
 sync
-rm -f /boot/overlays/dht11-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dht11-overlay.dtb
+rm -f /boot/overlays/bmp085_i2c-sensor.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/bmp085_i2c-sensor.dtbo
 sync
-rm -f /boot/overlays/enc28j60-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/enc28j60-overlay.dtb
+rm -f /boot/overlays/boomberry-dac.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/boomberry-dac.dtbo
 sync
-rm -f /boot/overlays/gpio-ir-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-ir-overlay.dtb
+rm -f /boot/overlays/boomberry-digi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/boomberry-digi.dtbo
 sync
-rm -f /boot/overlays/gpio-poweroff-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-poweroff-overlay.dtb
+rm -f /boot/overlays/dht11.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dht11.dtbo
 sync
-rm -f /boot/overlays/hifiberry-amp-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-amp-overlay.dtb
+rm -f /boot/overlays/dpi24.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dpi24.dtbo
 sync
-rm -f /boot/overlays/hifiberry-dac-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-dac-overlay.dtb
+rm -f /boot/overlays/dwc-otg.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dwc-otg.dtbo
 sync
-rm -f /boot/overlays/hifiberry-dacplus-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-dacplus-overlay.dtb
+rm -f /boot/overlays/dwc2.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dwc2.dtbo
 sync
-rm -f /boot/overlays/hifiberry-digi-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-digi-overlay.dtb
+rm -f /boot/overlays/enc28j60.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/enc28j60.dtbo
 sync
-rm -f /boot/overlays/hy28a-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28a-overlay.dtb
+rm -f /boot/overlays/gpio-ir.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-ir.dtbo
 sync
-rm -f /boot/overlays/hy28b-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28b-overlay.dtb
+rm -f /boot/overlays/gpio-poweroff.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-poweroff.dtbo
 sync
-rm -f /boot/overlays/i2c-gpio-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-gpio-overlay.dtb
+rm -f /boot/overlays/hifiberry-amp.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-amp.dtbo
 sync
-rm -f /boot/overlays/i2c-rtc-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-rtc-overlay.dtb
+rm -f /boot/overlays/hifiberry-dac.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-dac.dtbo
 sync
-rm -f /boot/overlays/i2c0-bcm2708-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c0-bcm2708-overlay.dtb
+rm -f /boot/overlays/hifiberry-dacplus.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-dacplus.dtbo
 sync
-rm -f /boot/overlays/i2c1-bcm2708-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c1-bcm2708-overlay.dtb
+rm -f /boot/overlays/hifiberry-digi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-digi.dtbo
 sync
-rm -f /boot/overlays/i2s-mmap-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2s-mmap-overlay.dtb
+rm -f /boot/overlays/hy28a.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28a.dtbo
 sync
-rm -f /boot/overlays/iqaudio-dac-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/iqaudio-dac-overlay.dtb
+rm -f /boot/overlays/hy28b.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28b.dtbo
 sync
-rm -f /boot/overlays/iqaudio-dacplus-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/iqaudio-dacplus-overlay.dtb
+rm -f /boot/overlays/i2c-gpio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-gpio.dtbo
 sync
-rm -f /boot/overlays/lirc-rpi-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/lirc-rpi-overlay.dtb
+rm -f /boot/overlays/i2c-mux-pca9548a.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-mux-pca9548a.dtbo
 sync
-rm -f /boot/overlays/mcp2515-can0-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp2515-can0-overlay.dtb
+rm -f /boot/overlays/i2c-pwm-pca9685a.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-pwm-pca9685a.dtbo
 sync
-rm -f /boot/overlays/mcp2515-can1-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp2515-can1-overlay.dtb
+rm -f /boot/overlays/i2c-rtc.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-rtc.dtbo
 sync
-rm -f /boot/overlays/mmc-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mmc-overlay.dtb
+rm -f /boot/overlays/i2c0-bcm2708.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c0-bcm2708.dtbo
 sync
-rm -f /boot/overlays/mz61581-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mz61581-overlay.dtb
+rm -f /boot/overlays/i2c1-bcm2708.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c1-bcm2708.dtbo
 sync
-rm -f /boot/overlays/pi3-act-led-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-act-led-overlay.dtb
+rm -f /boot/overlays/i2s-mmap.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2s-mmap.dtbo
 sync
-rm -f /boot/overlays/pi3-disable-bt-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-disable-bt-overlay.dtb
+rm -f /boot/overlays/iqaudio-dac.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/iqaudio-dac.dtbo
 sync
-rm -f /boot/overlays/pi3-miniuart-bt-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-miniuart-bt-overlay.dtb
+rm -f /boot/overlays/iqaudio-dacplus.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/iqaudio-dacplus.dtbo
 sync
-rm -f /boot/overlays/piscreen-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen-overlay.dtb
+rm -f /boot/overlays/lirc-rpi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/lirc-rpi.dtbo
 sync
-rm -f /boot/overlays/piscreen2r-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen2r-overlay.dtb
+rm -f /boot/overlays/mcp2515-can0.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp2515-can0.dtbo
 sync
-rm -f /boot/overlays/pitft28-capacitive-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-capacitive-overlay.dtb
+rm -f /boot/overlays/mcp2515-can1.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp2515-can1.dtbo
 sync
-rm -f /boot/overlays/pitft28-resistive-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-resistive-overlay.dtb
+rm -f /boot/overlays/mmc.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mmc.dtbo
 sync
-rm -f /boot/overlays/pps-gpio-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pps-gpio-overlay.dtb
+rm -f /boot/overlays/mz61581.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mz61581.dtbo
 sync
-rm -f /boot/overlays/pwm-2chan-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pwm-2chan-overlay.dtb
+rm -f /boot/overlays/pi3-act-led.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-act-led.dtbo
 sync
-rm -f /boot/overlays/pwm-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pwm-overlay.dtb
+rm -f /boot/overlays/pi3-disable-bt.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-disable-bt.dtbo
 sync
-rm -f /boot/overlays/qca7000-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/qca7000-overlay.dtb
+rm -f /boot/overlays/pi3-miniuart-bt.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-miniuart-bt.dtbo
 sync
-rm -f /boot/overlays/raspidac3-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/raspidac3-overlay.dtb
+rm -f /boot/overlays/piscreen.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen.dtbo
 sync
-rm -f /boot/overlays/rpi-backlight-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-backlight-overlay.dtb
+rm -f /boot/overlays/piscreen2r.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen2r.dtbo
 sync
-rm -f /boot/overlays/rpi-dac-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-dac-overlay.dtb
+rm -f /boot/overlays/pitft28-capacitive.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-capacitive.dtbo
 sync
-rm -f /boot/overlays/rpi-display-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-display-overlay.dtb
+rm -f /boot/overlays/pitft28-resistive.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-resistive.dtbo
 sync
-rm -f /boot/overlays/rpi-ft5406-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-ft5406-overlay.dtb
+rm -f /boot/overlays/pps-gpio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pps-gpio.dtbo
 sync
-rm -f /boot/overlays/rpi-proto-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-proto-overlay.dtb
+rm -f /boot/overlays/pwm-2chan.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pwm-2chan.dtbo
 sync
-rm -f /boot/overlays/rpi-sense-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-sense-overlay.dtb
+rm -f /boot/overlays/pwm.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pwm.dtbo
 sync
-rm -f /boot/overlays/sdhost-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdhost-overlay.dtb
+rm -f /boot/overlays/qca7000.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/qca7000.dtbo
 sync
-rm -f /boot/overlays/sdio-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdio-overlay.dtb
+rm -f /boot/overlays/raspidac3.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/raspidac3.dtbo
 sync
-rm -f /boot/overlays/smi-dev-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-dev-overlay.dtb
+rm -f /boot/overlays/rpi-backlight.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-backlight.dtbo
 sync
-rm -f /boot/overlays/smi-nand-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-nand-overlay.dtb
+rm -f /boot/overlays/rpi-dac.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-dac.dtbo
 sync
-rm -f /boot/overlays/smi-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-overlay.dtb
+rm -f /boot/overlays/rpi-display.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-display.dtbo
 sync
-rm -f /boot/overlays/spi-bcm2708-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi-bcm2708-overlay.dtb
+rm -f /boot/overlays/rpi-ft5406.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-ft5406.dtbo
 sync
-rm -f /boot/overlays/spi-bcm2835-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi-bcm2835-overlay.dtb
+rm -f /boot/overlays/rpi-proto.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-proto.dtbo
 sync
-rm -f /boot/overlays/spi-dma-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi-dma-overlay.dtb
+rm -f /boot/overlays/rpi-sense.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-sense.dtbo
 sync
-rm -f /boot/overlays/tinylcd35-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tinylcd35-overlay.dtb
+rm -f /boot/overlays/sdhost.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdhost.dtbo
 sync
-rm -f /boot/overlays/uart1-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/uart1-overlay.dtb
+rm -f /boot/overlays/sdio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdio.dtbo
 sync
-rm -f /boot/overlays/vc4-kms-v3d-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vc4-kms-v3d-overlay.dtb
+rm -f /boot/overlays/sdtweak.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdtweak.dtbo
 sync
-rm -f /boot/overlays/vga666-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vga666-overlay.dtb
+rm -f /boot/overlays/smi-dev.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-dev.dtbo
 sync
-rm -f /boot/overlays/w1-gpio-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/w1-gpio-overlay.dtb
+rm -f /boot/overlays/smi-nand.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi-nand.dtbo
 sync
-rm -f /boot/overlays/w1-gpio-pullup-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/w1-gpio-pullup-overlay.dtb
+rm -f /boot/overlays/smi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/smi.dtbo
 sync
-rm -f /boot/overlays/wittypi-overlay.dtb
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi-overlay.dtb
+rm -f /boot/overlays/spi-gpio35-39.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi-gpio35-39.dtbo
+sync
+rm -f /boot/overlays/spi1-1cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi1-1cs.dtbo
+sync
+rm -f /boot/overlays/spi1-2cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi1-2cs.dtbo
+sync
+rm -f /boot/overlays/spi1-3cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi1-3cs.dtbo
+sync
+rm -f /boot/overlays/spi2-1cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi2-1cs.dtbo
+sync
+rm -f /boot/overlays/spi2-2cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi2-2cs.dtbo
+sync
+rm -f /boot/overlays/spi2-3cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi2-3cs.dtbo
+sync
+rm -f /boot/overlays/tinylcd35.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tinylcd35.dtbo
+sync
+rm -f /boot/overlays/uart1.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/uart1.dtbo
+sync
+rm -f /boot/overlays/vc4-kms-v3d.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vc4-kms-v3d.dtbo
+sync
+rm -f /boot/overlays/vga666.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vga666.dtbo
+sync
+rm -f /boot/overlays/w1-gpio-pullup.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/w1-gpio-pullup.dtbo
+sync
+rm -f /boot/overlays/w1-gpio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/w1-gpio.dtbo
+sync
+rm -f /boot/overlays/wittypi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtbo
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.1.20+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.1.20+
+if [ -d "/etc/kernel/postinst.d/4.4.8+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.8+
 fi
-if [ -d "/etc/kernel/postinst.d/4.1.20-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.1.20-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.8-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.8-v7+
 fi
 #DEBHELPER#

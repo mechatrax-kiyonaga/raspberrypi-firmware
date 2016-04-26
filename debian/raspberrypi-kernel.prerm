@@ -1,13 +1,13 @@
 #!/bin/sh
 export INITRD=No
 if [ -d "/etc/kernel/prerm.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/prerm.d
-  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d
 fi
-if [ -d "/etc/kernel/prerm.d/4.1.20+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.20+ --arg=/boot/kernel.img /etc/kernel/prerm.d/4.1.20+
+if [ -d "/etc/kernel/prerm.d/4.4.8+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/prerm.d/4.4.8+
 fi
-if [ -d "/etc/kernel/prerm.d/4.1.20-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.1.20-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d/4.1.20-v7+
+if [ -d "/etc/kernel/prerm.d/4.4.8-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d/4.4.8-v7+
 fi
 #DEBHELPER#
