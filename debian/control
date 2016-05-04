@@ -38,7 +38,7 @@ Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV 
 Package: libraspberrypi-bin
 Section: misc
 Architecture: armel armhf
-Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}
+Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}, device-tree-compiler
 Description: Miscellaneous Raspberry Pi utilities
  This package contains various utilities for interacting with the Raspberry
  Pi's VideoCore IV.
