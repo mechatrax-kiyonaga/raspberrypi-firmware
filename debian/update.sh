@@ -56,9 +56,9 @@ copy_files
 
 find headers -name .gitignore -delete
 git add headers --all
-git commit -m "Update headers"
-
+git commit -m "Update headers" || echo "Headers not updated"
 git tag ${RELEASE}-headers
+
 git checkout debian
 git merge master --no-edit
 
