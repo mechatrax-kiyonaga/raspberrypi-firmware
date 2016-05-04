@@ -101,6 +101,9 @@ sync
 rm -f /boot/overlays/i2c1-bcm2708.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c1-bcm2708.dtbo
 sync
+rm -f /boot/overlays/i2s-gpio28-31.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2s-gpio28-31.dtbo
+sync
 rm -f /boot/overlays/i2s-mmap.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2s-mmap.dtbo
 sync
@@ -139,6 +142,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen.dt
 sync
 rm -f /boot/overlays/piscreen2r.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen2r.dtbo
+sync
+rm -f /boot/overlays/pitft22.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft22.dtbo
 sync
 rm -f /boot/overlays/pitft28-capacitive.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-capacitive.dtbo
@@ -181,6 +187,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-sense.d
 sync
 rm -f /boot/overlays/sdhost.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdhost.dtbo
+sync
+rm -f /boot/overlays/sdio-1bit.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdio-1bit.dtbo
 sync
 rm -f /boot/overlays/sdio.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdio.dtbo

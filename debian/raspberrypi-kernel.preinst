@@ -35,6 +35,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-rtc.dtbo /boot/overlays/i2c-rtc.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c0-bcm2708.dtbo /boot/overlays/i2c0-bcm2708.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c1-bcm2708.dtbo /boot/overlays/i2c1-bcm2708.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2s-gpio28-31.dtbo /boot/overlays/i2s-gpio28-31.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2s-mmap.dtbo /boot/overlays/i2s-mmap.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/iqaudio-dac.dtbo /boot/overlays/iqaudio-dac.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/iqaudio-dacplus.dtbo /boot/overlays/iqaudio-dacplus.dtbo
@@ -48,6 +49,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/p
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-miniuart-bt.dtbo /boot/overlays/pi3-miniuart-bt.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen.dtbo /boot/overlays/piscreen.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen2r.dtbo /boot/overlays/piscreen2r.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pitft22.dtbo /boot/overlays/pitft22.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pitft28-capacitive.dtbo /boot/overlays/pitft28-capacitive.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pitft28-resistive.dtbo /boot/overlays/pitft28-resistive.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pps-gpio.dtbo /boot/overlays/pps-gpio.dtbo
@@ -62,6 +64,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/r
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-proto.dtbo /boot/overlays/rpi-proto.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-sense.dtbo /boot/overlays/rpi-sense.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdhost.dtbo /boot/overlays/sdhost.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdio-1bit.dtbo /boot/overlays/sdio-1bit.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdio.dtbo /boot/overlays/sdio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdtweak.dtbo /boot/overlays/sdtweak.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/smi-dev.dtbo /boot/overlays/smi-dev.dtbo
