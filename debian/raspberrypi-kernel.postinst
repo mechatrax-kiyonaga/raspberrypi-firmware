@@ -250,13 +250,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.9+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.9-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.8+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.8+
+if [ -d "/etc/kernel/postinst.d/4.4.9+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.9+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.9+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.8-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.8-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.9-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.9-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.9-v7+
 fi
 #DEBHELPER#

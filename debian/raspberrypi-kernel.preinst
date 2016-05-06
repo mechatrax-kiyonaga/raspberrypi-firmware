@@ -86,13 +86,13 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/wittypi.dtbo /boot/overlays/wittypi.dtbo
 export INITRD=No
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.9+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.9-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.8+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.8+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.8+
+if [ -d "/etc/kernel/preinst.d/4.4.9+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.9+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.9+
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.8-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.8-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.8-v7+
+if [ -d "/etc/kernel/preinst.d/4.4.9-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.9-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.9-v7+
 fi
 #DEBHELPER#
