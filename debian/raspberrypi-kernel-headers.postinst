@@ -1,15 +1,15 @@
 #!/bin/sh
 export INITRD=No
 if [ -d "/etc/kernel/header_postinst.d" ]; then
-  run-parts -v --verbose --exit-on-error --arg=4.4.9+ /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=4.4.9-v7+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=4.4.11+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=4.4.11-v7+ /etc/kernel/header_postinst.d
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/4.4.9+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=4.4.9+ /etc/kernel/header_postinst.d/4.4.9+
+if [ -d "/etc/kernel/header_postinst.d/4.4.11+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=4.4.11+ /etc/kernel/header_postinst.d/4.4.11+
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/4.4.9-v7+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=4.4.9-v7+ /etc/kernel/header_postinst.d/4.4.9-v7+
+if [ -d "/etc/kernel/header_postinst.d/4.4.11-v7+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=4.4.11-v7+ /etc/kernel/header_postinst.d/4.4.11-v7+
 fi
 #DEBHELPER#

@@ -26,6 +26,9 @@ sync
 rm -f /boot/overlays/README
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/README
 sync
+rm -f /boot/overlays/adau1977-adc.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/adau1977-adc.dtbo
+sync
 rm -f /boot/overlays/ads7846.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads7846.dtbo
 sync
@@ -34,6 +37,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/akkordion-i
 sync
 rm -f /boot/overlays/at86rf233.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/at86rf233.dtbo
+sync
+rm -f /boot/overlays/audioinjector-wm8731-audio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audioinjector-wm8731-audio.dtbo
 sync
 rm -f /boot/overlays/bmp085_i2c-sensor.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/bmp085_i2c-sensor.dtbo
@@ -86,8 +92,8 @@ sync
 rm -f /boot/overlays/i2c-gpio.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-gpio.dtbo
 sync
-rm -f /boot/overlays/i2c-mux-pca9548a.dtbo
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-mux-pca9548a.dtbo
+rm -f /boot/overlays/i2c-mux.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-mux.dtbo
 sync
 rm -f /boot/overlays/i2c-pwm-pca9685a.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-pwm-pca9685a.dtbo
@@ -250,13 +256,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.9+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.9-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.11+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.11-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.9+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.9+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.9+
+if [ -d "/etc/kernel/postinst.d/4.4.11+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.11+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.11+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.9-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.9-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.9-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.11-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.11-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.11-v7+
 fi
 #DEBHELPER#
