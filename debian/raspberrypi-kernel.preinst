@@ -11,13 +11,12 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/kernel7.im
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/COPYING.linux /boot/COPYING.linux
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/README /boot/overlays/README
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/adau1977-adc.dtbo /boot/overlays/adau1977-adc.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/ads1015.dtbo /boot/overlays/ads1015.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/ads7846.dtbo /boot/overlays/ads7846.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/akkordion-iqdacplus.dtbo /boot/overlays/akkordion-iqdacplus.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/at86rf233.dtbo /boot/overlays/at86rf233.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audioinjector-wm8731-audio.dtbo /boot/overlays/audioinjector-wm8731-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/bmp085_i2c-sensor.dtbo /boot/overlays/bmp085_i2c-sensor.dtbo
-dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/boomberry-dac.dtbo /boot/overlays/boomberry-dac.dtbo
-dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/boomberry-digi.dtbo /boot/overlays/boomberry-digi.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dht11.dtbo /boot/overlays/dht11.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dpi24.dtbo /boot/overlays/dpi24.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dwc-otg.dtbo /boot/overlays/dwc-otg.dtbo
@@ -41,7 +40,10 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2s-mmap.dtbo /boot/overlays/i2s-mmap.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/iqaudio-dac.dtbo /boot/overlays/iqaudio-dac.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/iqaudio-dacplus.dtbo /boot/overlays/iqaudio-dacplus.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/justboom-dac.dtbo /boot/overlays/justboom-dac.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/justboom-digi.dtbo /boot/overlays/justboom-digi.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/lirc-rpi.dtbo /boot/overlays/lirc-rpi.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp23017.dtbo /boot/overlays/mcp23017.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp2515-can0.dtbo /boot/overlays/mcp2515-can0.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp2515-can1.dtbo /boot/overlays/mcp2515-can1.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mmc.dtbo /boot/overlays/mmc.dtbo
@@ -65,6 +67,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/r
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-ft5406.dtbo /boot/overlays/rpi-ft5406.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-proto.dtbo /boot/overlays/rpi-proto.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rpi-sense.dtbo /boot/overlays/rpi-sense.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/rra-digidac1-wm8741-audio.dtbo /boot/overlays/rra-digidac1-wm8741-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdhost.dtbo /boot/overlays/sdhost.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdio-1bit.dtbo /boot/overlays/sdio-1bit.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/sdio.dtbo /boot/overlays/sdio.dtbo
@@ -88,13 +91,13 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/wittypi.dtbo /boot/overlays/wittypi.dtbo
 export INITRD=No
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.11+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.11-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.13+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.13-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.11+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.11+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.11+
+if [ -d "/etc/kernel/preinst.d/4.4.13+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.13+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.13+
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.11-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.11-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.11-v7+
+if [ -d "/etc/kernel/preinst.d/4.4.13-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.13-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.13-v7+
 fi
 #DEBHELPER#

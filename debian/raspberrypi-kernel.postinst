@@ -29,6 +29,9 @@ sync
 rm -f /boot/overlays/adau1977-adc.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/adau1977-adc.dtbo
 sync
+rm -f /boot/overlays/ads1015.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads1015.dtbo
+sync
 rm -f /boot/overlays/ads7846.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads7846.dtbo
 sync
@@ -43,12 +46,6 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audioinject
 sync
 rm -f /boot/overlays/bmp085_i2c-sensor.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/bmp085_i2c-sensor.dtbo
-sync
-rm -f /boot/overlays/boomberry-dac.dtbo
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/boomberry-dac.dtbo
-sync
-rm -f /boot/overlays/boomberry-digi.dtbo
-dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/boomberry-digi.dtbo
 sync
 rm -f /boot/overlays/dht11.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dht11.dtbo
@@ -119,8 +116,17 @@ sync
 rm -f /boot/overlays/iqaudio-dacplus.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/iqaudio-dacplus.dtbo
 sync
+rm -f /boot/overlays/justboom-dac.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/justboom-dac.dtbo
+sync
+rm -f /boot/overlays/justboom-digi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/justboom-digi.dtbo
+sync
 rm -f /boot/overlays/lirc-rpi.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/lirc-rpi.dtbo
+sync
+rm -f /boot/overlays/mcp23017.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp23017.dtbo
 sync
 rm -f /boot/overlays/mcp2515-can0.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp2515-can0.dtbo
@@ -191,6 +197,9 @@ sync
 rm -f /boot/overlays/rpi-sense.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-sense.dtbo
 sync
+rm -f /boot/overlays/rra-digidac1-wm8741-audio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rra-digidac1-wm8741-audio.dtbo
+sync
 rm -f /boot/overlays/sdhost.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sdhost.dtbo
 sync
@@ -256,13 +265,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.11+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.11-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.13+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.13-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.11+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.11+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.11+
+if [ -d "/etc/kernel/postinst.d/4.4.13+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.13+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.13+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.11-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.11-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.11-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.13-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.13-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.13-v7+
 fi
 #DEBHELPER#
