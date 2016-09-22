@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20160921-1) jessie; urgency=medium
+
+  * firmware as of ad8608c08b122b2c228dba0ff5070d6e9519faf5
+
+ -- Serge Schneider <serge@raspberrypi.org>  Thu, 22 Sep 2016 09:09:53 +0100
+
 raspberrypi-firmware (1.20160620-1) jessie; urgency=medium
 
   * firmware as of 390f53ed0fd79df274bdcc81d99e09fa262f03ab
