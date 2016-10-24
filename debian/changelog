@@ -1,3 +1,10 @@
+raspberrypi-firmware (1.20161020-1) jessie; urgency=medium
+
+  * firmware as of ec5a517ed6051974a5a09f7b7811d21c443a7c74
+  * raspberrypi-bootloader: Move raspberrypi-kernel to Recommends
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 24 Oct 2016 12:43:51 +0100
+
 raspberrypi-firmware (1.20160921-1) jessie; urgency=medium
 
   * firmware as of ad8608c08b122b2c228dba0ff5070d6e9519faf5

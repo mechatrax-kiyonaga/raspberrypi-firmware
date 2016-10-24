@@ -41,6 +41,9 @@ sync
 rm -f /boot/overlays/akkordion-iqdacplus.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/akkordion-iqdacplus.dtbo
 sync
+rm -f /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
+sync
 rm -f /boot/overlays/at86rf233.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/at86rf233.dtbo
 sync
@@ -185,6 +188,9 @@ sync
 rm -f /boot/overlays/pitft28-resistive.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft28-resistive.dtbo
 sync
+rm -f /boot/overlays/pitft35-resistive.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft35-resistive.dtbo
+sync
 rm -f /boot/overlays/pps-gpio.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pps-gpio.dtbo
 sync
@@ -301,13 +307,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.21+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.21-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.26+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.26-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.21+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.21+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.21+
+if [ -d "/etc/kernel/postinst.d/4.4.26+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.26+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.26+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.21-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.21-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.21-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.26-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.26-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.26-v7+
 fi
 #DEBHELPER#
