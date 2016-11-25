@@ -179,6 +179,9 @@ sync
 rm -f /boot/overlays/piscreen2r.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/piscreen2r.dtbo
 sync
+rm -f /boot/overlays/pisound.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pisound.dtbo
+sync
 rm -f /boot/overlays/pitft22.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pitft22.dtbo
 sync
@@ -307,13 +310,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.26+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.26-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.26+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.26+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.26+
+if [ -d "/etc/kernel/postinst.d/4.4.34+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.34+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.26-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.26-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.26-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.34-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.34-v7+
 fi
 #DEBHELPER#

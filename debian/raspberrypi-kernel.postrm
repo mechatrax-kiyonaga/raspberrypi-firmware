@@ -1,13 +1,13 @@
 #!/bin/sh
 export INITRD=No
 if [ -d "/etc/kernel/postrm.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.26+ --arg=/boot/kernel.img /etc/kernel/postrm.d
-  run-parts -v --report --exit-on-error --arg=4.4.26-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d
 fi
-if [ -d "/etc/kernel/postrm.d/4.4.26+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.26+ --arg=/boot/kernel.img /etc/kernel/postrm.d/4.4.26+
+if [ -d "/etc/kernel/postrm.d/4.4.34+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/postrm.d/4.4.34+
 fi
-if [ -d "/etc/kernel/postrm.d/4.4.26-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.26-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d/4.4.26-v7+
+if [ -d "/etc/kernel/postrm.d/4.4.34-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d/4.4.34-v7+
 fi
 #DEBHELPER#
