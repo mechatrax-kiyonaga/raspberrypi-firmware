@@ -26,6 +26,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/d
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dpi24.dtbo /boot/overlays/dpi24.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dwc-otg.dtbo /boot/overlays/dwc-otg.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/dwc2.dtbo /boot/overlays/dwc2.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/enc28j60-spi2.dtbo /boot/overlays/enc28j60-spi2.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/enc28j60.dtbo /boot/overlays/enc28j60.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-ir.dtbo /boot/overlays/gpio-ir.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-poweroff.dtbo /boot/overlays/gpio-poweroff.dtbo
@@ -40,6 +41,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-mux.dtbo /boot/overlays/i2c-mux.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-pwm-pca9685a.dtbo /boot/overlays/i2c-pwm-pca9685a.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-rtc.dtbo /boot/overlays/i2c-rtc.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c-sensor.dtbo /boot/overlays/i2c-sensor.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c0-bcm2708.dtbo /boot/overlays/i2c0-bcm2708.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2c1-bcm2708.dtbo /boot/overlays/i2c1-bcm2708.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/i2s-gpio28-31.dtbo /boot/overlays/i2s-gpio28-31.dtbo
@@ -106,13 +108,13 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/wittypi.dtbo /boot/overlays/wittypi.dtbo
 export INITRD=No
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.34+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.34+
+if [ -d "/etc/kernel/preinst.d/4.4.38+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.38+
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.34-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.34-v7+
+if [ -d "/etc/kernel/preinst.d/4.4.38-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.38-v7+
 fi
 #DEBHELPER#

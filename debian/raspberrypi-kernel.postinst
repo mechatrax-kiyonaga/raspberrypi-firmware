@@ -74,6 +74,9 @@ sync
 rm -f /boot/overlays/dwc2.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/dwc2.dtbo
 sync
+rm -f /boot/overlays/enc28j60-spi2.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/enc28j60-spi2.dtbo
+sync
 rm -f /boot/overlays/enc28j60.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/enc28j60.dtbo
 sync
@@ -115,6 +118,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-pwm-pca
 sync
 rm -f /boot/overlays/i2c-rtc.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-rtc.dtbo
+sync
+rm -f /boot/overlays/i2c-sensor.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-sensor.dtbo
 sync
 rm -f /boot/overlays/i2c0-bcm2708.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c0-bcm2708.dtbo
@@ -310,13 +316,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.34+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.34+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.34+
+if [ -d "/etc/kernel/postinst.d/4.4.38+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.38+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.34-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.34-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.34-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.38-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.38-v7+
 fi
 #DEBHELPER#
