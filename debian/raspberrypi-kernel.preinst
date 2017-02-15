@@ -1,6 +1,7 @@
 #!/bin/sh
 mkdir -p /usr/share/rpikernelhack/overlays
 mkdir -p /boot/overlays
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rpi-0-w.dtb /boot/bcm2708-rpi-0-w.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rpi-b-plus.dtb /boot/bcm2708-rpi-b-plus.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rpi-b.dtb /boot/bcm2708-rpi-b.dtb
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/bcm2708-rpi-cm.dtb /boot/bcm2708-rpi-cm.dtb
@@ -56,10 +57,12 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/m
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp23s17.dtbo /boot/overlays/mcp23s17.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp2515-can0.dtbo /boot/overlays/mcp2515-can0.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp2515-can1.dtbo /boot/overlays/mcp2515-can1.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mcp3008.dtbo /boot/overlays/mcp3008.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mmc.dtbo /boot/overlays/mmc.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mz61581.dtbo /boot/overlays/mz61581.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-act-led.dtbo /boot/overlays/pi3-act-led.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-disable-bt.dtbo /boot/overlays/pi3-disable-bt.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-disable-wifi.dtbo /boot/overlays/pi3-disable-wifi.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-miniuart-bt.dtbo /boot/overlays/pi3-miniuart-bt.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen.dtbo /boot/overlays/piscreen.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/piscreen2r.dtbo /boot/overlays/piscreen2r.dtbo
@@ -91,6 +94,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/s
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/smi.dtbo /boot/overlays/smi.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/spi-gpio35-39.dtbo /boot/overlays/spi-gpio35-39.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/spi-rtc.dtbo /boot/overlays/spi-rtc.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/spi0-cs.dtbo /boot/overlays/spi0-cs.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/spi0-hw-cs.dtbo /boot/overlays/spi0-hw-cs.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/spi1-1cs.dtbo /boot/overlays/spi1-1cs.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/spi1-2cs.dtbo /boot/overlays/spi1-2cs.dtbo
@@ -108,13 +112,13 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/wittypi.dtbo /boot/overlays/wittypi.dtbo
 export INITRD=No
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.48+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.48-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.38+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.38+
+if [ -d "/etc/kernel/preinst.d/4.4.48+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.48+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.4.48+
 fi
-if [ -d "/etc/kernel/preinst.d/4.4.38-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.38-v7+
+if [ -d "/etc/kernel/preinst.d/4.4.48-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.48-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.4.48-v7+
 fi
 #DEBHELPER#

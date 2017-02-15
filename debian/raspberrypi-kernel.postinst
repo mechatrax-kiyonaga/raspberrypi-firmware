@@ -1,4 +1,7 @@
 #!/bin/sh
+rm -f /boot/bcm2708-rpi-0-w.dtb
+dpkg-divert --package rpikernelhack --remove --rename /boot/bcm2708-rpi-0-w.dtb
+sync
 rm -f /boot/bcm2708-rpi-b-plus.dtb
 dpkg-divert --package rpikernelhack --remove --rename /boot/bcm2708-rpi-b-plus.dtb
 sync
@@ -164,6 +167,9 @@ sync
 rm -f /boot/overlays/mcp2515-can1.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp2515-can1.dtbo
 sync
+rm -f /boot/overlays/mcp3008.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp3008.dtbo
+sync
 rm -f /boot/overlays/mmc.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mmc.dtbo
 sync
@@ -175,6 +181,9 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-act-led
 sync
 rm -f /boot/overlays/pi3-disable-bt.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-disable-bt.dtbo
+sync
+rm -f /boot/overlays/pi3-disable-wifi.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-disable-wifi.dtbo
 sync
 rm -f /boot/overlays/pi3-miniuart-bt.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/pi3-miniuart-bt.dtbo
@@ -269,6 +278,9 @@ sync
 rm -f /boot/overlays/spi-rtc.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi-rtc.dtbo
 sync
+rm -f /boot/overlays/spi0-cs.dtbo
+dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi0-cs.dtbo
+sync
 rm -f /boot/overlays/spi0-hw-cs.dtbo
 dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi0-hw-cs.dtbo
 sync
@@ -316,13 +328,13 @@ dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/wittypi.dtb
 sync
 export INITRD=No
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.48+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.4.48-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.38+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.38+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.38+
+if [ -d "/etc/kernel/postinst.d/4.4.48+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.48+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.4.48+
 fi
-if [ -d "/etc/kernel/postinst.d/4.4.38-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.4.38-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.38-v7+
+if [ -d "/etc/kernel/postinst.d/4.4.48-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.4.48-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.4.48-v7+
 fi
 #DEBHELPER#
