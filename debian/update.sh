@@ -22,10 +22,10 @@ git fetch --all
 if [ -n "$1" ]; then
 	FIRMWARE_COMMIT="$1"
 else
-	FIRMWARE_COMMIT="`git rev-parse upstream/master`"
+	FIRMWARE_COMMIT="`git rev-parse upstream/stable`"
 fi
 
-git checkout master
+git checkout stable
 git merge $FIRMWARE_COMMIT --no-edit
 
 DATE="`git show -s --format=%ct $FIRMWARE_COMMIT`"
@@ -60,7 +60,7 @@ git commit -m "Update headers" || echo "Headers not updated"
 git tag ${RELEASE}-headers
 
 git checkout debian
-git merge master --no-edit
+git merge stable --no-edit
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
 dch -v $DEBVER -D jessie --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
