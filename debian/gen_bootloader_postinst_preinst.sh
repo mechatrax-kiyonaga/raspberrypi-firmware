@@ -16,9 +16,11 @@ printf "mkdir -p /boot/overlays\n" >> raspberrypi-kernel.preinst
 for FN in ../boot/*.dtb ../boot/kernel*.img ../boot/COPYING.linux ../boot/overlays/*; do
   if ! [ -d "$FN" ]; then
     FN=${FN#../boot/}
-    printf "rm -f /boot/$FN\n" >> raspberrypi-kernel.postinst
-    printf "dpkg-divert --package rpikernelhack --remove --rename /boot/$FN\n" >> raspberrypi-kernel.postinst
-    printf "sync\n" >> raspberrypi-kernel.postinst
+    printf "if [ -f /usr/share/rpikernelhack/$FN ]; then\n" >> raspberrypi-kernel.postinst
+    printf "	rm -f /boot/$FN\n" >> raspberrypi-kernel.postinst
+    printf "	dpkg-divert --package rpikernelhack --remove --rename /boot/$FN\n" >> raspberrypi-kernel.postinst
+    printf "	sync\n" >> raspberrypi-kernel.postinst
+    printf "fi\n" >> raspberrypi-kernel.postinst
 
     printf "dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-kernel.preinst
   fi
