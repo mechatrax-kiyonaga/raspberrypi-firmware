@@ -1,5 +1,8 @@
 #!/bin/sh
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/prerm.d" ]; then
   run-parts -v --report --exit-on-error --arg=4.4.50+ --arg=/boot/kernel.img /etc/kernel/prerm.d
   run-parts -v --report --exit-on-error --arg=4.4.50-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d

@@ -1,5 +1,8 @@
 #!/bin/sh
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
   run-parts -v --verbose --exit-on-error --arg=4.4.50+ /etc/kernel/header_postinst.d
   run-parts -v --verbose --exit-on-error --arg=4.4.50-v7+ /etc/kernel/header_postinst.d

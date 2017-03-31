@@ -110,7 +110,10 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/v
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w1-gpio-pullup.dtbo /boot/overlays/w1-gpio-pullup.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/w1-gpio.dtbo /boot/overlays/w1-gpio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/wittypi.dtbo /boot/overlays/wittypi.dtbo
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/preinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=4.4.50+ --arg=/boot/kernel.img /etc/kernel/preinst.d
   run-parts -v --report --exit-on-error --arg=4.4.50-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d

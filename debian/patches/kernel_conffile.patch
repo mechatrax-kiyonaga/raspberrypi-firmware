@@ -1,0 +1,4 @@
+--- /dev/null
++++ b/etc/default/raspberrypi-kernel
+@@ -0,0 +1 @@
++INITRD=No

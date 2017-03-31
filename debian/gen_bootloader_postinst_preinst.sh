@@ -25,7 +25,10 @@ for FN in ../boot/*.dtb ../boot/kernel*.img ../boot/COPYING.linux ../boot/overla
 done
 
 cat <<EOF >> raspberrypi-kernel.preinst
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/preinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/preinst.d
   run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
@@ -39,7 +42,10 @@ fi
 EOF
 
 cat <<EOF >> raspberrypi-kernel.postinst
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/postinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postinst.d
   run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
@@ -108,7 +114,10 @@ printf "#!/bin/sh\n" > raspberrypi-kernel.postrm
 printf "#!/bin/sh\n" > raspberrypi-kernel-headers.postinst
 
 cat <<EOF >> raspberrypi-kernel.prerm
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/prerm.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/prerm.d
   run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d
@@ -122,7 +131,10 @@ fi
 EOF
 
 cat <<EOF >> raspberrypi-kernel.postrm
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/postrm.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postrm.d
   run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d
@@ -136,7 +148,10 @@ fi
 EOF
 
 cat <<EOF >> raspberrypi-kernel-headers.postinst
-export INITRD=No
+if [ -f /etc/default/raspberrypi-kernel ]; then
+  . /etc/default/raspberrypi-kernel
+  export INITRD
+fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
   run-parts -v --verbose --exit-on-error --arg=${version}+ /etc/kernel/header_postinst.d
   run-parts -v --verbose --exit-on-error --arg=${version}-v7+ /etc/kernel/header_postinst.d
