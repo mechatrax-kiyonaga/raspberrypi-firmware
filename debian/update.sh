@@ -58,15 +58,15 @@ find headers -name .gitignore -delete
 git add headers --all
 git commit -m "Update headers" || echo "Headers not updated"
 git tag ${RELEASE}-headers
+rm -rf linux
 
 git checkout debian
-git merge stable --no-edit
+git merge stable --no-edit -Xtheirs
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
 dch -v $DEBVER -D jessie --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
 git commit -a -m "$RELEASE release"
 git tag $RELEASE $FIRMWARE_COMMIT
-rm -rf linux
 
 gbp buildpackage -us -uc -sa -S
 git clean -xdf
