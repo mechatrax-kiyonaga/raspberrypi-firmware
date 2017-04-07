@@ -29,7 +29,10 @@ done
 cat <<EOF >> raspberrypi-kernel.preinst
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
+  INITRD=${INITRD:-"No"}
   export INITRD
+  RPI_INITRD=${RPI_INITRD:-"No"}
+  export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/preinst.d
@@ -46,7 +49,11 @@ EOF
 cat <<EOF >> raspberrypi-kernel.postinst
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
+  INITRD=${INITRD:-"No"}
   export INITRD
+  RPI_INITRD=${RPI_INITRD:-"No"}
+  export RPI_INITRD
+
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postinst.d
@@ -118,7 +125,11 @@ printf "#!/bin/sh\n" > raspberrypi-kernel-headers.postinst
 cat <<EOF >> raspberrypi-kernel.prerm
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
+  INITRD=${INITRD:-"No"}
   export INITRD
+  RPI_INITRD=${RPI_INITRD:-"No"}
+  export RPI_INITRD
+
 fi
 if [ -d "/etc/kernel/prerm.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/prerm.d
@@ -135,7 +146,11 @@ EOF
 cat <<EOF >> raspberrypi-kernel.postrm
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
+  INITRD=${INITRD:-"No"}
   export INITRD
+  RPI_INITRD=${RPI_INITRD:-"No"}
+  export RPI_INITRD
+
 fi
 if [ -d "/etc/kernel/postrm.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postrm.d
@@ -152,7 +167,11 @@ EOF
 cat <<EOF >> raspberrypi-kernel-headers.postinst
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
+  INITRD=${INITRD:-"No"}
   export INITRD
+  RPI_INITRD=${RPI_INITRD:-"No"}
+  export RPI_INITRD
+
 fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
   run-parts -v --verbose --exit-on-error --arg=${version}+ /etc/kernel/header_postinst.d

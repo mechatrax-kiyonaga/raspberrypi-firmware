@@ -546,7 +546,11 @@ if [ -f /usr/share/rpikernelhack/overlays/wittypi.dtbo ]; then
 fi
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
+  INITRD=No
   export INITRD
+  RPI_INITRD=No
+  export RPI_INITRD
+
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=4.4.50+ --arg=/boot/kernel.img /etc/kernel/postinst.d
