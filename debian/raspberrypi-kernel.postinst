@@ -89,6 +89,11 @@ if [ -f /usr/share/rpikernelhack/overlays/allo-boss-dac-pcm512x-audio.dtbo ]; th
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-boss-dac-pcm512x-audio.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/allo-digione.dtbo ]; then
+	rm -f /boot/overlays/allo-digione.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-digione.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/allo-piano-dac-pcm512x-audio.dtbo ]; then
 	rm -f /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
@@ -174,6 +179,11 @@ if [ -f /usr/share/rpikernelhack/overlays/fe-pi-audio.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/fe-pi-audio.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/goodix.dtbo ]; then
+	rm -f /boot/overlays/goodix.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/goodix.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/googlevoicehat-soundcard.dtbo ]; then
 	rm -f /boot/overlays/googlevoicehat-soundcard.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/googlevoicehat-soundcard.dtbo
@@ -242,6 +252,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/i2c-pwm-pca9685a.dtbo ]; then
 	rm -f /boot/overlays/i2c-pwm-pca9685a.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-pwm-pca9685a.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/i2c-rtc-gpio.dtbo ]; then
+	rm -f /boot/overlays/i2c-rtc-gpio.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/i2c-rtc-gpio.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/i2c-rtc.dtbo ]; then
@@ -329,9 +344,19 @@ if [ -f /usr/share/rpikernelhack/overlays/midi-uart0.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/midi-uart0.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/midi-uart1.dtbo ]; then
+	rm -f /boot/overlays/midi-uart1.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/midi-uart1.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/mmc.dtbo ]; then
 	rm -f /boot/overlays/mmc.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mmc.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/mpu6050.dtbo ]; then
+	rm -f /boot/overlays/mpu6050.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mpu6050.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/mz61581.dtbo ]; then
@@ -417,6 +442,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/raspidac3.dtbo ]; then
 	rm -f /boot/overlays/raspidac3.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/raspidac3.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/rotary-encoder.dtbo ]; then
+	rm -f /boot/overlays/rotary-encoder.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rotary-encoder.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/rpi-backlight.dtbo ]; then
@@ -608,13 +638,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.28+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.9.28-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.9.35+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.9.35-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.9.28+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.28+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.9.28+
+if [ -d "/etc/kernel/postinst.d/4.9.35+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.9.35+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.9.35+
 fi
-if [ -d "/etc/kernel/postinst.d/4.9.28-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.28-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.9.28-v7+
+if [ -d "/etc/kernel/postinst.d/4.9.35-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.9.35-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.9.35-v7+
 fi
 #DEBHELPER#

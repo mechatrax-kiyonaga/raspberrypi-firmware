@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20170702-1) jessie; urgency=medium
+
+  * firmware as of 84c8778cfcc99a40ef84efd39cd444c0eb5a80fa
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 03 Jul 2017 11:09:01 +0100
+
 raspberrypi-firmware (1.20170515-1) jessie; urgency=medium
 
   * firmware as of 856c68d57b030f38f2c6e2a9a5ed8bc51ca51707
