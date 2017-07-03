@@ -1,3 +1,12 @@
+raspberrypi-firmware (1.20170703-2) stretch; urgency=medium
+
+  * firmware as of 84c8778cfcc99a40ef84efd39cd444c0eb5a80fa
+  * Bump compat to 10
+  * Removed non-brcm VC libs
+  * Bump standard to 3.9.8
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 03 Jul 2017 15:46:36 +0100
+
 raspberrypi-firmware (1.20170703-1) jessie; urgency=medium
 
   * firmware as of 6ba0dabbe76ce02d261cc4658c3484fa12b10385
