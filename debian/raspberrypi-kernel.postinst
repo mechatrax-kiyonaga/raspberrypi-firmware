@@ -199,6 +199,11 @@ if [ -f /usr/share/rpikernelhack/overlays/gpio-poweroff.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-poweroff.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/gpio-shutdown.dtbo ]; then
+	rm -f /boot/overlays/gpio-shutdown.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-shutdown.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/hifiberry-amp.dtbo ]; then
 	rm -f /boot/overlays/hifiberry-amp.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hifiberry-amp.dtbo
@@ -362,6 +367,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/mz61581.dtbo ]; then
 	rm -f /boot/overlays/mz61581.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mz61581.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/papirus.dtbo ]; then
+	rm -f /boot/overlays/papirus.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/papirus.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/pi3-act-led.dtbo ]; then
@@ -638,13 +648,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.35+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.9.35-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.9.41+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.9.41-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.9.35+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.35+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.9.35+
+if [ -d "/etc/kernel/postinst.d/4.9.41+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.9.41+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.9.41+
 fi
-if [ -d "/etc/kernel/postinst.d/4.9.35-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.35-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.9.35-v7+
+if [ -d "/etc/kernel/postinst.d/4.9.41-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.9.41-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.9.41-v7+
 fi
 #DEBHELPER#

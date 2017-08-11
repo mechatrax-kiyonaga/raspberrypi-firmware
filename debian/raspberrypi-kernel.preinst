@@ -41,6 +41,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/g
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/googlevoicehat-soundcard.dtbo /boot/overlays/googlevoicehat-soundcard.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-ir.dtbo /boot/overlays/gpio-ir.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-poweroff.dtbo /boot/overlays/gpio-poweroff.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-shutdown.dtbo /boot/overlays/gpio-shutdown.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/hifiberry-amp.dtbo /boot/overlays/hifiberry-amp.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/hifiberry-dac.dtbo /boot/overlays/hifiberry-dac.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/hifiberry-dacplus.dtbo /boot/overlays/hifiberry-dacplus.dtbo
@@ -74,6 +75,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/m
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mmc.dtbo /boot/overlays/mmc.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mpu6050.dtbo /boot/overlays/mpu6050.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/mz61581.dtbo /boot/overlays/mz61581.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/papirus.dtbo /boot/overlays/papirus.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-act-led.dtbo /boot/overlays/pi3-act-led.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-disable-bt.dtbo /boot/overlays/pi3-disable-bt.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/pi3-disable-wifi.dtbo /boot/overlays/pi3-disable-wifi.dtbo
@@ -135,13 +137,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.35+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.9.35-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.9.41+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.9.41-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.9.35+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.35+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.9.35+
+if [ -d "/etc/kernel/preinst.d/4.9.41+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.9.41+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.9.41+
 fi
-if [ -d "/etc/kernel/preinst.d/4.9.35-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.9.35-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.9.35-v7+
+if [ -d "/etc/kernel/preinst.d/4.9.41-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.9.41-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.9.41-v7+
 fi
 #DEBHELPER#
