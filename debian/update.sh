@@ -64,9 +64,9 @@ git checkout debian
 git merge stable --no-edit -Xtheirs
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
-dch -v $DEBVER -D jessie --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
+dch -v $DEBVER -D stretch --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
 git commit -a -m "$RELEASE release"
 git tag $RELEASE $FIRMWARE_COMMIT
 
-gbp buildpackage -us -uc -sa -S
+gbp buildpackage -us -uc -sa
 git clean -xdf
