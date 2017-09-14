@@ -641,9 +641,9 @@ if [ -f /usr/share/rpikernelhack/overlays/wittypi.dtbo ]; then
 fi
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
-  INITRD=No
+  INITRD=${INITRD:-"No"}
   export INITRD
-  RPI_INITRD=No
+  RPI_INITRD=${RPI_INITRD:-"No"}
   export RPI_INITRD
 
 fi

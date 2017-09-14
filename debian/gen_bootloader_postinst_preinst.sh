@@ -5,7 +5,7 @@ if ! [ -d ../boot ]; then
   exit 1
 fi
 
-version=`cat ../extra/uname_string | cut -f 3 -d ' ' | tr -d +`; do
+version=`cat ../extra/uname_string | cut -f 3 -d ' ' | tr -d +`
 
 printf "#!/bin/sh\n" > raspberrypi-kernel.postinst
 printf "#!/bin/sh\n" > raspberrypi-kernel.preinst
@@ -29,9 +29,9 @@ done
 cat <<EOF >> raspberrypi-kernel.preinst
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
-  INITRD=${INITRD:-"No"}
+  INITRD=\${INITRD:-"No"}
   export INITRD
-  RPI_INITRD=${RPI_INITRD:-"No"}
+  RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
@@ -49,9 +49,9 @@ EOF
 cat <<EOF >> raspberrypi-kernel.postinst
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
-  INITRD=${INITRD:-"No"}
+  INITRD=\${INITRD:-"No"}
   export INITRD
-  RPI_INITRD=${RPI_INITRD:-"No"}
+  RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
 
 fi
@@ -125,9 +125,9 @@ printf "#!/bin/sh\n" > raspberrypi-kernel-headers.postinst
 cat <<EOF >> raspberrypi-kernel.prerm
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
-  INITRD=${INITRD:-"No"}
+  INITRD=\${INITRD:-"No"}
   export INITRD
-  RPI_INITRD=${RPI_INITRD:-"No"}
+  RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
 
 fi
@@ -146,9 +146,9 @@ EOF
 cat <<EOF >> raspberrypi-kernel.postrm
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
-  INITRD=${INITRD:-"No"}
+  INITRD=\${INITRD:-"No"}
   export INITRD
-  RPI_INITRD=${RPI_INITRD:-"No"}
+  RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
 
 fi
@@ -167,9 +167,9 @@ EOF
 cat <<EOF >> raspberrypi-kernel-headers.postinst
 if [ -f /etc/default/raspberrypi-kernel ]; then
   . /etc/default/raspberrypi-kernel
-  INITRD=${INITRD:-"No"}
+  INITRD=\${INITRD:-"No"}
   export INITRD
-  RPI_INITRD=${RPI_INITRD:-"No"}
+  RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
 
 fi
