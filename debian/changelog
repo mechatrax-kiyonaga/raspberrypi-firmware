@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20171029-1) stretch; urgency=medium
+
+  * firmware as of 93aae1391121c44c7bbddf66abaf38725ffa2dc0
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 30 Oct 2017 10:38:00 +0000
+
 raspberrypi-firmware (1.20170811-2) stretch; urgency=medium
 
   * 
