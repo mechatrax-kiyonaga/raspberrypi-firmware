@@ -1139,6 +1139,8 @@ kernel/drivers/ssb/ssb.ko:
 kernel/drivers/bcma/bcma.ko:
 kernel/drivers/extcon/extcon-core.ko:
 kernel/drivers/extcon/extcon-arizona.ko: kernel/drivers/extcon/extcon-core.ko kernel/sound/soc/snd-soc-core.ko kernel/sound/core/snd-compress.ko kernel/sound/core/snd-pcm-dmaengine.ko kernel/sound/core/snd-pcm.ko kernel/sound/core/snd-timer.ko kernel/sound/core/snd.ko
+kernel/drivers/iio/adc/ad_sigma_delta.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/adc/ad7793.ko: kernel/drivers/iio/adc/ad_sigma_delta.ko kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
 kernel/drivers/iio/adc/mcp320x.ko: kernel/drivers/iio/industrialio.ko
 kernel/drivers/iio/adc/mcp3422.ko: kernel/drivers/iio/industrialio.ko
 kernel/drivers/iio/buffer/industrialio-buffer-cb.ko: kernel/drivers/iio/industrialio.ko

@@ -8600,6 +8600,15 @@ alias sdio:c*v02DFd911B* btmrvl_sdio
 alias sdio:c*v02DFd911A* btmrvl_sdio
 alias sdio:c*v02DFd9105* btmrvl_sdio
 alias platform:extcon-arizona extcon_arizona
+alias spi:ad7799 ad7793
+alias spi:ad7798 ad7793
+alias spi:ad7797 ad7793
+alias spi:ad7796 ad7793
+alias spi:ad7795 ad7793
+alias spi:ad7794 ad7793
+alias spi:ad7793 ad7793
+alias spi:ad7792 ad7793
+alias spi:ad7785 ad7793
 alias of:N*T*Cmicrochip,mcp3301C* mcp320x
 alias of:N*T*Cmicrochip,mcp3301 mcp320x
 alias of:N*T*Cmicrochip,mcp3208C* mcp320x
