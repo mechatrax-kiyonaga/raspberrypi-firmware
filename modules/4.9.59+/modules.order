@@ -1139,6 +1139,8 @@ kernel/drivers/ssb/ssb.ko
 kernel/drivers/bcma/bcma.ko
 kernel/drivers/extcon/extcon-core.ko
 kernel/drivers/extcon/extcon-arizona.ko
+kernel/drivers/iio/adc/ad_sigma_delta.ko
+kernel/drivers/iio/adc/ad7793.ko
 kernel/drivers/iio/adc/mcp320x.ko
 kernel/drivers/iio/adc/mcp3422.ko
 kernel/drivers/iio/buffer/industrialio-buffer-cb.ko

@@ -1,12 +1,12 @@
-Source: raspberrypi-firmware
+Source: raspberrypi-firmware-mtx
 Priority: extra
-Maintainer: Serge Schneider <serge@raspberrypi.org>
-Build-Depends: debhelper (>= 8.0.0), quilt
+Maintainer: Masahiro Honda <honda@mechatrax.com>
+Build-Depends: debhelper (>= 10), quilt
 Standards-Version: 3.9.8
 Section: libs
 Homepage: https://github.com/raspberrypi/firmware
-Vcs-Git: git@github.com:RPi-Distro/firmware.git
-Vcs-Browser: https://github.com/RPi-Distro/firmware
+Vcs-Git: https://github.com/mechatrax/raspberrypi-firmware.git
+Vcs-Browser: https://github.com/mechatrax/raspberrpi-firmware
 
 Package: libraspberrypi0
 Section: libs
@@ -51,21 +51,23 @@ Recommends: raspberrypi-kernel
 Description: Raspberry Pi bootloader
  This package contains the Raspberry Pi firmware and bootloader.
 
-Package: raspberrypi-kernel
+Package: raspberrypi-kernel-mtx
 Section: kernel
 Architecture: armel armhf
 Depends: ${misc:Depends}
-Breaks: raspberrypi-bootloader (<<1.20160324-1)
-Replaces: raspberrypi-bootloader (<<1.20160324-1)
-Provides: linux-image
+Breaks: raspberrypi-bootloader (<<1.20160324-1), raspberrypi-kernel
+Replaces: raspberrypi-bootloader (<<1.20160324-1), raspberrypi-kernel
+Provides: linux-image, raspberrypi-kernel
 Description: Raspberry Pi bootloader
  This package contains the Raspberry Pi Linux kernel.
 
-Package: raspberrypi-kernel-headers
+Package: raspberrypi-kernel-headers-mtx
 Section: kernel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Provides: linux-headers
+Breaks: raspberrypi-kernel-headers
+Replaces: raspberrypi-kernel-headers
+Provides: linux-headers, raspberrypi-kernel-headers
 Description: Header files for the Raspberry Pi Linux kernel
  This package provides the architecture-specific kernel header files for
  the Raspberry Pi Linux kernel, generally used for building out-of-tree

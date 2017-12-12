@@ -498,6 +498,7 @@ alias symbol:dm_io_client_destroy dm_mod
 alias symbol:drm_plane_helper_update drm_kms_helper
 alias symbol:nf_ct_tmpl_free nf_conntrack
 alias symbol:lc_reset lru_cache
+alias symbol:ad_sd_cleanup_buffer_and_trigger ad_sigma_delta
 alias symbol:phy_mii_ioctl libphy
 alias symbol:mtd_device_parse_register mtd
 alias symbol:onfi_async_timing_mode_to_sdr_timings nand
@@ -971,6 +972,7 @@ alias symbol:l2tp_nl_unregister_ops l2tp_netlink
 alias symbol:drm_plane_create_zpos_property drm
 alias symbol:dvb_usbv2_generic_rw dvb_usb_v2
 alias symbol:v4l2_prio_init videodev
+alias symbol:ad_sd_validate_trigger ad_sigma_delta
 alias symbol:dib8000_attach dib8000
 alias symbol:usb_serial_generic_get_icount usbserial
 alias symbol:intlog2 dvb_core
@@ -1111,6 +1113,7 @@ alias symbol:tveeprom_read tveeprom
 alias symbol:i2400m_tx_msg_get i2400m
 alias symbol:nf_conntrack_locks nf_conntrack
 alias symbol:cx2341x_fill_defaults cx2341x
+alias symbol:ad_sd_calibrate_all ad_sigma_delta
 alias symbol:bt_sock_reclassify_lock bluetooth
 alias symbol:cryptd_free_ahash cryptd
 alias symbol:irda_param_insert irda
@@ -1705,6 +1708,7 @@ alias symbol:phy_ethtool_sset libphy
 alias symbol:xt_request_find_target x_tables
 alias symbol:p9_client_readdir 9pnet
 alias symbol:ocfs2_stack_supports_plocks ocfs2_stackglue
+alias symbol:ad_sd_read_reg ad_sigma_delta
 alias symbol:can_bus_off can_dev
 alias symbol:nf_nat_packet nf_nat
 alias symbol:dm_array_empty dm_persistent_data
@@ -1976,6 +1980,7 @@ alias symbol:em28xx_audio_analog_set em28xx
 alias symbol:dm_rh_get_state dm_region_hash
 alias symbol:ieee80211_set_key_rx_seq mac80211
 alias symbol:snd_soc_dapm_add_routes snd_soc_core
+alias symbol:ad_sd_setup_buffer_and_trigger ad_sigma_delta
 alias symbol:hci_conn_switch_role bluetooth
 alias symbol:iio_device_free industrialio
 alias symbol:nf_log_dump_tcp_header nf_log_common
@@ -2194,6 +2199,7 @@ alias symbol:usb_wwan_tiocmset usb_wwan
 alias symbol:ath9k_hw_get_txq_props ath9k_hw
 alias symbol:ieee80211_get_tkip_p1k_iv mac80211
 alias symbol:rfkill_register rfkill
+alias symbol:ad_sd_write_reg ad_sigma_delta
 alias symbol:dlm_lock dlm
 alias symbol:snd_soc_get_volsw_range snd_soc_core
 alias symbol:w1_ds2780_eeprom_cmd w1_ds2780
@@ -2338,6 +2344,7 @@ alias symbol:drm_i2c_encoder_restore drm
 alias symbol:cs42448_data snd_soc_cs42xx8
 alias symbol:drm_kms_helper_poll_fini drm_kms_helper
 alias symbol:ieee80211_stop_rx_ba_session mac80211
+alias symbol:ad_sd_set_comm ad_sigma_delta
 alias symbol:zs_get_total_pages zsmalloc
 alias symbol:v4l2_detect_gtf v4l2_dv_timings
 alias symbol:videobuf_dvb_unregister_bus videobuf_dvb
@@ -2466,6 +2473,7 @@ alias symbol:rdev_clear_badblocks md_mod
 alias symbol:snd_timer_global_free snd_timer
 alias symbol:ax25cmp ax25
 alias symbol:dm_io dm_mod
+alias symbol:ad_sigma_delta_single_conversion ad_sigma_delta
 alias symbol:bitmap_endwrite md_mod
 alias symbol:iscsi_complete_pdu libiscsi
 alias symbol:nand_cleanup nand
@@ -2756,6 +2764,7 @@ alias symbol:nf_ct_untracked_status_or nf_conntrack
 alias symbol:snd_soc_dapm_new_control snd_soc_core
 alias symbol:v4l2_ctrl_g_ctrl_int64 videodev
 alias symbol:__nf_ct_l4proto_find nf_conntrack
+alias symbol:ad_sd_init ad_sigma_delta
 alias symbol:dm_bufio_set_minimum_buffers dm_bufio
 alias symbol:drbd_conn_str drbd
 alias symbol:snd_ac97_set_rate snd_ac97_codec
@@ -3046,6 +3055,7 @@ alias symbol:ves1x93_attach ves1x93
 alias symbol:drm_gem_cma_dumb_create_internal drm
 alias symbol:lbs_remove_card libertas
 alias symbol:phy_resume libphy
+alias symbol:ad_sd_reset ad_sigma_delta
 alias symbol:ath9k_hw_disable_mib_counters ath9k_hw
 alias symbol:fuse_conn_put fuse
 alias symbol:media_entity_graph_walk_next media
