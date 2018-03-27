@@ -173,7 +173,6 @@ kernel/drivers/scsi/sg.ko
 kernel/drivers/spi/spidev.ko
 kernel/drivers/spi/spi-bcm2835.ko
 kernel/drivers/spi/spi-bcm2835aux.ko
-kernel/drivers/net/phy/mdio-bitbang.ko
 kernel/drivers/net/ethernet/microchip/enc28j60.ko
 kernel/drivers/net/ethernet/qualcomm/qcaspi.ko
 kernel/drivers/net/hamradio/mkiss.ko
@@ -231,6 +230,7 @@ kernel/drivers/net/usb/pegasus.ko
 kernel/drivers/net/usb/rtl8150.ko
 kernel/drivers/net/usb/r8152.ko
 kernel/drivers/net/usb/hso.ko
+kernel/drivers/net/usb/lan78xx.ko
 kernel/drivers/net/usb/asix.ko
 kernel/drivers/net/usb/ax88179_178a.ko
 kernel/drivers/net/usb/cdc_ether.ko
@@ -261,6 +261,10 @@ kernel/drivers/net/dummy.ko
 kernel/drivers/net/ifb.ko
 kernel/drivers/net/macvlan.ko
 kernel/drivers/net/netconsole.ko
+kernel/drivers/net/phy/libphy.ko
+kernel/drivers/net/phy/mdio-bitbang.ko
+kernel/drivers/net/phy/fixed_phy.ko
+kernel/drivers/net/phy/microchip.ko
 kernel/drivers/net/tun.ko
 kernel/drivers/net/veth.ko
 kernel/drivers/net/vxlan.ko
@@ -1026,6 +1030,7 @@ kernel/drivers/hid/hid-zydacron.ko
 kernel/drivers/hid/wacom.ko
 kernel/drivers/hid/hid-waltop.ko
 kernel/drivers/hid/hid-wiimote.ko
+kernel/drivers/of/of_mdio.ko
 kernel/drivers/staging/media/lirc/lirc_imon.ko
 kernel/drivers/staging/media/lirc/lirc_rpi.ko
 kernel/drivers/staging/media/lirc/lirc_sasem.ko
@@ -1138,6 +1143,8 @@ kernel/drivers/ssb/ssb.ko
 kernel/drivers/bcma/bcma.ko
 kernel/drivers/extcon/extcon-core.ko
 kernel/drivers/extcon/extcon-arizona.ko
+kernel/drivers/iio/adc/ad_sigma_delta.ko
+kernel/drivers/iio/adc/ad7793.ko
 kernel/drivers/iio/adc/mcp320x.ko
 kernel/drivers/iio/adc/mcp3422.ko
 kernel/drivers/iio/buffer/industrialio-buffer-cb.ko

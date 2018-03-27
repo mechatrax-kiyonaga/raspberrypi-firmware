@@ -1692,6 +1692,8 @@ alias usb:v0AF0p6771d*dc*dsc*dp*ic*isc*ip*in* hso
 alias usb:v0AF0p6751d*dc*dsc*dp*ic*isc*ip*in* hso
 alias usb:v0AF0p6731d*dc*dsc*dp*ic*isc*ip*in* hso
 alias usb:v0AF0p6711d*dc*dsc*dp*ic*isc*ip*in* hso
+alias usb:v0424p7850d*dc*dsc*dp*ic*isc*ip*in* lan78xx
+alias usb:v0424p7800d*dc*dsc*dp*ic*isc*ip*in* lan78xx
 alias usb:v066Bp20F9d*dc*dsc*dp*ic*isc*ip*in* asix
 alias usb:v0B95p172Ad*dc*dsc*dp*ic*isc*ip*in* asix
 alias usb:v0B95p7E2Bd*dc*dsc*dp*ic*isc*ip*in* asix
@@ -2225,6 +2227,7 @@ alias rtnl-link-bond bonding
 alias rtnl-link-dummy dummy
 alias rtnl-link-ifb ifb
 alias rtnl-link-macvlan macvlan
+alias mdio:0000000000000111110000010011???? microchip
 alias devname:net/tun tun
 alias char-major-10-200 tun
 alias rtnl-link-veth veth
@@ -8664,6 +8667,15 @@ alias sdio:c*v02DFd911B* btmrvl_sdio
 alias sdio:c*v02DFd911A* btmrvl_sdio
 alias sdio:c*v02DFd9105* btmrvl_sdio
 alias platform:extcon-arizona extcon_arizona
+alias spi:ad7799 ad7793
+alias spi:ad7798 ad7793
+alias spi:ad7797 ad7793
+alias spi:ad7796 ad7793
+alias spi:ad7795 ad7793
+alias spi:ad7794 ad7793
+alias spi:ad7793 ad7793
+alias spi:ad7792 ad7793
+alias spi:ad7785 ad7793
 alias of:N*T*Cmicrochip,mcp3301C* mcp320x
 alias of:N*T*Cmicrochip,mcp3301 mcp320x
 alias of:N*T*Cmicrochip,mcp3208C* mcp320x
