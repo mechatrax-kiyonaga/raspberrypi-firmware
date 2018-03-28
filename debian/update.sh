@@ -29,7 +29,7 @@ git checkout stable
 git merge $FIRMWARE_COMMIT --no-edit
 
 DATE="`git show -s --format=%ct $FIRMWARE_COMMIT`"
-DEBVER="`date -d @$DATE -u +1.%Y%m%d-1`"
+DEBVER="`date -d @$DATE -u +1.%Y%m%d-1~mtx1`"
 RELEASE="`date -d @$DATE -u +1.%Y%m%d`"
 
 KERNEL_COMMIT="`cat extra/git_hash`"
@@ -37,7 +37,7 @@ KERNEL_COMMIT="`cat extra/git_hash`"
 echo "Downloading linux (${KERNEL_COMMIT})..."
 rm linux -rf
 mkdir linux -p
-wget -qO- https://github.com/raspberrypi/linux/archive/${KERNEL_COMMIT}.tar.gz | tar xz -C linux --strip-components=1
+wget -qO- https://github.com/mechatrax/linux/archive/${KERNEL_COMMIT}.tar.gz | tar xz -C linux --strip-components=1
 
 echo Updating files...
 echo "+" > linux/.scmversion
