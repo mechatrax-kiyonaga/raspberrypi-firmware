@@ -68,6 +68,12 @@ kernel/drivers/hid/hid.ko
 kernel/drivers/hid/hid-generic.ko
 kernel/drivers/hid/usbhid/usbhid.ko
 kernel/drivers/i2c/i2c-core.ko
+kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/industrialio-configfs.ko
+kernel/drivers/iio/industrialio-sw-device.ko
+kernel/drivers/iio/industrialio-sw-trigger.ko
+kernel/drivers/iio/buffer/industrialio-buffer-cb.ko
+kernel/drivers/iio/buffer/kfifo_buf.ko
 kernel/drivers/input/input-core.ko
 kernel/drivers/input/input-leds.ko
 kernel/drivers/input/mousedev.ko
