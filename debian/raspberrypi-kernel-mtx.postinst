@@ -84,6 +84,11 @@ if [ -f /usr/share/rpikernelhack/overlays/ads7846.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ads7846.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/adv7282m.dtbo ]; then
+	rm -f /boot/overlays/adv7282m.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/adv7282m.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/akkordion-iqdacplus.dtbo ]; then
 	rm -f /boot/overlays/akkordion-iqdacplus.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/akkordion-iqdacplus.dtbo
@@ -242,6 +247,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/gpio-shutdown.dtbo ]; then
 	rm -f /boot/overlays/gpio-shutdown.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-shutdown.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/hd44780-lcd.dtbo ]; then
+	rm -f /boot/overlays/hd44780-lcd.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hd44780-lcd.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/hifiberry-amp.dtbo ]; then
@@ -434,6 +444,11 @@ if [ -f /usr/share/rpikernelhack/overlays/mz61581.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mz61581.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/ov5647.dtbo ]; then
+	rm -f /boot/overlays/ov5647.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ov5647.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/papirus.dtbo ]; then
 	rm -f /boot/overlays/papirus.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/papirus.dtbo
@@ -579,6 +594,11 @@ if [ -f /usr/share/rpikernelhack/overlays/rpi-ft5406.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-ft5406.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/rpi-poe.dtbo ]; then
+	rm -f /boot/overlays/rpi-poe.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-poe.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/rpi-proto.dtbo ]; then
 	rm -f /boot/overlays/rpi-proto.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/rpi-proto.dtbo
@@ -709,6 +729,16 @@ if [ -f /usr/share/rpikernelhack/overlays/sx150x.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/sx150x.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/tc358743-audio.dtbo ]; then
+	rm -f /boot/overlays/tc358743-audio.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tc358743-audio.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/tc358743.dtbo ]; then
+	rm -f /boot/overlays/tc358743.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tc358743.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/tinylcd35.dtbo ]; then
 	rm -f /boot/overlays/tinylcd35.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tinylcd35.dtbo
@@ -737,6 +767,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/vc4-fkms-v3d.dtbo ]; then
 	rm -f /boot/overlays/vc4-fkms-v3d.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vc4-fkms-v3d.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-kippah-7inch.dtbo ]; then
+	rm -f /boot/overlays/vc4-kms-kippah-7inch.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/vc4-kms-kippah-7inch.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-v3d.dtbo ]; then
@@ -773,13 +808,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.52+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.52-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.61 --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.61-v7 --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.52+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.52+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.52+
+if [ -d "/etc/kernel/postinst.d/4.14.61" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.61 --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.61
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.52-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.52-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.52-v7+
+if [ -d "/etc/kernel/postinst.d/4.14.61-v7" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.61-v7 --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.61-v7
 fi
 #DEBHELPER#
