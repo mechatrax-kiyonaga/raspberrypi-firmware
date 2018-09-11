@@ -89,6 +89,11 @@ if [ -f /usr/share/rpikernelhack/overlays/adv7282m.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/adv7282m.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/adv728x-m.dtbo ]; then
+	rm -f /boot/overlays/adv728x-m.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/adv728x-m.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/akkordion-iqdacplus.dtbo ]; then
 	rm -f /boot/overlays/akkordion-iqdacplus.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/akkordion-iqdacplus.dtbo
@@ -132,6 +137,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/audioinjector-addons.dtbo ]; then
 	rm -f /boot/overlays/audioinjector-addons.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audioinjector-addons.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/audioinjector-ultra.dtbo ]; then
+	rm -f /boot/overlays/audioinjector-ultra.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audioinjector-ultra.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/audioinjector-wm8731-audio.dtbo ]; then
@@ -808,13 +818,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.62 --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.62-v7 --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.69 --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.69-v7 --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.62" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.62 --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.62
+if [ -d "/etc/kernel/postinst.d/4.14.69" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.69 --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.69
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.62-v7" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.62-v7 --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.62-v7
+if [ -d "/etc/kernel/postinst.d/4.14.69-v7" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.69-v7 --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.69-v7
 fi
 #DEBHELPER#

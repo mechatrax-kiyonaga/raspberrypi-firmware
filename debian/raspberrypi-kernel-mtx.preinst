@@ -19,6 +19,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/a
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/ads1115.dtbo /boot/overlays/ads1115.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/ads7846.dtbo /boot/overlays/ads7846.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/adv7282m.dtbo /boot/overlays/adv7282m.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/adv728x-m.dtbo /boot/overlays/adv728x-m.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/akkordion-iqdacplus.dtbo /boot/overlays/akkordion-iqdacplus.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-boss-dac-pcm512x-audio.dtbo /boot/overlays/allo-boss-dac-pcm512x-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/allo-digione.dtbo /boot/overlays/allo-digione.dtbo
@@ -28,6 +29,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/a
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/applepi-dac.dtbo /boot/overlays/applepi-dac.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/at86rf233.dtbo /boot/overlays/at86rf233.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audioinjector-addons.dtbo /boot/overlays/audioinjector-addons.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audioinjector-ultra.dtbo /boot/overlays/audioinjector-ultra.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audioinjector-wm8731-audio.dtbo /boot/overlays/audioinjector-wm8731-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/audremap.dtbo /boot/overlays/audremap.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/balena-fin.dtbo /boot/overlays/balena-fin.dtbo
@@ -169,13 +171,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.62 --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.62-v7 --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.69 --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.69-v7 --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.14.62" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.62 --arg=/boot/kernel.img /etc/kernel/preinst.d/4.14.62
+if [ -d "/etc/kernel/preinst.d/4.14.69" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.69 --arg=/boot/kernel.img /etc/kernel/preinst.d/4.14.69
 fi
-if [ -d "/etc/kernel/preinst.d/4.14.62-v7" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.62-v7 --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.14.62-v7
+if [ -d "/etc/kernel/preinst.d/4.14.69-v7" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.69-v7 --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.14.69-v7
 fi
 #DEBHELPER#

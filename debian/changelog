@@ -1,3 +1,9 @@
+raspberrypi-firmware-mtx (1.20180910-1~mtx1) stretch; urgency=medium
+
+  * firmware as of 6acbc5179e575cfe7d61783d9a2a02d1335ef31e
+
+ -- Masahiro Honda <honda@mechatrax.com>  Tue, 11 Sep 2018 12:59:17 +0900
+
 raspberrypi-firmware-mtx (1.20180817-1~mtx1) stretch; urgency=medium
 
   * firmware as of 8ca8952ab7f79c3343bad7a919f3a885cd220267
