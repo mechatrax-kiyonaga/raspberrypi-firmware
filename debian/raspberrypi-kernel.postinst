@@ -229,6 +229,11 @@ if [ -f /usr/share/rpikernelhack/overlays/googlevoicehat-soundcard.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/googlevoicehat-soundcard.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/gpio-fan.dtbo ]; then
+	rm -f /boot/overlays/gpio-fan.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-fan.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/gpio-ir-tx.dtbo ]; then
 	rm -f /boot/overlays/gpio-ir-tx.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-ir-tx.dtbo
@@ -793,13 +798,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.69+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.69-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.70+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.70-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.69+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.69+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.69+
+if [ -d "/etc/kernel/postinst.d/4.14.70+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.70+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.70+
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.69-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.69-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.69-v7+
+if [ -d "/etc/kernel/postinst.d/4.14.70-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.70-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.70-v7+
 fi
 #DEBHELPER#

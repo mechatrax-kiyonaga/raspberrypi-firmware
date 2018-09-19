@@ -47,6 +47,7 @@ dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/e
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/fe-pi-audio.dtbo /boot/overlays/fe-pi-audio.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/goodix.dtbo /boot/overlays/goodix.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/googlevoicehat-soundcard.dtbo /boot/overlays/googlevoicehat-soundcard.dtbo
+dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-fan.dtbo /boot/overlays/gpio-fan.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-ir-tx.dtbo /boot/overlays/gpio-ir-tx.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-ir.dtbo /boot/overlays/gpio-ir.dtbo
 dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/overlays/gpio-key.dtbo /boot/overlays/gpio-key.dtbo
@@ -166,13 +167,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.69+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.69-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.70+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.70-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.14.69+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.69+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.14.69+
+if [ -d "/etc/kernel/preinst.d/4.14.70+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.70+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.14.70+
 fi
-if [ -d "/etc/kernel/preinst.d/4.14.69-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.69-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.14.69-v7+
+if [ -d "/etc/kernel/preinst.d/4.14.70-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.70-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.14.70-v7+
 fi
 #DEBHELPER#
