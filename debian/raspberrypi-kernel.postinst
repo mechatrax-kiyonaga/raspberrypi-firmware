@@ -249,6 +249,11 @@ if [ -f /usr/share/rpikernelhack/overlays/gpio-key.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-key.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/gpio-no-bank0-irq.dtbo ]; then
+	rm -f /boot/overlays/gpio-no-bank0-irq.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-no-bank0-irq.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/gpio-no-irq.dtbo ]; then
 	rm -f /boot/overlays/gpio-no-irq.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/gpio-no-irq.dtbo
@@ -297,6 +302,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/hy28a.dtbo ]; then
 	rm -f /boot/overlays/hy28a.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28a.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/hy28b-2017.dtbo ]; then
+	rm -f /boot/overlays/hy28b-2017.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/hy28b-2017.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/hy28b.dtbo ]; then
@@ -798,13 +808,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.71+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.71-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.79+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.79-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.71+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.71+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.71+
+if [ -d "/etc/kernel/postinst.d/4.14.79+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.79+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.79+
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.71-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.71-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.71-v7+
+if [ -d "/etc/kernel/postinst.d/4.14.79-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.79-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.79-v7+
 fi
 #DEBHELPER#
