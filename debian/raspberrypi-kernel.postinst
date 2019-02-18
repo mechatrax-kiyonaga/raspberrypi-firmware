@@ -54,6 +54,11 @@ if [ -f /usr/share/rpikernelhack/COPYING.linux ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/COPYING.linux
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/3dlab-nano-player.dtbo ]; then
+	rm -f /boot/overlays/3dlab-nano-player.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/3dlab-nano-player.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/README ]; then
 	rm -f /boot/overlays/README
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/README
@@ -147,6 +152,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/audioinjector-wm8731-audio.dtbo ]; then
 	rm -f /boot/overlays/audioinjector-wm8731-audio.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audioinjector-wm8731-audio.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/audiosense-pi.dtbo ]; then
+	rm -f /boot/overlays/audiosense-pi.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/audiosense-pi.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/audremap.dtbo ]; then
@@ -439,6 +449,11 @@ if [ -f /usr/share/rpikernelhack/overlays/mcp3202.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp3202.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/mcp342x.dtbo ]; then
+	rm -f /boot/overlays/mcp342x.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/mcp342x.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/media-center.dtbo ]; then
 	rm -f /boot/overlays/media-center.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/media-center.dtbo
@@ -719,6 +734,11 @@ if [ -f /usr/share/rpikernelhack/overlays/spi2-3cs.dtbo ]; then
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/spi2-3cs.dtbo
 	sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/ssd1306.dtbo ]; then
+	rm -f /boot/overlays/ssd1306.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/ssd1306.dtbo
+	sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/superaudioboard.dtbo ]; then
 	rm -f /boot/overlays/superaudioboard.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/superaudioboard.dtbo
@@ -742,6 +762,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/tinylcd35.dtbo ]; then
 	rm -f /boot/overlays/tinylcd35.dtbo
 	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tinylcd35.dtbo
+	sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/tpm-slb9670.dtbo ]; then
+	rm -f /boot/overlays/tpm-slb9670.dtbo
+	dpkg-divert --package rpikernelhack --remove --rename /boot/overlays/tpm-slb9670.dtbo
 	sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/uart0.dtbo ]; then
@@ -808,13 +833,13 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.79+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.14.79-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.98+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.14.98-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.79+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.79+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.79+
+if [ -d "/etc/kernel/postinst.d/4.14.98+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.98+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.14.98+
 fi
-if [ -d "/etc/kernel/postinst.d/4.14.79-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.14.79-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.79-v7+
+if [ -d "/etc/kernel/postinst.d/4.14.98-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.14.98-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.14.98-v7+
 fi
 #DEBHELPER#

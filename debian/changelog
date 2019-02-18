@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20190215-1) stretch; urgency=medium
+
+  * firmware as of 98997f363e3683ead4f50c37902169248628303a
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 18 Feb 2019 10:12:19 +0000
+
 raspberrypi-firmware (1.20181112-1) stretch; urgency=medium
 
   * firmware as of 12e0bf86e08d6067372bc0a45d7e8a10d3113210
