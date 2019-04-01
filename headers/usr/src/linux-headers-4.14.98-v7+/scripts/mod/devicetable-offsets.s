@@ -11,7 +11,7 @@
 	.file	"devicetable-offsets.c"
 @ GNU C89 (Raspbian 6.3.0-18+rpi1+deb9u1) version 6.3.0 20170516 (arm-linux-gnueabihf)
 @	compiled by GNU C version 6.3.0 20170516, GMP version 6.1.2, MPFR version 3.1.5, MPC version 1.0.3, isl version 0.15
-@ GGC heuristics: --param ggc-min-expand=89 --param ggc-min-heapsize=112083
+@ GGC heuristics: --param ggc-min-expand=96 --param ggc-min-heapsize=124879
 @ options passed:  -nostdinc -I ./arch/arm/include
 @ -I ./arch/arm/include/generated -I ./include -I ./arch/arm/include/uapi
 @ -I ./arch/arm/include/generated/uapi -I ./include/uapi
