@@ -42,10 +42,10 @@ KERNEL_COMMIT="`cat extra/git_hash`"
 echo "Downloading linux (${KERNEL_COMMIT})..."
 rm linux -rf
 mkdir linux -p
-if [ -e ../linux-vc5-${KERNEL_COMMIT}.tar.gz ]; then
-	tar xzf ../linux-vc5-${KERNEL_COMMIT}.tar.gz -C linux --strip-components=1
+if [ -e ../linux-${KERNEL_COMMIT}.tar.gz ]; then
+	tar xzf ../linux-${KERNEL_COMMIT}.tar.gz -C linux --strip-components=1
 else
-	wget -qO- https://github.com/raspberrypi/linux-vc5/archive/${KERNEL_COMMIT}.tar.gz | tar xz -C linux --strip-components=1
+	wget -qO- https://github.com/raspberrypi/linux/archive/${KERNEL_COMMIT}.tar.gz | tar xz -C linux --strip-components=1
 fi
 
 echo Updating files...
