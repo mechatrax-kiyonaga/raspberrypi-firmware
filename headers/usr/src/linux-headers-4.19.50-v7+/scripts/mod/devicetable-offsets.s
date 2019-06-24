@@ -9,20 +9,21 @@
 	.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
 	.eabi_attribute 18, 2	@ Tag_ABI_PCS_wchar_t
 	.file	"devicetable-offsets.c"
-@ GNU C89 (Ubuntu 8.3.0-6ubuntu1~18.10.1) version 8.3.0 (arm-linux-gnueabihf)
-@	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.20-GMP
+@ GNU C89 (Raspbian 8.3.0-6+rpi1) version 8.3.0 (arm-linux-gnueabihf)
+@	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
 
-@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+@ GGC heuristics: --param ggc-min-expand=96 --param ggc-min-heapsize=125022
 @ options passed:  -nostdinc -I ./arch/arm/include
 @ -I ./arch/arm/include/generated -I ./include -I ./arch/arm/include/uapi
 @ -I ./arch/arm/include/generated/uapi -I ./include/uapi
-@ -I ./include/generated/uapi -imultilib sf -imultiarch arm-linux-gnueabi
+@ -I ./include/generated/uapi -imultilib . -imultiarch arm-linux-gnueabihf
 @ -D __KERNEL__ -D __LINUX_ARM_ARCH__=7 -U arm
 @ -D KBUILD_BASENAME="devicetable_offsets"
 @ -D KBUILD_MODNAME="devicetable_offsets"
-@ -isystem /usr/lib/gcc-cross/arm-linux-gnueabihf/8/include
+@ -isystem /usr/lib/gcc/arm-linux-gnueabihf/8/include
 @ -include ./include/linux/kconfig.h
 @ -include ./include/linux/compiler_types.h
+@ -MD scripts/mod/.devicetable-offsets.s.d
 @ scripts/mod/devicetable-offsets.c -mlittle-endian -mapcs
 @ -mno-sched-prolog -mabi=aapcs-linux -mfpu=vfp -marm -mfloat-abi=soft
 @ -mtls-dialect=gnu -march=armv7-a
@@ -41,7 +42,7 @@
 @ -fno-var-tracking-assignments -fno-strict-overflow
 @ -fno-merge-all-constants -fmerge-constants -fstack-check=no
 @ -fconserve-stack -fmacro-prefix-map=./= -fverbose-asm
-@ --param allow-store-data-races=0 -fstack-protector-strong
+@ --param allow-store-data-races=0
 @ options enabled:  -faggressive-loop-optimizations -falign-jumps
 @ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
 @ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
@@ -987,5 +988,5 @@ main:
 	ldmfd	sp, {fp, sp, pc}	@
 	.fnend
 	.size	main, .-main
-	.ident	"GCC: (Ubuntu 8.3.0-6ubuntu1~18.10.1) 8.3.0"
+	.ident	"GCC: (Raspbian 8.3.0-6+rpi1) 8.3.0"
 	.section	.note.GNU-stack,"",%progbits
