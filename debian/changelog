@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20190708-1) buster; urgency=medium
+
+  * firmware as of cb3a32adf39f45a49be454e30c7464920ad7c605
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 08 Jul 2019 14:05:04 +0100
+
 raspberrypi-firmware (1.20190620+1-1) buster; urgency=medium
 
   * firmware as of 88ca9081f5e51cdedd16d5dbc85ed12a25123201

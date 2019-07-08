@@ -953,17 +953,17 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.50+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.50-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.50-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.57+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.57-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.57-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.50+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.50+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.19.50+
+if [ -d "/etc/kernel/postinst.d/4.19.57+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.57+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.19.57+
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.50-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.50-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.19.50-v7+
+if [ -d "/etc/kernel/postinst.d/4.19.57-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.57-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.19.57-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.50-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.50-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/4.19.50-v7l+
+if [ -d "/etc/kernel/postinst.d/4.19.57-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.57-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/4.19.57-v7l+
 fi
 #DEBHELPER#
