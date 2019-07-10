@@ -19,11 +19,11 @@ for FN in ../boot/*.dtb ../boot/kernel*.img ../boot/COPYING.linux ../boot/overla
     FN=${FN#../boot/}
     printf "if [ -f /usr/share/rpikernelhack/$FN ]; then\n" >> raspberrypi-kernel-mtx.postinst
     printf "	rm -f /boot/$FN\n" >> raspberrypi-kernel-mtx.postinst
-    printf "	dpkg-divert --package rpikernelhack --remove --rename /boot/$FN\n" >> raspberrypi-kernel-mtx.postinst
+    printf "	dpkg-divert --package rpikernelhack --rename --remove /boot/$FN\n" >> raspberrypi-kernel-mtx.postinst
     printf "	sync\n" >> raspberrypi-kernel-mtx.postinst
     printf "fi\n" >> raspberrypi-kernel-mtx.postinst
 
-    printf "dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-kernel-mtx.preinst
+    printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-kernel-mtx.preinst
   fi
 done
 
@@ -38,12 +38,16 @@ fi
 if [ -d "/etc/kernel/preinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/preinst.d
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/preinst.d
 fi
 if [ -d "/etc/kernel/preinst.d/${version}${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/preinst.d/${version}${suffix}
 fi
 if [ -d "/etc/kernel/preinst.d/${version}-v7${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/preinst.d/${version}-v7${suffix}
+fi
+if [ -d "/etc/kernel/preinst.d/${version}-v7l${suffix}" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/preinst.d/${version}-v7l${suffix}
 fi
 EOF
 
@@ -59,6 +63,7 @@ fi
 if [ -d "/etc/kernel/postinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postinst.d
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postinst.d
 fi
 if [ -d "/etc/kernel/postinst.d/${version}${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postinst.d/${version}${suffix}
@@ -66,13 +71,16 @@ fi
 if [ -d "/etc/kernel/postinst.d/${version}-v7${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postinst.d/${version}-v7${suffix}
 fi
+if [ -d "/etc/kernel/postinst.d/${version}-v7l${suffix}" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postinst.d/${version}-v7l${suffix}
+fi
 EOF
 
 printf "#DEBHELPER#\n" >> raspberrypi-kernel-mtx.postinst
 printf "#DEBHELPER#\n" >> raspberrypi-kernel-mtx.preinst
 
-printf "#!/bin/sh\n" > raspberrypi-bootloader.postinst
-printf "#!/bin/sh\n" > raspberrypi-bootloader.preinst
+printf "#!/bin/sh -e\n" > raspberrypi-bootloader.postinst
+printf "#!/bin/sh -e\n" > raspberrypi-bootloader.preinst
 
 printf "mkdir -p /usr/share/rpikernelhack\n" >> raspberrypi-bootloader.preinst
 
@@ -109,10 +117,10 @@ for FN in ../boot/*.elf ../boot/*.dat ../boot/*.bin ../boot/LICENCE.broadcom; do
   if ! [ -d "$FN" ]; then
     FN=${FN#../boot/}
     printf "rm -f /boot/$FN\n" >> raspberrypi-bootloader.postinst
-    printf "dpkg-divert --package rpikernelhack --remove --rename /boot/$FN\n" >> raspberrypi-bootloader.postinst
+    printf "dpkg-divert --package rpikernelhack --rename --remove /boot/$FN\n" >> raspberrypi-bootloader.postinst
     printf "sync\n" >> raspberrypi-bootloader.postinst
 
-    printf "dpkg-divert --package rpikernelhack --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-bootloader.preinst
+    printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-bootloader.preinst
   fi
 done
 
@@ -135,12 +143,16 @@ fi
 if [ -d "/etc/kernel/prerm.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/prerm.d
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/prerm.d
 fi
 if [ -d "/etc/kernel/prerm.d/${version}${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/prerm.d/${version}${suffix}
 fi
 if [ -d "/etc/kernel/prerm.d/${version}-v7${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/prerm.d/${version}-v7${suffix}
+fi
+if [ -d "/etc/kernel/prerm.d/${version}-v7l${suffix}" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/prerm.d/${version}-v7l${suffix}
 fi
 EOF
 
@@ -156,12 +168,16 @@ fi
 if [ -d "/etc/kernel/postrm.d" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postrm.d
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postrm.d
 fi
 if [ -d "/etc/kernel/postrm.d/${version}${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postrm.d/${version}${suffix}
 fi
 if [ -d "/etc/kernel/postrm.d/${version}-v7${suffix}" ]; then
   run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postrm.d/${version}-v7${suffix}
+fi
+if [ -d "/etc/kernel/postrm.d/${version}-v7l${suffix}" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postrm.d/${version}-v7l${suffix}
 fi
 EOF
 
@@ -177,6 +193,7 @@ fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
   run-parts -v --verbose --exit-on-error --arg=${version}${suffix} /etc/kernel/header_postinst.d
   run-parts -v --verbose --exit-on-error --arg=${version}-v7${suffix} /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=${version}-v7l${suffix} /etc/kernel/header_postinst.d
 fi
 
 if [ -d "/etc/kernel/header_postinst.d/${version}${suffix}" ]; then
@@ -185,6 +202,9 @@ fi
 
 if [ -d "/etc/kernel/header_postinst.d/${version}-v7${suffix}" ]; then
   run-parts -v --verbose --exit-on-error --arg=${version}-v7${suffix} /etc/kernel/header_postinst.d/${version}-v7${suffix}
+fi
+if [ -d "/etc/kernel/header_postinst.d/${version}-v7l${suffix}" ]; then
+  run-parts -v --verbose --exit-on-error --arg=${version}-v7l${suffix} /etc/kernel/header_postinst.d/${version}-v7l${suffix}
 fi
 EOF
 
