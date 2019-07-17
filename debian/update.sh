@@ -18,6 +18,11 @@ ln -sf "/usr/src/linux-headers-$version" "headers/lib/modules/$version/build"
 
 }
 
+if [ "$(arch)" != "armhf" ]; then
+	export ARCH=arm
+	export CROSS_COMPILE=arm-linux-gnueabihf-
+fi
+
 git fetch --all
 if [ -n "$1" ]; then
 	FIRMWARE_COMMIT="$1"
@@ -43,10 +48,17 @@ echo Updating files...
 echo "+" > linux/.scmversion
 rm -rf headers
 
+version="`cat extra/uname_string7l | cut -d ' ' -f 3`"
+(cd linux; make distclean bcm2711_defconfig modules_prepare)
+cp extra/Module7l.symvers linux/Module.symvers
+copy_files
+(cd linux; make distclean)
+
 version="`cat extra/uname_string7 | cut -d ' ' -f 3`"
 (cd linux; make distclean bcm2709_defconfig modules_prepare)
 cp extra/Module7.symvers linux/Module.symvers
 copy_files
+(cd linux; make distclean)
 
 version="`cat extra/uname_string | cut -d ' ' -f 3`"
 (cd linux; make distclean bcmrpi_defconfig modules_prepare)
@@ -57,6 +69,7 @@ copy_files
 find headers -name .gitignore -delete
 git add headers --all
 git commit -m "Update headers" || echo "Headers not updated"
+git tag -d ${RELEASE}-headers || true
 git tag ${RELEASE}-headers
 rm -rf linux
 
@@ -64,9 +77,9 @@ git checkout debian
 git merge stable --no-edit -Xtheirs
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
-dch -v $DEBVER -D stretch --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
+dch -v $DEBVER -D buster --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
 git commit -a -m "$RELEASE release"
 git tag $RELEASE $FIRMWARE_COMMIT
 
-gbp buildpackage -us -uc -sa
+gbp buildpackage -us -uc -sa -aarmhf
 git clean -xdf
