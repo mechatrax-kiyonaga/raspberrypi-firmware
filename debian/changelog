@@ -1,3 +1,9 @@
+raspberrypi-firmware-mtx (1.20190819-1~mtx1) buster; urgency=medium
+
+  * firmware as of 7b5bef9719ea051c446475559d204cc3be56093e
+
+ -- Masahiro Honda <honda@mechatrax.com>  Tue, 20 Aug 2019 14:25:08 +0900
+
 raspberrypi-firmware-mtx (1.20190718-1~mtx1) buster; urgency=medium
 
   * firmware as of 60765cc4f140399d7614a34d202b6ef428b6b474
