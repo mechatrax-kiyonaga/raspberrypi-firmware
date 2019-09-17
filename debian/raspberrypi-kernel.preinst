@@ -208,6 +208,7 @@ if [ -d "/etc/kernel/preinst.d" ]; then
   run-parts -v --report --exit-on-error --arg=4.19.66+ --arg=/boot/kernel.img /etc/kernel/preinst.d
   run-parts -v --report --exit-on-error --arg=4.19.66-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
   run-parts -v --report --exit-on-error --arg=4.19.66-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.66-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
 if [ -d "/etc/kernel/preinst.d/4.19.66+" ]; then
   run-parts -v --report --exit-on-error --arg=4.19.66+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.19.66+
@@ -217,5 +218,8 @@ if [ -d "/etc/kernel/preinst.d/4.19.66-v7+" ]; then
 fi
 if [ -d "/etc/kernel/preinst.d/4.19.66-v7l+" ]; then
   run-parts -v --report --exit-on-error --arg=4.19.66-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/4.19.66-v7l+
+fi
+if [ -d "/etc/kernel/preinst.d/4.19.66-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.66-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/4.19.66-v8+
 fi
 #DEBHELPER#
