@@ -13,7 +13,7 @@ printf "#!/bin/sh\n" > raspberrypi-kernel.preinst
 printf "mkdir -p /usr/share/rpikernelhack/overlays\n" >> raspberrypi-kernel.preinst
 printf "mkdir -p /boot/overlays\n" >> raspberrypi-kernel.preinst
 
-for FN in ../boot/*.dtb ../boot/kernel*.img ../boot/COPYING.linux ../boot/overlays/*; do
+for FN in ../boot/*.dtb ../boot/kernel.img ../boot/kernel7.img ../boot/COPYING.linux ../boot/overlays/* ../boot/kernel7l.img ../boot/kernel8.img; do
   if ! [ -d "$FN" ]; then
     FN=${FN#../boot/}
     printf "if [ -f /usr/share/rpikernelhack/$FN ]; then\n" >> raspberrypi-kernel.postinst
@@ -120,7 +120,7 @@ fi
 
 EOF
 
-for FN in ../boot/*.elf ../boot/*.dat ../boot/*.bin ../boot/LICENCE.broadcom; do
+for FN in ../boot/start.elf ../boot/start_*.elf ../boot/fixup.dat ../boot/fixup_*.dat ../boot/*.bin ../boot/LICENCE.broadcom ../boot/start4*.elf ../boot/fixup4*.dat; do
   if ! [ -d "$FN" ]; then
     FN=${FN#../boot/}
     printf "rm -f /boot/$FN\n" >> raspberrypi-bootloader.postinst
@@ -203,7 +203,6 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
-
 fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
   run-parts -v --verbose --exit-on-error --arg=${version}+ /etc/kernel/header_postinst.d
