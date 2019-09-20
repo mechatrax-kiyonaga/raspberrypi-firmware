@@ -90,7 +90,8 @@ git checkout debian
 git merge stable --no-edit -Xtheirs
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
-dch -v "$DEBVER" -D buster --force-distribution "firmware as of ${FIRMWARE_COMMIT}"
+dch "firmware as of ${FIRMWARE_COMMIT}"
+dch -v "$DEBVER" -D buster --force-distribution "$(cut -f 1 -d'+' extra/uname_string)"
 git commit -a -m "$RELEASE release"
 git tag "$RELEASE" "$FIRMWARE_COMMIT"
 
