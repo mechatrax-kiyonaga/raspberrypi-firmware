@@ -6,7 +6,6 @@ if ! [ -d ../boot ]; then
 fi
 
 version=`cat ../extra/uname_string | cut -f 3 -d ' ' | tr -d +`
-suffix=`cat ../extra/uname_string | cut -f 3 -d ' ' | sed -e 's/[^\+]//g'`
 
 printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.postinst
 printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.preinst
@@ -14,7 +13,7 @@ printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.preinst
 printf "mkdir -p /usr/share/rpikernelhack/overlays\n" >> raspberrypi-kernel-mtx.preinst
 printf "mkdir -p /boot/overlays\n" >> raspberrypi-kernel-mtx.preinst
 
-for FN in ../boot/*.dtb ../boot/kernel*.img ../boot/COPYING.linux ../boot/overlays/*; do
+for FN in ../boot/*.dtb ../boot/kernel.img ../boot/kernel7.img ../boot/COPYING.linux ../boot/overlays/* ../boot/kernel7l.img ../boot/kernel8.img; do
   if ! [ -d "$FN" ]; then
     FN=${FN#../boot/}
     printf "if [ -f /usr/share/rpikernelhack/$FN ]; then\n" >> raspberrypi-kernel-mtx.postinst
@@ -36,18 +35,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/${version}${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/preinst.d/${version}${suffix}
+if [ -d "/etc/kernel/preinst.d/${version}+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/preinst.d/${version}+
 fi
-if [ -d "/etc/kernel/preinst.d/${version}-v7${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/preinst.d/${version}-v7${suffix}
+if [ -d "/etc/kernel/preinst.d/${version}-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/${version}-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/${version}-v7l${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/preinst.d/${version}-v7l${suffix}
+if [ -d "/etc/kernel/preinst.d/${version}-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/${version}-v7l+
+fi
+if [ -d "/etc/kernel/preinst.d/${version}-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/${version}-v8+
 fi
 EOF
 
@@ -61,18 +64,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/${version}${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postinst.d/${version}${suffix}
+if [ -d "/etc/kernel/postinst.d/${version}+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postinst.d/${version}+
 fi
-if [ -d "/etc/kernel/postinst.d/${version}-v7${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postinst.d/${version}-v7${suffix}
+if [ -d "/etc/kernel/postinst.d/${version}-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/${version}-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/${version}-v7l${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postinst.d/${version}-v7l${suffix}
+if [ -d "/etc/kernel/postinst.d/${version}-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/${version}-v7l+
+fi
+if [ -d "/etc/kernel/postinst.d/${version}-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/${version}-v8+
 fi
 EOF
 
@@ -113,7 +120,7 @@ fi
 
 EOF
 
-for FN in ../boot/*.elf ../boot/*.dat ../boot/*.bin ../boot/LICENCE.broadcom; do
+for FN in ../boot/start.elf ../boot/start_*.elf ../boot/fixup.dat ../boot/fixup_*.dat ../boot/*.bin ../boot/LICENCE.broadcom ../boot/start4*.elf ../boot/fixup4*.dat; do
   if ! [ -d "$FN" ]; then
     FN=${FN#../boot/}
     printf "rm -f /boot/$FN\n" >> raspberrypi-bootloader.postinst
@@ -141,18 +148,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/prerm.d" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/prerm.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/prerm.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/prerm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/prerm.d
 fi
-if [ -d "/etc/kernel/prerm.d/${version}${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/prerm.d/${version}${suffix}
+if [ -d "/etc/kernel/prerm.d/${version}+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/prerm.d/${version}+
 fi
-if [ -d "/etc/kernel/prerm.d/${version}-v7${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/prerm.d/${version}-v7${suffix}
+if [ -d "/etc/kernel/prerm.d/${version}-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/prerm.d/${version}-v7+
 fi
-if [ -d "/etc/kernel/prerm.d/${version}-v7l${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/prerm.d/${version}-v7l${suffix}
+if [ -d "/etc/kernel/prerm.d/${version}-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/prerm.d/${version}-v7l+
+fi
+if [ -d "/etc/kernel/prerm.d/${version}-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/prerm.d/${version}-v8+
 fi
 EOF
 
@@ -166,18 +177,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postrm.d" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postrm.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postrm.d
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postrm.d
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/postrm.d
 fi
-if [ -d "/etc/kernel/postrm.d/${version}${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}${suffix} --arg=/boot/kernel.img /etc/kernel/postrm.d/${version}${suffix}
+if [ -d "/etc/kernel/postrm.d/${version}+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}+ --arg=/boot/kernel.img /etc/kernel/postrm.d/${version}+
 fi
-if [ -d "/etc/kernel/postrm.d/${version}-v7${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7${suffix} --arg=/boot/kernel7.img /etc/kernel/postrm.d/${version}-v7${suffix}
+if [ -d "/etc/kernel/postrm.d/${version}-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7+ --arg=/boot/kernel7.img /etc/kernel/postrm.d/${version}-v7+
 fi
-if [ -d "/etc/kernel/postrm.d/${version}-v7l${suffix}" ]; then
-  run-parts -v --report --exit-on-error --arg=${version}-v7l${suffix} --arg=/boot/kernel7l.img /etc/kernel/postrm.d/${version}-v7l${suffix}
+if [ -d "/etc/kernel/postrm.d/${version}-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postrm.d/${version}-v7l+
+fi
+if [ -d "/etc/kernel/postrm.d/${version}-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=${version}-v8+ --arg=/boot/kernel8.img /etc/kernel/postrm.d/${version}-v8+
 fi
 EOF
 
@@ -188,23 +203,26 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
   export RPI_INITRD
-
 fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
-  run-parts -v --verbose --exit-on-error --arg=${version}${suffix} /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=${version}-v7${suffix} /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=${version}-v7l${suffix} /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=${version}+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=${version}-v7+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=${version}-v7l+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=${version}-v8+ /etc/kernel/header_postinst.d
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/${version}${suffix}" ]; then
-  run-parts -v --verbose --exit-on-error --arg=${version}${suffix} /etc/kernel/header_postinst.d/${version}${suffix}
+if [ -d "/etc/kernel/header_postinst.d/${version}+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=${version}+ /etc/kernel/header_postinst.d/${version}+
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/${version}-v7${suffix}" ]; then
-  run-parts -v --verbose --exit-on-error --arg=${version}-v7${suffix} /etc/kernel/header_postinst.d/${version}-v7${suffix}
+if [ -d "/etc/kernel/header_postinst.d/${version}-v7+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=${version}-v7+ /etc/kernel/header_postinst.d/${version}-v7+
 fi
-if [ -d "/etc/kernel/header_postinst.d/${version}-v7l${suffix}" ]; then
-  run-parts -v --verbose --exit-on-error --arg=${version}-v7l${suffix} /etc/kernel/header_postinst.d/${version}-v7l${suffix}
+if [ -d "/etc/kernel/header_postinst.d/${version}-v7l+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=${version}-v7l+ /etc/kernel/header_postinst.d/${version}-v7l+
+fi
+if [ -d "/etc/kernel/header_postinst.d/${version}-v8+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=${version}-v8+ /etc/kernel/header_postinst.d/${version}-v8+
 fi
 EOF
 
