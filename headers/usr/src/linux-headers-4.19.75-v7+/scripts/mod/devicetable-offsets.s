@@ -9,40 +9,40 @@
 	.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
 	.eabi_attribute 18, 2	@ Tag_ABI_PCS_wchar_t
 	.file	"devicetable-offsets.c"
-@ GNU C89 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) version 7.4.0 (arm-linux-gnueabihf)
-@	compiled by GNU C version 7.4.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+@ GNU C89 (Debian 8.3.0-2) version 8.3.0 (arm-linux-gnueabihf)
+@	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
 
 @ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 @ options passed:  -nostdinc -I ./arch/arm/include
 @ -I ./arch/arm/include/generated -I ./include -I ./arch/arm/include/uapi
 @ -I ./arch/arm/include/generated/uapi -I ./include/uapi
-@ -I ./include/generated/uapi -imultilib sf -imultiarch arm-linux-gnueabi
+@ -I ./include/generated/uapi -imultilib . -imultiarch arm-linux-gnueabihf
 @ -D __KERNEL__ -D __LINUX_ARM_ARCH__=7 -U arm
 @ -D KBUILD_BASENAME="devicetable_offsets"
 @ -D KBUILD_MODNAME="devicetable_offsets"
-@ -isystem /usr/lib/gcc-cross/arm-linux-gnueabihf/7/include
+@ -isystem /usr/lib/gcc-cross/arm-linux-gnueabihf/8/include
 @ -include ./include/linux/kconfig.h
 @ -include ./include/linux/compiler_types.h
 @ -MD scripts/mod/.devicetable-offsets.s.d
 @ scripts/mod/devicetable-offsets.c -mlittle-endian -mapcs
-@ -mno-sched-prolog -mabi=aapcs-linux -mfpu=vfp -marm -march=armv7-a
-@ -mfloat-abi=soft -mtls-dialect=gnu
+@ -mno-sched-prolog -mabi=aapcs-linux -mfpu=vfp -marm -mfloat-abi=soft
+@ -mtls-dialect=gnu -march=armv7-a
 @ -auxbase-strip scripts/mod/devicetable-offsets.s -O2 -Wall -Wundef
 @ -Wstrict-prototypes -Wno-trigraphs -Werror=implicit-function-declaration
 @ -Wno-format-security -Wno-frame-address -Wformat-truncation=0
 @ -Wformat-overflow=0 -Wno-int-in-bool-context -Wframe-larger-than=1024
 @ -Wno-unused-but-set-variable -Wunused-const-variable=0
-@ -Wdeclaration-after-statement -Wno-pointer-sign -Werror=implicit-int
-@ -Werror=strict-prototypes -Werror=date-time
-@ -Werror=incompatible-pointer-types -Werror=designated-init -std=gnu90 -p
-@ -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE
-@ -fno-dwarf2-cfi-asm -fno-ipa-sra -funwind-tables
+@ -Wdeclaration-after-statement -Wno-pointer-sign -Wno-stringop-truncation
+@ -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time
+@ -Werror=incompatible-pointer-types -Werror=designated-init
+@ -Wno-packed-not-aligned -std=gnu90 -p -fno-strict-aliasing -fno-common
+@ -fshort-wchar -fno-PIE -fno-dwarf2-cfi-asm -fno-ipa-sra -funwind-tables
 @ -fno-delete-null-pointer-checks -fstack-protector-strong
 @ -fno-omit-frame-pointer -fno-optimize-sibling-calls
 @ -fno-var-tracking-assignments -fno-strict-overflow
 @ -fno-merge-all-constants -fmerge-constants -fstack-check=no
-@ -fconserve-stack -fverbose-asm --param allow-store-data-races=0
-@ -fstack-protector-strong
+@ -fconserve-stack -fmacro-prefix-map=./= -fverbose-asm
+@ --param allow-store-data-races=0
 @ options enabled:  -faggressive-loop-optimizations -falign-jumps
 @ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
 @ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
@@ -83,9 +83,10 @@
 @ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
 @ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr
 @ -ftree-sra -ftree-switch-conversion -ftree-tail-merge -ftree-ter
-@ -ftree-vrp -funit-at-a-time -funwind-tables -fverbose-asm
-@ -fzero-initialized-in-bss -mapcs-frame -marm -mglibc -mlittle-endian
-@ -mpic-data-is-text-relative -munaligned-access -mvectorize-with-neon-quad
+@ -ftree-vrp -funit-at-a-time -funwind-tables -fverbose-asm -fwrapv
+@ -fwrapv-pointer -fzero-initialized-in-bss -mapcs-frame -marm -mbe32
+@ -mglibc -mlittle-endian -mpic-data-is-text-relative -munaligned-access
+@ -mvectorize-with-neon-quad
 
 	.text
 	.section	.text.startup,"ax",%progbits
@@ -987,5 +988,5 @@ main:
 	ldmfd	sp, {fp, sp, pc}	@
 	.fnend
 	.size	main, .-main
-	.ident	"GCC: (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 7.4.0"
+	.ident	"GCC: (Debian 8.3.0-2) 8.3.0"
 	.section	.note.GNU-stack,"",%progbits

@@ -1,1 +1,1 @@
-#define vdso_offset_sigtramp	0x0698
+#define vdso_offset_sigtramp	0x0688

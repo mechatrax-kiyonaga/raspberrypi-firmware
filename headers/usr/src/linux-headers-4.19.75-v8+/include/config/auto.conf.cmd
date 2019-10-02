@@ -1232,16 +1232,16 @@ endif
 ifneq "$(KERNELVERSION)" "4.19.75"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(CC_VERSION_TEXT)" "aarch64-linux-gnu-gcc (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 7.4.0"
+ifneq "$(CC_VERSION_TEXT)" "gcc (Debian 8.3.0-6) 8.3.0"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(srctree)" "."
 include/config/auto.conf: FORCE
 endif
-ifneq "$(CC)" "aarch64-linux-gnu-gcc"
+ifneq "$(CC)" "gcc"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(LD)" "aarch64-linux-gnu-ld"
+ifneq "$(LD)" "ld"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(SRCARCH)" "arm64"

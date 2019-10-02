@@ -1,7 +1,7 @@
 	.arch armv8-a
 	.file	"devicetable-offsets.c"
-// GNU C89 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) version 7.4.0 (aarch64-linux-gnu)
-//	compiled by GNU C version 7.4.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+// GNU C89 (Debian 8.3.0-6) version 8.3.0 (aarch64-linux-gnu)
+//	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
 
 // GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 // options passed:  -nostdinc -I ./arch/arm64/include
@@ -11,7 +11,7 @@
 // -imultiarch aarch64-linux-gnu -D __KERNEL__ -D CONFIG_AS_LSE=1
 // -D KBUILD_BASENAME="devicetable_offsets"
 // -D KBUILD_MODNAME="devicetable_offsets"
-// -isystem /usr/lib/gcc/aarch64-linux-gnu/7/include
+// -isystem /usr/lib/gcc/aarch64-linux-gnu/8/include
 // -include ./include/linux/kconfig.h
 // -include ./include/linux/compiler_types.h
 // -MD scripts/mod/.devicetable-offsets.s.d
@@ -22,16 +22,17 @@
 // -Wno-frame-address -Wformat-truncation=0 -Wformat-overflow=0
 // -Wno-int-in-bool-context -Wframe-larger-than=2048
 // -Wno-unused-but-set-variable -Wunused-const-variable=0
-// -Wdeclaration-after-statement -Wno-pointer-sign -Werror=implicit-int
-// -Werror=strict-prototypes -Werror=date-time
-// -Werror=incompatible-pointer-types -Werror=designated-init -std=gnu90 -p
-// -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE
-// -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks
-// -fstack-protector-strong -fno-omit-frame-pointer
-// -fno-optimize-sibling-calls -fno-var-tracking-assignments
-// -fno-strict-overflow -fno-merge-all-constants -fmerge-constants
-// -fstack-check=no -fconserve-stack -fverbose-asm
-// --param allow-store-data-races=0 -fstack-protector-strong
+// -Wdeclaration-after-statement -Wno-pointer-sign -Wno-stringop-truncation
+// -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time
+// -Werror=incompatible-pointer-types -Werror=designated-init
+// -Wno-packed-not-aligned -std=gnu90 -p -fno-strict-aliasing -fno-common
+// -fshort-wchar -fno-PIE -fno-asynchronous-unwind-tables
+// -fno-delete-null-pointer-checks -fstack-protector-strong
+// -fno-omit-frame-pointer -fno-optimize-sibling-calls
+// -fno-var-tracking-assignments -fno-strict-overflow
+// -fno-merge-all-constants -fmerge-constants -fstack-check=no
+// -fconserve-stack -fmacro-prefix-map=./= -fverbose-asm
+// --param allow-store-data-races=0
 // options enabled:  -faggressive-loop-optimizations -falign-labels
 // -fauto-inc-dec -fbranch-count-reg -fcaller-saves
 // -fchkp-check-incomplete-type -fchkp-check-read -fchkp-check-write
@@ -73,10 +74,10 @@
 // -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
 // -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
 // -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
-// -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
-// -mfix-cortex-a53-835769 -mfix-cortex-a53-843419 -mgeneral-regs-only
-// -mglibc -mlittle-endian -momit-leaf-frame-pointer
-// -mpc-relative-literal-loads
+// -funit-at-a-time -funwind-tables -fverbose-asm -fwrapv -fwrapv-pointer
+// -fzero-initialized-in-bss -mfix-cortex-a53-835769
+// -mfix-cortex-a53-843419 -mgeneral-regs-only -mglibc -mlittle-endian
+// -momit-leaf-frame-pointer -mpc-relative-literal-loads
 
 	.text
 	.global	_mcount
@@ -86,11 +87,16 @@
 	.global	main
 	.type	main, %function
 main:
+.LFB24:
+	.cfi_startproc
 	stp	x29, x30, [sp, -16]!	//,,,
-	add	x29, sp, 0	//,,
+	.cfi_def_cfa_offset 16
+	.cfi_offset 29, -16
+	.cfi_offset 30, -8
+	mov	x29, sp	//,
 // scripts/mod/devicetable-offsets.c:10: {
 	mov	x0, x30	//,
-	bl	_mcount	//
+	bl	_mcount		//
 // scripts/mod/devicetable-offsets.c:11: 	DEVID(usb_device_id);
 #APP
 // 11 "scripts/mod/devicetable-offsets.c" 1
@@ -966,7 +972,12 @@ main:
 #NO_APP
 	mov	w0, 0	//,
 	ldp	x29, x30, [sp], 16	//,,,
-	ret
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa_offset 0
+	ret	
+	.cfi_endproc
+.LFE24:
 	.size	main, .-main
-	.ident	"GCC: (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 7.4.0"
+	.ident	"GCC: (Debian 8.3.0-6) 8.3.0"
 	.section	.note.GNU-stack,"",@progbits

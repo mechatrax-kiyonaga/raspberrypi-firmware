@@ -16,7 +16,7 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/aarch64-linux-gnu/bits/typesizes.h \
   /usr/include/aarch64-linux-gnu/sys/socket.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include/stddef.h \
+  /usr/lib/gcc/aarch64-linux-gnu/8/include/stddef.h \
   /usr/include/aarch64-linux-gnu/bits/socket.h \
   /usr/include/aarch64-linux-gnu/sys/types.h \
   /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
@@ -27,7 +27,6 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/endian.h \
   /usr/include/aarch64-linux-gnu/bits/endian.h \
   /usr/include/aarch64-linux-gnu/bits/byteswap.h \
-  /usr/include/aarch64-linux-gnu/bits/byteswap-16.h \
   /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
@@ -35,9 +34,6 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
-  /usr/include/aarch64-linux-gnu/sys/sysmacros.h \
-  /usr/include/aarch64-linux-gnu/bits/sysmacros.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -48,9 +44,8 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/aarch64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/aarch64-linux-gnu/bits/socket2.h \
   /usr/include/aarch64-linux-gnu/bits/in.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include/stdint.h \
+  /usr/lib/gcc/aarch64-linux-gnu/8/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
   /usr/include/aarch64-linux-gnu/bits/wchar.h \
@@ -65,10 +60,8 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include-fixed/limits.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include-fixed/syslimits.h \
+  /usr/lib/gcc/aarch64-linux-gnu/8/include-fixed/limits.h \
+  /usr/lib/gcc/aarch64-linux-gnu/8/include-fixed/syslimits.h \
   /usr/include/limits.h \
   /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
   /usr/include/aarch64-linux-gnu/bits/local_lim.h \
@@ -76,16 +69,16 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/aarch64-linux-gnu/bits/posix2_lim.h \
   scripts/mod/modpost.h \
   /usr/include/stdio.h \
+  /usr/lib/gcc/aarch64-linux-gnu/8/include/stdarg.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/libio.h \
-  /usr/include/aarch64-linux-gnu/bits/_G_config.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include/stdarg.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
   /usr/include/aarch64-linux-gnu/bits/sys_errlist.h \
   /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/stdlib.h \
   /usr/include/aarch64-linux-gnu/bits/waitflags.h \
   /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
@@ -94,7 +87,6 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/alloca.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/aarch64-linux-gnu/sys/stat.h \
   /usr/include/aarch64-linux-gnu/bits/stat.h \
   /usr/include/aarch64-linux-gnu/sys/mman.h \
@@ -104,14 +96,12 @@ deps_scripts/mod/sumversion.o := \
   /usr/include/fcntl.h \
   /usr/include/aarch64-linux-gnu/bits/fcntl.h \
   /usr/include/aarch64-linux-gnu/bits/fcntl-linux.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl2.h \
   /usr/include/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
   /usr/include/aarch64-linux-gnu/bits/environments.h \
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/elf.h \
   /usr/include/aarch64-linux-gnu/bits/auxv.h \
   scripts/mod/elfconfig.h \

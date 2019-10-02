@@ -91,6 +91,7 @@ enum ad7793_excitation_current {
  * @buffered: If set to true configure the device for buffered input mode.
  * @unipolar: If set to true sample in unipolar mode, if set to false sample in
  *		bipolar mode.
+ * @user_calibration: If set to true enable calibbias and calibscale attributes.
  * @refsel: Reference voltage selection
  * @bias_voltage: Bias voltage selection
  * @exitation_current: Excitation current selection
@@ -102,6 +103,7 @@ struct ad7793_platform_data {
 	bool boost_enable;
 	bool buffered;
 	bool unipolar;
+	bool user_calibration;
 
 	enum ad7793_refsel refsel;
 	enum ad7793_bias_voltage bias_voltage;
