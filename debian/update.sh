@@ -7,13 +7,13 @@ copy_files (){
 	rsync -aHAX \
 		--files-from=<(cd linux; find . -name Makefile\* -o -name Kconfig\* -o -name \*.pl) linux/ "$destdir/"
 	rsync -aHAX \
-		--files-from=<(cd linux; find arch/arm{,64}/include include scripts -type f) linux/ "$destdir/"
+		--files-from=<(cd linux; find arch/arm/include include scripts -type f) linux/ "$destdir/"
 	rsync -aHAX \
-		--files-from=<(cd linux; find arch/arm{,64} -name module.lds -o -name Kbuild.platforms -o -name Platform) linux/ "$destdir/"
+		--files-from=<(cd linux; find arch/arm -name module.lds -o -name Kbuild.platforms -o -name Platform) linux/ "$destdir/"
 	rsync -aHAX \
-		--files-from=<(cd linux; find $(find arch/arm{,64} -name include -o -name scripts -type d) -type f) linux/ "$destdir/"
+		--files-from=<(cd linux; find $(find arch/arm -name include -o -name scripts -type d) -type f) linux/ "$destdir/"
 	rsync -aHAX \
-		--files-from=<(cd linux; find arch/arm{,64}/include Module.symvers .config include scripts -type f) linux/ "$destdir/"
+		--files-from=<(cd linux; find arch/arm/include Module.symvers .config include scripts -type f) linux/ "$destdir/"
 	ln -sf "/usr/src/linux-headers-$version" "headers/lib/modules/$version/build"
 }
 
@@ -48,15 +48,6 @@ fi
 echo Updating files...
 echo "+" > linux/.scmversion
 rm -rf headers
-
-ARCH=arm64
-CROSS_COMPILE=aarch64-linux-gnu-
-
-version="$(cut -d ' ' -f 3 extra/uname_string8)"
-(cd linux;  make distclean bcm2711_defconfig modules_prepare)
-cp extra/Module8.symvers linux/Module.symvers
-copy_files
-(cd linux; make distclean)
 
 ARCH=arm
 CROSS_COMPILE=arm-linux-gnueabihf-
