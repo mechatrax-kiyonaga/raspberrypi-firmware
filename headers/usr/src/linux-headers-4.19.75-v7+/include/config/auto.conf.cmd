@@ -1305,7 +1305,7 @@ endif
 ifneq "$(KERNELVERSION)" "4.19.75"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(CC_VERSION_TEXT)" "arm-linux-gnueabihf-gcc (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 7.4.0"
+ifneq "$(CC_VERSION_TEXT)" "arm-linux-gnueabihf-gcc (Raspbian 8.3.0-6+rpi1) 8.3.0"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(srctree)" "."

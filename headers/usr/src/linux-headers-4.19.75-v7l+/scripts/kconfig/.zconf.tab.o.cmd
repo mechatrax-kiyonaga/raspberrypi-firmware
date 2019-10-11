@@ -1,4 +1,4 @@
-cmd_scripts/kconfig/zconf.tab.o := gcc -Wp,-MD,scripts/kconfig/.zconf.tab.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89      -Iscripts/kconfig -c -o scripts/kconfig/zconf.tab.o scripts/kconfig/zconf.tab.c
+cmd_scripts/kconfig/zconf.tab.o := gcc -Wp,-MD,scripts/kconfig/.zconf.tab.o.d -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64     -Iscripts/kconfig -c -o scripts/kconfig/zconf.tab.o scripts/kconfig/zconf.tab.c
 
 source_scripts/kconfig/zconf.tab.o := scripts/kconfig/zconf.tab.c
 
@@ -6,65 +6,58 @@ deps_scripts/kconfig/zconf.tab.o := \
   /usr/include/stdc-predef.h \
   /usr/include/ctype.h \
   /usr/include/features.h \
-  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
-  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
-  /usr/include/aarch64-linux-gnu/bits/long-double.h \
-  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
-  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
-  /usr/include/aarch64-linux-gnu/bits/types.h \
-  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/arm-linux-gnueabihf/sys/cdefs.h \
+  /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
+  /usr/include/arm-linux-gnueabihf/bits/long-double.h \
+  /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
+  /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
+  /usr/include/arm-linux-gnueabihf/bits/types.h \
+  /usr/include/arm-linux-gnueabihf/bits/typesizes.h \
   /usr/include/endian.h \
-  /usr/include/aarch64-linux-gnu/bits/endian.h \
-  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
-  /usr/include/aarch64-linux-gnu/bits/byteswap-16.h \
-  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
-  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include/stdarg.h \
+  /usr/include/arm-linux-gnueabihf/bits/endian.h \
+  /usr/include/arm-linux-gnueabihf/bits/byteswap.h \
+  /usr/include/arm-linux-gnueabihf/bits/uintn-identity.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/locale_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/__locale_t.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/8/include/stdarg.h \
   /usr/include/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include/stddef.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/libio.h \
-  /usr/include/aarch64-linux-gnu/bits/_G_config.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/sys_errlist.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
+  /usr/include/arm-linux-gnueabihf/bits/libc-header-start.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/8/include/stddef.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/__fpos_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/__mbstate_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/__fpos64_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/__FILE.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/FILE.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_FILE.h \
+  /usr/include/arm-linux-gnueabihf/bits/stdio_lim.h \
+  /usr/include/arm-linux-gnueabihf/bits/sys_errlist.h \
+  /usr/include/arm-linux-gnueabihf/bits/stdio.h \
   /usr/include/stdlib.h \
-  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
-  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
-  /usr/include/aarch64-linux-gnu/bits/floatn.h \
-  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
-  /usr/include/aarch64-linux-gnu/sys/types.h \
-  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
-  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
-  /usr/include/aarch64-linux-gnu/sys/select.h \
-  /usr/include/aarch64-linux-gnu/bits/select.h \
-  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
-  /usr/include/aarch64-linux-gnu/sys/sysmacros.h \
-  /usr/include/aarch64-linux-gnu/bits/sysmacros.h \
-  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/arm-linux-gnueabihf/bits/waitflags.h \
+  /usr/include/arm-linux-gnueabihf/bits/waitstatus.h \
+  /usr/include/arm-linux-gnueabihf/bits/floatn.h \
+  /usr/include/arm-linux-gnueabihf/bits/floatn-common.h \
+  /usr/include/arm-linux-gnueabihf/sys/types.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/clock_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/clockid_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/time_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/timer_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/stdint-intn.h \
+  /usr/include/arm-linux-gnueabihf/sys/select.h \
+  /usr/include/arm-linux-gnueabihf/bits/select.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/sigset_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/__sigset_t.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_timeval.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_timespec.h \
+  /usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h \
+  /usr/include/arm-linux-gnueabihf/bits/thread-shared-types.h \
+  /usr/include/arm-linux-gnueabihf/bits/pthreadtypes-arch.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
+  /usr/include/arm-linux-gnueabihf/bits/stdlib-bsearch.h \
+  /usr/include/arm-linux-gnueabihf/bits/stdlib-float.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include/stdbool.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/8/include/stdbool.h \
   scripts/kconfig/lkc.h \
     $(wildcard include/config/prefix.h) \
   scripts/kconfig/expr.h \
@@ -74,42 +67,40 @@ deps_scripts/kconfig/zconf.tab.o := \
   scripts/kconfig/kconf_id.c \
   scripts/kconfig/zconf.lex.c \
   /usr/include/errno.h \
-  /usr/include/aarch64-linux-gnu/bits/errno.h \
+  /usr/include/arm-linux-gnueabihf/bits/errno.h \
   /usr/include/linux/errno.h \
-  /usr/include/aarch64-linux-gnu/asm/errno.h \
+  /usr/include/arm-linux-gnueabihf/asm/errno.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include-fixed/limits.h \
-  /usr/lib/gcc/aarch64-linux-gnu/7/include-fixed/syslimits.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed/limits.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/8/include-fixed/syslimits.h \
   /usr/include/limits.h \
-  /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/local_lim.h \
+  /usr/include/arm-linux-gnueabihf/bits/posix1_lim.h \
+  /usr/include/arm-linux-gnueabihf/bits/local_lim.h \
   /usr/include/linux/limits.h \
-  /usr/include/aarch64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/arm-linux-gnueabihf/bits/posix2_lim.h \
   /usr/include/unistd.h \
-  /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
-  /usr/include/aarch64-linux-gnu/bits/environments.h \
-  /usr/include/aarch64-linux-gnu/bits/confname.h \
-  /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
-  /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
+  /usr/include/arm-linux-gnueabihf/bits/posix_opt.h \
+  /usr/include/arm-linux-gnueabihf/bits/environments.h \
+  /usr/include/arm-linux-gnueabihf/bits/confname.h \
+  /usr/include/arm-linux-gnueabihf/bits/getopt_posix.h \
+  /usr/include/arm-linux-gnueabihf/bits/getopt_core.h \
   scripts/kconfig/util.c \
   scripts/kconfig/confdata.c \
-  /usr/include/aarch64-linux-gnu/sys/stat.h \
-  /usr/include/aarch64-linux-gnu/bits/stat.h \
+  /usr/include/arm-linux-gnueabihf/sys/stat.h \
+  /usr/include/arm-linux-gnueabihf/bits/stat.h \
   /usr/include/fcntl.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl-linux.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl2.h \
+  /usr/include/arm-linux-gnueabihf/bits/fcntl.h \
+  /usr/include/arm-linux-gnueabihf/bits/fcntl-linux.h \
   /usr/include/time.h \
-  /usr/include/aarch64-linux-gnu/bits/time.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/arm-linux-gnueabihf/bits/time.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_tm.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_itimerspec.h \
   scripts/kconfig/expr.c \
   scripts/kconfig/symbol.c \
   /usr/include/regex.h \
-  /usr/include/aarch64-linux-gnu/sys/utsname.h \
-  /usr/include/aarch64-linux-gnu/bits/utsname.h \
+  /usr/include/arm-linux-gnueabihf/sys/utsname.h \
+  /usr/include/arm-linux-gnueabihf/bits/utsname.h \
   scripts/kconfig/menu.c \
   scripts/kconfig/preprocess.c \
 
