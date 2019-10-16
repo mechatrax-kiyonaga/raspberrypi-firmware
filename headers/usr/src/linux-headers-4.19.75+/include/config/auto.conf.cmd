@@ -1320,10 +1320,10 @@ endif
 ifneq "$(SRCARCH)" "arm"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(HOSTCXX)" "g++"
+ifneq "$(HOSTCXX)" "arm-linux-gnueabihf-g++"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(HOSTCC)" "gcc"
+ifneq "$(HOSTCC)" "arm-linux-gnueabihf-gcc"
 include/config/auto.conf: FORCE
 endif
 
