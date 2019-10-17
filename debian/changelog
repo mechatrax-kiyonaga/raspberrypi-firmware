@@ -1,3 +1,12 @@
+raspberrypi-firmware-mtx (1.20190925-2~mtx1) buster; urgency=medium
+
+  * firmware as of e97160f213cd55f29c955192c491017f71811331
+  * Linux version 4.19.75
+  * Add free space check
+  * Remove old NOOBS fixup which would no longer work
+
+ -- Masahiro Honda <honda@mechatrax.com>  Wed, 16 Oct 2019 15:55:56 +0900
+
 raspberrypi-firmware-mtx (1.20190925-1~mtx1) buster; urgency=medium
 
   * firmware as of e97160f213cd55f29c955192c491017f71811331

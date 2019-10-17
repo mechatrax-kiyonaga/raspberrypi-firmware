@@ -5,24 +5,145 @@ if ! [ -d ../boot ]; then
   exit 1
 fi
 
-version=`cat ../extra/uname_string | cut -f 3 -d ' ' | tr -d +`
+version="$(cut -f 3 -d ' ' ../extra/uname_string | tr -d +)"
 
-printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.postinst
-printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.preinst
+NEW_SIZE="$(du -cm ../boot/*.dtb ../boot/kernel*.img ../boot/COPYING.linux ../boot/overlays/* ../boot/start*.elf ../boot/fixup*.dat ../boot/LICENCE.broadcom | tail -n1 | cut -f1)"
 
+printf "#!/bin/sh -e\n\n" | tee raspberrypi-kernel-mtx.postinst | tee raspberrypi-bootloader.postinst | tee raspberrypi-kernel-mtx.preinst > raspberrypi-bootloader.preinst
+
+cat <<EOF | tee -a raspberrypi-kernel-mtx.postinst >> raspberrypi-bootloader.postinst
+get_file_list() {
+  cat /var/lib/dpkg/info/raspberrypi-kernel-mtx.md5sums /var/lib/dpkg/info/raspberrypi-kernel-mtx.md5sums 2> /dev/null | awk '/ boot/ {print "/"\$2}'
+}
+
+get_filtered_file_list() {
+  for file in \$(get_file_list); do
+    if [ -f "\$file" ]; then
+      echo "\$file"
+    fi
+  done
+}
+
+get_available_space() {
+  INSTALLED_SPACE="\$(get_filtered_file_list | xargs -r du -cm 2> /dev/null | tail -n1 | cut -f1)"
+  FREE_SPACE="\$(df -m /boot | awk 'NR==2 {print \$4}')"
+  echo \$(( INSTALLED_SPACE + FREE_SPACE ))
+}
+
+is_pifour() {
+  grep -q "^Revision\s*:\s*[ 123][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]11[0-9a-fA-F]$" /proc/cpuinfo
+  return \$?
+}
+
+if [ "\$(get_available_space)" -lt "$NEW_SIZE" ]; then
+  echo "You do not have enough space in /boot to install this package."
+  SKIP_FILES=1
+  if is_pifour; then
+    SKIP_PI4=0
+    echo "Only adding Pi 4 support"
+  else
+    SKIP_PI4=1
+    echo "Skipping Pi 4 support"
+  fi
+fi
+
+EOF
+
+printf "mkdir -p /usr/share/rpikernelhack\n" >> raspberrypi-bootloader.preinst
 printf "mkdir -p /usr/share/rpikernelhack/overlays\n" >> raspberrypi-kernel-mtx.preinst
 printf "mkdir -p /boot/overlays\n" >> raspberrypi-kernel-mtx.preinst
 
-for FN in ../boot/*.dtb ../boot/kernel.img ../boot/kernel7.img ../boot/COPYING.linux ../boot/overlays/* ../boot/kernel7l.img ../boot/kernel8.img; do
-  if ! [ -d "$FN" ]; then
+cat <<EOF | tee -a raspberrypi-kernel-mtx.postinst >> raspberrypi-bootloader.postinst
+if [ "\$SKIP_FILES" != "1" ] || [ "\${SKIP_PI4}" = "1" ]; then
+EOF
+for FN in ../boot/kernel.img ../boot/kernel7.img; do
+  if [ -f "$FN" ]; then
     FN=${FN#../boot/}
-    printf "if [ -f /usr/share/rpikernelhack/$FN ]; then\n" >> raspberrypi-kernel-mtx.postinst
-    printf "	rm -f /boot/$FN\n" >> raspberrypi-kernel-mtx.postinst
-    printf "	dpkg-divert --package rpikernelhack --rename --remove /boot/$FN\n" >> raspberrypi-kernel-mtx.postinst
-    printf "	sync\n" >> raspberrypi-kernel-mtx.postinst
-    printf "fi\n" >> raspberrypi-kernel-mtx.postinst
+    cat << EOF >> raspberrypi-kernel-mtx.postinst
+  if [ -f /usr/share/rpikernelhack/$FN ]; then
+    rm -f /boot/$FN
+    dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
+    sync
+  fi
+EOF
+  fi
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> raspberrypi-kernel-mtx.preinst
+done
+for FN in ../boot/start.elf ../boot/start_*.elf ../boot/fixup.dat ../boot/fixup_*.dat ../boot/*.bin; do
+  if [ -f "$FN" ]; then
+    FN=${FN#../boot/}
+    cat << EOF >> raspberrypi-bootloader.postinst
+  if [ -f /usr/share/rpikernelhack/$FN ]; then
+    rm -f /boot/$FN
+    dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
+    sync
+  fi
+EOF
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> raspberrypi-bootloader.preinst
+  fi
+done
 
-    printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-kernel-mtx.preinst
+cat <<EOF | tee -a raspberrypi-kernel-mtx.postinst >> raspberrypi-bootloader.postinst
+fi
+
+if [ "\$SKIP_FILES" != "1" ] || [ "\${SKIP_PI4}" = "0" ]; then
+EOF
+for FN in ../boot/kernel7l.img ../boot/kernel8.img; do
+  if [ -f "$FN" ]; then
+    FN=${FN#../boot/}
+    cat << EOF >> raspberrypi-kernel-mtx.postinst
+  if [ -f /usr/share/rpikernelhack/$FN ]; then
+    rm -f /boot/$FN
+    dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
+    sync
+  fi
+EOF
+  fi
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> raspberrypi-kernel-mtx.preinst
+done
+for FN in ../boot/start4*.elf ../boot/fixup4*.dat; do
+  if [ -f "$FN" ]; then
+    FN=${FN#../boot/}
+    cat << EOF >> raspberrypi-bootloader.postinst
+  if [ -f /usr/share/rpikernelhack/$FN ]; then
+    rm -f /boot/$FN
+    dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
+    sync
+  fi
+EOF
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> raspberrypi-bootloader.preinst
+  fi
+done
+cat <<EOF | tee -a raspberrypi-kernel-mtx.postinst >> raspberrypi-bootloader.postinst
+fi
+
+EOF
+
+for FN in ../boot/*.dtb ../boot/COPYING.linux ../boot/overlays/*; do
+  if [ -f "$FN" ]; then
+    FN=${FN#../boot/}
+    cat << EOF >> raspberrypi-kernel-mtx.postinst
+if [ -f /usr/share/rpikernelhack/$FN ]; then
+  rm -f /boot/$FN
+  dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
+  sync
+fi
+EOF
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> raspberrypi-kernel-mtx.preinst
+  fi
+done
+
+for FN in ../boot/LICENCE.broadcom; do
+  if [ -f "$FN" ]; then
+    FN=${FN#../boot/}
+    cat << EOF >> raspberrypi-bootloader.postinst
+if [ -f /usr/share/rpikernelhack/$FN ]; then
+  rm -f /boot/$FN
+  dpkg-divert --package rpikernelhack --rename --remove /boot/$FN
+  sync
+fi
+EOF
+  printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/%s /boot/%s\n" "$FN" "$FN" >> raspberrypi-bootloader.preinst
   fi
 done
 
@@ -83,56 +204,9 @@ if [ -d "/etc/kernel/postinst.d/${version}-v8+" ]; then
 fi
 EOF
 
-printf "#DEBHELPER#\n" >> raspberrypi-kernel-mtx.postinst
-printf "#DEBHELPER#\n" >> raspberrypi-kernel-mtx.preinst
-
-printf "#!/bin/sh -e\n" > raspberrypi-bootloader.postinst
-printf "#!/bin/sh -e\n" > raspberrypi-bootloader.preinst
-
-printf "mkdir -p /usr/share/rpikernelhack\n" >> raspberrypi-bootloader.preinst
-
-cat <<EOF >> raspberrypi-bootloader.preinst
-if [ -f "/boot/recovery.elf" ]; then
-  echo "/boot appears to be NOOBS recovery partition. Applying fix."
-  rootnum=\`cat /proc/cmdline | sed -n 's|.*root=/dev/mmcblk0p\([0-9]*\).*|\1|p'\`
-  if [ ! "\$rootnum" ];then
-    echo "Could not determine root partition"
-    exit 1
-  fi
-
-  if ! grep -qE "/dev/mmcblk0p1\s+/boot" /etc/fstab; then
-    echo "Unexpected fstab entry"
-    exit 1
-  fi
-
-  boot="/dev/mmcblk0p\$((rootnum-1))"
-  root="/dev/mmcblk0p\${rootnum}"
-  sed /etc/fstab -i -e "s|^.* / |\${root}  / |"
-  sed /etc/fstab -i -e "s|^.* /boot |\${boot}  /boot |"
-  umount /boot
-  if [ \$? -ne 0 ]; then
-    echo "Failed to umount /boot. Remount manually and run sudo apt-get install -f."
-    exit 1
-  else
-    mount /boot
-  fi
-fi
-
-EOF
-
-for FN in ../boot/start.elf ../boot/start_*.elf ../boot/fixup.dat ../boot/fixup_*.dat ../boot/*.bin ../boot/LICENCE.broadcom ../boot/start4*.elf ../boot/fixup4*.dat; do
-  if ! [ -d "$FN" ]; then
-    FN=${FN#../boot/}
-    printf "rm -f /boot/$FN\n" >> raspberrypi-bootloader.postinst
-    printf "dpkg-divert --package rpikernelhack --rename --remove /boot/$FN\n" >> raspberrypi-bootloader.postinst
-    printf "sync\n" >> raspberrypi-bootloader.postinst
-
-    printf "dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/$FN /boot/$FN\n" >> raspberrypi-bootloader.preinst
-  fi
-done
-
-printf "#DEBHELPER#\n" >> raspberrypi-bootloader.postinst
-printf "#DEBHELPER#\n" >> raspberrypi-bootloader.preinst
+printf "rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays\n" >> raspberrypi-kernel-mtx.postinst
+printf "rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack\n" | tee -a raspberrypi-kernel-mtx.postinst >> raspberrypi-bootloader.postinst
+printf "#DEBHELPER#\n" | tee -a raspberrypi-kernel-mtx.postinst | tee -a raspberrypi-bootloader.postinst | tee -a raspberrypi-kernel-mtx.preinst >> raspberrypi-bootloader.preinst
 
 printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.prerm
 printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.postrm
