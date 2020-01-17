@@ -204,8 +204,18 @@ if [ -d "/etc/kernel/postinst.d/${version}-v8+" ]; then
 fi
 EOF
 
-printf "rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays\n" >> raspberrypi-kernel.postinst
-printf "rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack\n" | tee -a raspberrypi-kernel.postinst >> raspberrypi-bootloader.postinst
+cat <<EOF >> raspberrypi-kernel.postinst
+if [ -d /usr/share/rpikernelhack/overlays ]; then
+  rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
+fi
+EOF
+
+cat <<EOF | tee -a raspberrypi-kernel.postinst >> raspberrypi-bootloader.postinst
+if [ -d /usr/share/rpikernelhack ]; then
+  rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
+fi
+EOF
+
 printf "#DEBHELPER#\n" | tee -a raspberrypi-kernel.postinst | tee -a raspberrypi-bootloader.postinst | tee -a raspberrypi-kernel.preinst >> raspberrypi-bootloader.preinst
 
 printf "#!/bin/sh\n" > raspberrypi-kernel.prerm
