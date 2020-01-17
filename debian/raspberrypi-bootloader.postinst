@@ -131,5 +131,7 @@ if [ -f /usr/share/rpikernelhack/LICENCE.broadcom ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/LICENCE.broadcom
   sync
 fi
-rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
+if [ -d /usr/share/rpikernelhack ]; then
+  rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
+fi
 #DEBHELPER#
