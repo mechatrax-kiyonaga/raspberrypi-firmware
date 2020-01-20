@@ -104,6 +104,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/iqaudio-digi-wm8804-audio.dtbo /boot/overlays/iqaudio-digi-wm8804-audio.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/irs1125.dtbo /boot/overlays/irs1125.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/jedec-spi-nor.dtbo /boot/overlays/jedec-spi-nor.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/justboom-both.dtbo /boot/overlays/justboom-both.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/justboom-dac.dtbo /boot/overlays/justboom-dac.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/justboom-digi.dtbo /boot/overlays/justboom-digi.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/ltc294x.dtbo /boot/overlays/ltc294x.dtbo
@@ -213,21 +214,21 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.83+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.83-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.83-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.83-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.93+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.93-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.93-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.93-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.83+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.83+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.19.83+
+if [ -d "/etc/kernel/preinst.d/4.19.93+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.93+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.19.93+
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.83-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.83-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.19.83-v7+
+if [ -d "/etc/kernel/preinst.d/4.19.93-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.93-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.19.93-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.83-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.83-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/4.19.83-v7l+
+if [ -d "/etc/kernel/preinst.d/4.19.93-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.93-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/4.19.93-v7l+
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.83-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.83-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/4.19.83-v8+
+if [ -d "/etc/kernel/preinst.d/4.19.93-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.93-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/4.19.93-v8+
 fi
 #DEBHELPER#
