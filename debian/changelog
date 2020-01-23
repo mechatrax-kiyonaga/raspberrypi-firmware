@@ -1,3 +1,10 @@
+raspberrypi-firmware-mtx (1.20200114-1~mtx1) buster; urgency=medium
+
+  * firmware as of 2a9f85903405eec3e0196685fef3139aa817dc28
+  * Linux version 4.19.93
+
+ -- Masahiro Honda <honda@mechatrax.com>  Thu, 23 Jan 2020 16:39:16 +0900
+
 raspberrypi-firmware-mtx (1.20191119-1~mtx1) buster; urgency=medium
 
   * firmware as of 64ff17eca2af47db0361099b0265d336af9635c0
