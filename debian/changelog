@@ -1,3 +1,10 @@
+raspberrypi-firmware (1.20200210-1) buster; urgency=medium
+
+  * firmware as of 2efcd0bb3848640e385c894b22551f0d32761bf8
+  * Linux version 4.19.97
+
+ -- Serge Schneider <serge@raspberrypi.org>  Mon, 10 Feb 2020 16:19:26 +0000
+
 raspberrypi-firmware (1.20200205-1) buster; urgency=medium
 
   * firmware as of 149cd7f0487e08e148efe604f8d4d359541cecf4
