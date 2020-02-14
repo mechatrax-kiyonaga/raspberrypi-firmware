@@ -185,4 +185,42 @@ int ad_sd_validate_trigger(struct iio_dev *indio_dev, struct iio_trigger *trig);
 		_storagebits, _shift, "supply", IIO_VOLTAGE, \
 		BIT(IIO_CHAN_INFO_SAMP_FREQ))
 
+#define __AD_SD_CHANNEL_WITH_CALIB(_si, _channel1, _channel2, _address, \
+	_bits, _storagebits, _shift, _extend_name, _type, _mask_all) \
+	{ \
+		.type = (_type), \
+		.differential = (_channel2 == -1 ? 0 : 1), \
+		.indexed = 1, \
+		.channel = (_channel1), \
+		.channel2 = (_channel2), \
+		.address = (_address), \
+		.extend_name = (_extend_name), \
+		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW) | \
+			BIT(IIO_CHAN_INFO_OFFSET) | \
+			BIT(IIO_CHAN_INFO_CALIBSCALE) | \
+			BIT(IIO_CHAN_INFO_CALIBBIAS), \
+		.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SCALE), \
+		.info_mask_shared_by_all = _mask_all, \
+		.scan_index = (_si), \
+		.scan_type = { \
+			.sign = 'u', \
+			.realbits = (_bits), \
+			.storagebits = (_storagebits), \
+			.shift = (_shift), \
+			.endianness = IIO_BE, \
+		}, \
+	}
+
+#define AD_SD_DIFF_CHANNEL_WITH_CALIB(_si, _channel1, _channel2, _address, \
+	_bits, _storagebits, _shift) \
+	__AD_SD_CHANNEL_WITH_CALIB(_si, _channel1, _channel2, _address, \
+		_bits, _storagebits, _shift, NULL, IIO_VOLTAGE, \
+		BIT(IIO_CHAN_INFO_SAMP_FREQ))
+
+#define AD_SD_CHANNEL_WITH_CALIB(_si, _channel, _address, \
+	_bits, _storagebits, _shift) \
+	__AD_SD_CHANNEL_WITH_CALIB(_si, _channel, -1, _address, \
+		_bits, _storagebits, _shift, NULL, IIO_VOLTAGE, \
+		BIT(IIO_CHAN_INFO_SAMP_FREQ))
+
 #endif

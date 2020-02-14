@@ -1305,7 +1305,7 @@ endif
 ifneq "$(KERNELVERSION)" "4.19.97"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(CC_VERSION_TEXT)" "arm-linux-gnueabihf-gcc (Raspbian 8.3.0-6+rpi1) 8.3.0"
+ifneq "$(CC_VERSION_TEXT)" "arm-linux-gnueabihf-gcc (Debian 8.3.0-2) 8.3.0"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(srctree)" "."
@@ -1320,10 +1320,10 @@ endif
 ifneq "$(SRCARCH)" "arm"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(HOSTCXX)" "g++"
+ifneq "$(HOSTCXX)" "arm-linux-gnueabihf-g++"
 include/config/auto.conf: FORCE
 endif
-ifneq "$(HOSTCC)" "gcc"
+ifneq "$(HOSTCC)" "arm-linux-gnueabihf-gcc"
 include/config/auto.conf: FORCE
 endif
 

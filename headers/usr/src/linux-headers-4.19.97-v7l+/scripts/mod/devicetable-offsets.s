@@ -9,7 +9,7 @@
 	.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
 	.eabi_attribute 18, 2	@ Tag_ABI_PCS_wchar_t
 	.file	"devicetable-offsets.c"
-@ GNU C89 (Raspbian 8.3.0-6+rpi1) version 8.3.0 (arm-linux-gnueabihf)
+@ GNU C89 (Debian 8.3.0-2) version 8.3.0 (arm-linux-gnueabihf)
 @	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
 
 @ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -20,7 +20,7 @@
 @ -D __KERNEL__ -D __LINUX_ARM_ARCH__=7 -U arm
 @ -D KBUILD_BASENAME="devicetable_offsets"
 @ -D KBUILD_MODNAME="devicetable_offsets"
-@ -isystem /usr/lib/gcc/arm-linux-gnueabihf/8/include
+@ -isystem /usr/lib/gcc-cross/arm-linux-gnueabihf/8/include
 @ -include ./include/linux/kconfig.h
 @ -include ./include/linux/compiler_types.h
 @ -MD scripts/mod/.devicetable-offsets.s.d
@@ -988,5 +988,5 @@ main:
 	ldmfd	sp, {fp, sp, pc}	@
 	.fnend
 	.size	main, .-main
-	.ident	"GCC: (Raspbian 8.3.0-6+rpi1) 8.3.0"
+	.ident	"GCC: (Debian 8.3.0-2) 8.3.0"
 	.section	.note.GNU-stack,"",%progbits
