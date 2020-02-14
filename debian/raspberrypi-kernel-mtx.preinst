@@ -33,6 +33,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/allo-katana-dac-audio.dtbo /boot/overlays/allo-katana-dac-audio.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/allo-piano-dac-pcm512x-audio.dtbo /boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo /boot/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/anyspi.dtbo /boot/overlays/anyspi.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/apds9960.dtbo /boot/overlays/apds9960.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/applepi-dac.dtbo /boot/overlays/applepi-dac.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/at86rf233.dtbo /boot/overlays/at86rf233.dtbo
@@ -74,6 +75,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hifiberry-dacplusadc.dtbo /boot/overlays/hifiberry-dacplusadc.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hifiberry-dacplusadcpro.dtbo /boot/overlays/hifiberry-dacplusadcpro.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hifiberry-dacplusdsp.dtbo /boot/overlays/hifiberry-dacplusdsp.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hifiberry-dacplushd.dtbo /boot/overlays/hifiberry-dacplushd.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hifiberry-digi-pro.dtbo /boot/overlays/hifiberry-digi-pro.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hifiberry-digi.dtbo /boot/overlays/hifiberry-digi.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/hy28a.dtbo /boot/overlays/hy28a.dtbo
@@ -214,21 +216,21 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.93+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.93-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.93-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.93-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.97+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.97-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.97-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.97-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.93+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.93+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.19.93+
+if [ -d "/etc/kernel/preinst.d/4.19.97+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.97+ --arg=/boot/kernel.img /etc/kernel/preinst.d/4.19.97+
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.93-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.93-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.19.93-v7+
+if [ -d "/etc/kernel/preinst.d/4.19.97-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.97-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/4.19.97-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.93-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.93-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/4.19.93-v7l+
+if [ -d "/etc/kernel/preinst.d/4.19.97-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.97-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/4.19.97-v7l+
 fi
-if [ -d "/etc/kernel/preinst.d/4.19.93-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.93-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/4.19.93-v8+
+if [ -d "/etc/kernel/preinst.d/4.19.97-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.97-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/4.19.97-v8+
 fi
 #DEBHELPER#
