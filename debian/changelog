@@ -1,3 +1,9 @@
+raspberrypi-firmware (1.20200512-2) buster; urgency=medium
+
+  * Build kernel and firmware for arm64
+
+ -- Serge Schneider <serge@raspberrypi.com>  Tue, 19 May 2020 09:13:35 +0100
+
 raspberrypi-firmware (1.20200512-1) buster; urgency=medium
 
   * firmware as of 21e1fe3477ffb708a5736ed61a924fd650031136
