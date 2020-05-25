@@ -23,7 +23,7 @@ is_pifour() {
   return $?
 }
 
-if [ "$(get_available_space)" -lt "53" ]; then
+if [ "$(get_available_space)" -lt "52" ]; then
   echo "You do not have enough space in /boot to install this package."
   SKIP_FILES=1
   if is_pifour; then
@@ -221,6 +221,11 @@ if [ -f /usr/share/rpikernelhack/overlays/audioinjector-addons.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/audioinjector-addons.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/audioinjector-isolated-soundcard.dtbo ]; then
+  rm -f /boot/overlays/audioinjector-isolated-soundcard.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/audioinjector-isolated-soundcard.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/audioinjector-ultra.dtbo ]; then
   rm -f /boot/overlays/audioinjector-ultra.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/audioinjector-ultra.dtbo
@@ -374,6 +379,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/hd44780-lcd.dtbo ]; then
   rm -f /boot/overlays/hd44780-lcd.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/hd44780-lcd.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/hdmi-backlight-hwhack-gpio.dtbo ]; then
+  rm -f /boot/overlays/hdmi-backlight-hwhack-gpio.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/hdmi-backlight-hwhack-gpio.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/hifiberry-amp.dtbo ]; then
@@ -631,6 +641,11 @@ if [ -f /usr/share/rpikernelhack/overlays/media-center.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/media-center.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/merus-amp.dtbo ]; then
+  rm -f /boot/overlays/merus-amp.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/merus-amp.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/midi-uart0.dtbo ]; then
   rm -f /boot/overlays/midi-uart0.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/midi-uart0.dtbo
@@ -846,6 +861,11 @@ if [ -f /usr/share/rpikernelhack/overlays/sdtweak.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/sdtweak.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/sh1106-spi.dtbo ]; then
+  rm -f /boot/overlays/sh1106-spi.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/sh1106-spi.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/smi-dev.dtbo ]; then
   rm -f /boot/overlays/smi-dev.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/smi-dev.dtbo
@@ -956,9 +976,19 @@ if [ -f /usr/share/rpikernelhack/overlays/spi6-2cs.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi6-2cs.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/ssd1306-spi.dtbo ]; then
+  rm -f /boot/overlays/ssd1306-spi.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ssd1306-spi.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/ssd1306.dtbo ]; then
   rm -f /boot/overlays/ssd1306.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ssd1306.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/ssd1351-spi.dtbo ]; then
+  rm -f /boot/overlays/ssd1351-spi.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ssd1351-spi.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/superaudioboard.dtbo ]; then
@@ -1080,22 +1110,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.97+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.97-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.97-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=4.19.97-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.118+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.118-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.118-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=4.19.118-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.97+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.97+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.19.97+
+if [ -d "/etc/kernel/postinst.d/4.19.118+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.118+ --arg=/boot/kernel.img /etc/kernel/postinst.d/4.19.118+
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.97-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.97-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.19.97-v7+
+if [ -d "/etc/kernel/postinst.d/4.19.118-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.118-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/4.19.118-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.97-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.97-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/4.19.97-v7l+
+if [ -d "/etc/kernel/postinst.d/4.19.118-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.118-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/4.19.118-v7l+
 fi
-if [ -d "/etc/kernel/postinst.d/4.19.97-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=4.19.97-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/4.19.97-v8+
+if [ -d "/etc/kernel/postinst.d/4.19.118-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=4.19.118-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/4.19.118-v8+
 fi
 if [ -d /usr/share/rpikernelhack/overlays ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
