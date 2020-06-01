@@ -1,3 +1,10 @@
+raspberrypi-firmware (1.20200601-1) buster; urgency=medium
+
+  * firmware as of 7caead9416f64b2d33361c703fb243b8e157eba4
+  * Linux version 4.19.118
+
+ -- Serge Schneider <serge@raspberrypi.com>  Mon, 01 Jun 2020 18:38:29 +0100
+
 raspberrypi-firmware (1.20200512-2) buster; urgency=medium
 
   * Build kernel and firmware for arm64
