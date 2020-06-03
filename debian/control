@@ -45,7 +45,7 @@ Description: Miscellaneous Raspberry Pi utilities
 
 Package: raspberrypi-bootloader
 Section: admin
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: ${misc:Depends}
 Recommends: raspberrypi-kernel
 Description: Raspberry Pi bootloader
@@ -53,7 +53,7 @@ Description: Raspberry Pi bootloader
 
 Package: raspberrypi-kernel-mtx
 Section: kernel
-Architecture: armel armhf
+Architecture: armel armhf arm64
 Depends: ${misc:Depends}
 Breaks: raspberrypi-bootloader (<<1.20160324-1), raspberrypi-kernel
 Replaces: raspberrypi-bootloader (<<1.20160324-1), raspberrypi-kernel
@@ -63,7 +63,7 @@ Description: Raspberry Pi bootloader
 
 Package: raspberrypi-kernel-headers-mtx
 Section: kernel
-Architecture: any
+Architecture: armhf arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Breaks: raspberrypi-kernel-headers
 Replaces: raspberrypi-kernel-headers
