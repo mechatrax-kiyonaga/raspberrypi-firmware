@@ -1058,6 +1058,7 @@ kernel/drivers/iio/light/veml6070.ko:
 kernel/drivers/iio/pressure/bmp280.ko:
 kernel/drivers/iio/pressure/bmp280-i2c.ko: kernel/drivers/iio/pressure/bmp280.ko kernel/drivers/base/regmap/regmap-i2c.ko
 kernel/drivers/iio/pressure/bmp280-spi.ko: kernel/drivers/iio/pressure/bmp280.ko
+kernel/drivers/iio/temperature/maxim_thermocouple.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko
 kernel/drivers/perf/raspberrypi_axi_monitor.ko:
 kernel/drivers/connector/cn.ko:
 kernel/drivers/mtd/parsers/ofpart.ko: kernel/drivers/mtd/mtd.ko
