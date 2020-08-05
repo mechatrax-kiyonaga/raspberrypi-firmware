@@ -611,6 +611,11 @@ if [ -f /usr/share/rpikernelhack/overlays/max98357a.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/max98357a.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/maxtherm.dtbo ]; then
+  rm -f /boot/overlays/maxtherm.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/maxtherm.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/mbed-dac.dtbo ]; then
   rm -f /boot/overlays/mbed-dac.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mbed-dac.dtbo
