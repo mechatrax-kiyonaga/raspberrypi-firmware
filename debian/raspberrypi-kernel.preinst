@@ -179,7 +179,6 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi-gpio40-45.dtbo /boot/overlays/spi-gpio40-45.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi-rtc.dtbo /boot/overlays/spi-rtc.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi0-cs.dtbo /boot/overlays/spi0-cs.dtbo
-dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi0-hw-cs.dtbo /boot/overlays/spi0-hw-cs.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi1-1cs.dtbo /boot/overlays/spi1-1cs.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi1-2cs.dtbo /boot/overlays/spi1-2cs.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/spi1-3cs.dtbo /boot/overlays/spi1-3cs.dtbo
