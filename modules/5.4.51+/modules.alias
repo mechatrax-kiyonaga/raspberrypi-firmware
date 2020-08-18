@@ -8531,6 +8531,8 @@ alias i2c:ds1621 ds1621
 alias platform:gpio-fan gpio_fan
 alias of:N*T*Cgpio-fanC* gpio_fan
 alias of:N*T*Cgpio-fan gpio_fan
+alias of:N*T*Ciio-hwmonC* iio_hwmon
+alias of:N*T*Ciio-hwmon iio_hwmon
 alias i2c:ina231 ina2xx
 alias i2c:ina230 ina2xx
 alias i2c:ina226 ina2xx
@@ -9863,6 +9865,12 @@ alias spi:bme280 bmp280_spi
 alias spi:bmp280 bmp280_spi
 alias spi:bmp181 bmp280_spi
 alias spi:bmp180 bmp280_spi
+alias spi:max31855 maxim_thermocouple
+alias spi:max6675 maxim_thermocouple
+alias of:N*T*Cmaxim,max31855C* maxim_thermocouple
+alias of:N*T*Cmaxim,max31855 maxim_thermocouple
+alias of:N*T*Cmaxim,max6675C* maxim_thermocouple
+alias of:N*T*Cmaxim,max6675 maxim_thermocouple
 alias of:N*T*Cbrcm,bcm2835-axiperfC* raspberrypi_axi_monitor
 alias of:N*T*Cbrcm,bcm2835-axiperf raspberrypi_axi_monitor
 alias net-pf-16-proto-11 cn

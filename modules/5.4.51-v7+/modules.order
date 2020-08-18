@@ -107,7 +107,10 @@ kernel/crypto/drbg.ko
 kernel/crypto/jitterentropy_rng.ko
 kernel/crypto/ghash-generic.ko
 kernel/crypto/af_alg.ko
+kernel/crypto/algif_hash.ko
 kernel/crypto/algif_skcipher.ko
+kernel/crypto/algif_rng.ko
+kernel/crypto/algif_aead.ko
 kernel/crypto/zstd.ko
 kernel/crypto/ecc.ko
 kernel/crypto/essiv.ko
@@ -887,6 +890,7 @@ kernel/drivers/power/supply/ltc2941-battery-gauge.ko
 kernel/drivers/power/supply/max17040_battery.ko
 kernel/drivers/hwmon/ds1621.ko
 kernel/drivers/hwmon/gpio-fan.ko
+kernel/drivers/hwmon/iio_hwmon.ko
 kernel/drivers/hwmon/ina2xx.ko
 kernel/drivers/hwmon/jc42.ko
 kernel/drivers/hwmon/lm75.ko
@@ -1058,6 +1062,7 @@ kernel/drivers/iio/light/veml6070.ko
 kernel/drivers/iio/pressure/bmp280.ko
 kernel/drivers/iio/pressure/bmp280-i2c.ko
 kernel/drivers/iio/pressure/bmp280-spi.ko
+kernel/drivers/iio/temperature/maxim_thermocouple.ko
 kernel/drivers/perf/raspberrypi_axi_monitor.ko
 kernel/drivers/connector/cn.ko
 kernel/drivers/mtd/parsers/ofpart.ko
