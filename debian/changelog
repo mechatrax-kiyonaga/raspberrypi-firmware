@@ -1,3 +1,10 @@
+raspberrypi-firmware (1.20200902-1) buster; urgency=medium
+
+  * firmware as of 2b41f509710d99758a5b8efa88d95dd0e9169c0a
+  * Linux version 5.4.51
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 03 Sep 2020 18:44:09 +0100
+
 raspberrypi-firmware (1.20200819-1) buster; urgency=medium
 
   * firmware as of ef72c17bcaaeb89093d87bcf71f3228e1b5e1fff
