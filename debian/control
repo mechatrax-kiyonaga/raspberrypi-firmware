@@ -1,7 +1,10 @@
 Source: raspberrypi-firmware
 Priority: optional
 Maintainer: Serge Schneider <serge@raspberrypi.org>
-Build-Depends: debhelper (>= 10)
+Build-Depends: debhelper (>= 10),
+ bc, flex, bison, libssl-dev, rsync,
+ gcc-aarch64-linux-gnu [!arm64 !armhf],
+ gcc-arm-linux-gnueabihf [!armhf],
 Standards-Version: 3.9.8
 Section: libs
 Homepage: https://github.com/raspberrypi/firmware
@@ -63,7 +66,7 @@ Description: Raspberry Pi bootloader
 
 Package: raspberrypi-kernel-headers
 Section: kernel
-Architecture: armhf
+Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Provides: linux-headers
 Description: Header files for the Raspberry Pi Linux kernel
