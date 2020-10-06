@@ -15,8 +15,9 @@ include /usr/share/dpkg/architecture.mk
 	dh $@
 
 override_dh_install:
+	./debian/build_headers.sh
 	dh_install
-ifneq (arm64,$(DEB_BUILD_ARCH))
+ifeq (armhf,$(DEB_BUILD_ARCH))
 	rm debian/libraspberrypi0/opt/vc/lib/libEGL.so
 	rm debian/libraspberrypi0/opt/vc/lib/libGLESv2.so
 	rm debian/libraspberrypi0/opt/vc/lib/libOpenVG.so
@@ -26,7 +27,7 @@ endif
 
 override_dh_fixperms:
 	dh_fixperms
-ifneq (arm64,$(DEB_BUILD_ARCH))
+ifeq (armhf,$(DEB_BUILD_ARCH))
 	chown -R :users debian/libraspberrypi-doc/opt/vc/src/hello_pi
 	chmod -R g+w debian/libraspberrypi-doc/opt/vc/src/hello_pi
 endif
