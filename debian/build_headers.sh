@@ -1,27 +1,21 @@
 #!/bin/bash -e
 
-if [ "$DEB_BUILD_ARCH" != "$DEB_TARGET_ARCH" ]; then
-	echo "Can't cross-compile headers package"
-	exit 1
-fi
-
 echo "Building headers..."
 echo "+" > linux/.scmversion
 
 export ARCH CROSS_COMPILE
 for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 	if [ "$DEB_BUILD_ARCH" != "armhf" ]; then
-		CROSS_COMPILE="arm-linux-gnueabihf-"
+		TARGET="arm-linux-gnueabihf"
+		CROSS_COMPILE="${TARGET}-"
 	else
 		CROSS_COMPILE=""
 	fi
 	case $version in
 	*-v8+)
-		if [ "$DEB_BUILD_ARCH" == "armhf" ]; then
-			continue
-		fi
 		if [ "$DEB_BUILD_ARCH" != "arm64" ]; then
-			CROSS_COMPILE="aarch64-linux-gnu-"
+			TARGET="aarch64-linux-gnu"
+			CROSS_COMPILE="${TARGET}-"
 		else
 			CROSS_COMPILE=""
 		fi
@@ -51,9 +45,7 @@ for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 	esac
 	(
 		cd linux
-		make distclean
-		make "$DEFCONFIG"
-		make modules_prepare
+		make HOSTCC=${CROSS_COMPILE}gcc HOSTCXX=${CROSS_COMPILE}g++ HOSTLD=${CROSS_COMPILE}ld distclean $DEFCONFIG modules_prepare
 	)
 	cp "extra/Module${VER}.symvers" linux/Module.symvers
 
