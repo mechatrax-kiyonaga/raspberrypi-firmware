@@ -29,7 +29,7 @@ KERNEL_COMMIT="$(cat extra/git_hash)"
 		echo "Compressing linux..."
 		git archive --format=tar --prefix=linux/ HEAD | xz -T0 > "../../raspberrypi-firmware_${RELEASE}.orig-linux.tar.xz"
 	fi
-}
+)
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
 dch "firmware as of ${FIRMWARE_COMMIT}"
