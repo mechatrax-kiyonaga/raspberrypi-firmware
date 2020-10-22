@@ -23,7 +23,7 @@ is_pifour() {
   return $?
 }
 
-if [ "$(get_available_space)" -lt "54" ]; then
+if [ "$(get_available_space)" -lt "55" ]; then
   echo "You do not have enough space in /boot to install this package."
   SKIP_FILES=1
   if is_pifour; then
@@ -139,6 +139,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/act-led.dtbo ]; then
   rm -f /boot/overlays/act-led.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/act-led.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/adafruit18.dtbo ]; then
+  rm -f /boot/overlays/adafruit18.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/adafruit18.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/adau1977-adc.dtbo ]; then
@@ -334,6 +339,16 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/fe-pi-audio.dtbo ]; then
   rm -f /boot/overlays/fe-pi-audio.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/fe-pi-audio.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/fsm-demo.dtbo ]; then
+  rm -f /boot/overlays/fsm-demo.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/fsm-demo.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/ghost-amp.dtbo ]; then
+  rm -f /boot/overlays/ghost-amp.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ghost-amp.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/goodix.dtbo ]; then
@@ -721,9 +736,19 @@ if [ -f /usr/share/rpikernelhack/overlays/papirus.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/papirus.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/pca953x.dtbo ]; then
+  rm -f /boot/overlays/pca953x.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/pca953x.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/pibell.dtbo ]; then
   rm -f /boot/overlays/pibell.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/pibell.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/pifacedigital.dtbo ]; then
+  rm -f /boot/overlays/pifacedigital.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/pifacedigital.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/piglow.dtbo ]; then
@@ -851,6 +876,11 @@ if [ -f /usr/share/rpikernelhack/overlays/rra-digidac1-wm8741-audio.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rra-digidac1-wm8741-audio.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/sainsmart18.dtbo ]; then
+  rm -f /boot/overlays/sainsmart18.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/sainsmart18.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/sc16is750-i2c.dtbo ]; then
   rm -f /boot/overlays/sc16is750-i2c.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/sc16is750-i2c.dtbo
@@ -921,9 +951,14 @@ if [ -f /usr/share/rpikernelhack/overlays/spi-rtc.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi-rtc.dtbo
   sync
 fi
-if [ -f /usr/share/rpikernelhack/overlays/spi0-cs.dtbo ]; then
-  rm -f /boot/overlays/spi0-cs.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi0-cs.dtbo
+if [ -f /usr/share/rpikernelhack/overlays/spi0-1cs.dtbo ]; then
+  rm -f /boot/overlays/spi0-1cs.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi0-1cs.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/spi0-2cs.dtbo ]; then
+  rm -f /boot/overlays/spi0-2cs.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi0-2cs.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/spi1-1cs.dtbo ]; then
@@ -1140,22 +1175,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.51+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.51-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.51-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.51-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.72+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.72-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.72-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.72-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.51+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.51+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.4.51+
+if [ -d "/etc/kernel/postinst.d/5.4.72+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.72+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.4.72+
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.51-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.51-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.4.51-v7+
+if [ -d "/etc/kernel/postinst.d/5.4.72-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.72-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.4.72-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.51-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.51-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.4.51-v7l+
+if [ -d "/etc/kernel/postinst.d/5.4.72-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.72-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.4.72-v7l+
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.51-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.51-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.4.51-v8+
+if [ -d "/etc/kernel/postinst.d/5.4.72-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.72-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.4.72-v8+
 fi
 if [ -d /usr/share/rpikernelhack/overlays ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
