@@ -1,7 +1,10 @@
 Source: raspberrypi-firmware-mtx
 Priority: extra
 Maintainer: Masahiro Honda <honda@mechatrax.com>
-Build-Depends: debhelper (>= 10)
+Build-Depends: debhelper (>= 10),
+ bc, flex, bison, libssl-dev, rsync,
+ gcc-aarch64-linux-gnu [!arm64 !armhf],
+ gcc-arm-linux-gnueabihf [!armhf],
 Standards-Version: 3.9.8
 Section: libs
 Homepage: https://github.com/raspberrypi/firmware
@@ -63,7 +66,7 @@ Description: Raspberry Pi bootloader
 
 Package: raspberrypi-kernel-headers-mtx
 Section: kernel
-Architecture: armhf arm64
+Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Breaks: raspberrypi-kernel-headers
 Replaces: raspberrypi-kernel-headers
