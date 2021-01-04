@@ -23,7 +23,7 @@ is_pifour() {
   return $?
 }
 
-if [ "$(get_available_space)" -lt "54" ]; then
+if [ "$(get_available_space)" -lt "46" ]; then
   echo "You do not have enough space in /boot to install this package."
   SKIP_FILES=1
   if is_pifour; then
@@ -1190,22 +1190,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.79-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.79+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.4.79+
+if [ -d "/etc/kernel/postinst.d/5.4.83+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.4.83+
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.79-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.4.79-v7+
+if [ -d "/etc/kernel/postinst.d/5.4.83-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.4.83-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.79-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.4.79-v7l+
+if [ -d "/etc/kernel/postinst.d/5.4.83-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.4.83-v7l+
 fi
-if [ -d "/etc/kernel/postinst.d/5.4.79-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.4.79-v8+
+if [ -d "/etc/kernel/postinst.d/5.4.83-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.4.83-v8+
 fi
 if [ -d /usr/share/rpikernelhack/overlays ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
