@@ -30,16 +30,25 @@ for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 		VER="8"
 		;;
 	*-v7l+)
+		if [ "$DEB_BUILD_ARCH" == "arm64" ]; then
+			continue
+		fi
 		ARCH="arm"
 		DEFCONFIG="bcm2711_defconfig"
 		VER="7l"
 		;;
 	*-v7+)
+		if [ "$DEB_BUILD_ARCH" == "arm64" ]; then
+			continue
+		fi
 		ARCH="arm"
 		DEFCONFIG="bcm2709_defconfig"
 		VER="7"
 		;;
 	*+)
+		if [ "$DEB_BUILD_ARCH" == "arm64" ]; then
+			continue
+		fi
 		ARCH="arm"
 		DEFCONFIG="bcmrpi_defconfig"
 		VER=""
