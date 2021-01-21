@@ -238,21 +238,21 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.4.79-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.4.83-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/5.4.79+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.4.79+
+if [ -d "/etc/kernel/preinst.d/5.4.83+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.4.83+
 fi
-if [ -d "/etc/kernel/preinst.d/5.4.79-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.4.79-v7+
+if [ -d "/etc/kernel/preinst.d/5.4.83-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.4.83-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/5.4.79-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.4.79-v7l+
+if [ -d "/etc/kernel/preinst.d/5.4.83-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.4.83-v7l+
 fi
-if [ -d "/etc/kernel/preinst.d/5.4.79-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.4.79-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.4.79-v8+
+if [ -d "/etc/kernel/preinst.d/5.4.83-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.4.83-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.4.83-v8+
 fi
 #DEBHELPER#
