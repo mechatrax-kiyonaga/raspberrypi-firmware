@@ -1,4 +1,4 @@
 [submodule "linux"]
 	path = linux
 	url = https://github.com/mechatrax/linux.git
-	branch = mtx-5.4.y
+	branch = mtx-5.10.y
