@@ -1,5 +1,5 @@
 Source: raspberrypi-firmware-mtx
-Priority: extra
+Priority: optional
 Maintainer: Masahiro Honda <honda@mechatrax.com>
 Build-Depends: debhelper (>= 10),
  bc, flex, bison, libssl-dev, rsync,
@@ -60,7 +60,7 @@ Architecture: armel armhf arm64
 Depends: ${misc:Depends}
 Breaks: raspberrypi-bootloader (<<1.20160324-1), raspberrypi-kernel
 Replaces: raspberrypi-bootloader (<<1.20160324-1), raspberrypi-kernel
-Provides: linux-image, raspberrypi-kernel
+Provides: linux-image, raspberrypi-kernel, wireguard-modules (= 1.0.0)
 Description: Raspberry Pi bootloader
  This package contains the Raspberry Pi Linux kernel.
 
