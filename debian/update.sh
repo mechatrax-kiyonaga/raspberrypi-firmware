@@ -17,7 +17,7 @@ git merge stable --no-edit -Xtheirs
 
 DATE="$(git show -s --format=%ct "$FIRMWARE_COMMIT")"
 RELEASE="$(date -d "@$DATE" -u +1.%Y%m%d)"
-DEBVER="${RELEASE}-1"
+DEBVER="1:${RELEASE}-1"
 
 KERNEL_COMMIT="$(cat extra/git_hash)"
 (

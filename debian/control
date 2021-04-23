@@ -74,3 +74,12 @@ Description: Header files for the Raspberry Pi Linux kernel
  the Raspberry Pi Linux kernel, generally used for building out-of-tree
  kernel modules.
 
+Package: linux-libc-dev
+Architecture: armhf arm64
+Section: devel
+Depends: ${misc:Depends}
+Description: Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These
+ headers are used by the installed headers for GNU libc and other system
+ libraries.
+Multi-Arch: same
