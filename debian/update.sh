@@ -24,6 +24,7 @@ KERNEL_COMMIT="$(cat extra/git_hash)"
 	echo "Downloading linux (${KERNEL_COMMIT})..."
 	cd linux
 	git fetch
+	git fetch --tags
 	git checkout "$KERNEL_COMMIT"
 	if ! [ -f "../../raspberrypi-firmware_${RELEASE}.orig-linux.tar.xz" ]; then
 		echo "Compressing linux..."
