@@ -1,3 +1,10 @@
+raspberrypi-firmware (1:1.20210527-1) buster; urgency=medium
+
+  * firmware as of 1eb8921ae7158249894f89e8bb6c4bfb04ec7377
+  * Linux version 5.10.17
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 27 May 2021 15:14:05 +0100
+
 raspberrypi-firmware (1:1.20210430-2) buster; urgency=medium
 
   * firmware as of 518ee7c871aaa9aaa88116953d57e73787ee6e43
