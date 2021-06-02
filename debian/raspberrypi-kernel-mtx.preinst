@@ -172,6 +172,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-dac.dtbo /boot/overlays/rpi-dac.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-display.dtbo /boot/overlays/rpi-display.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-ft5406.dtbo /boot/overlays/rpi-ft5406.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-poe-plus.dtbo /boot/overlays/rpi-poe-plus.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-poe.dtbo /boot/overlays/rpi-poe.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-proto.dtbo /boot/overlays/rpi-proto.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-sense.dtbo /boot/overlays/rpi-sense.dtbo
