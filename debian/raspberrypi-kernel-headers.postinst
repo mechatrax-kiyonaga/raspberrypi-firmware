@@ -7,23 +7,23 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/header_postinst.d" ]; then
-  run-parts -v --verbose --exit-on-error --arg=5.10.52+ /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=5.10.52-v7+ /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=5.10.52-v7l+ /etc/kernel/header_postinst.d
-  run-parts -v --verbose --exit-on-error --arg=5.10.52-v8+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=5.10.60+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=5.10.60-v7+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=5.10.60-v7l+ /etc/kernel/header_postinst.d
+  run-parts -v --verbose --exit-on-error --arg=5.10.60-v8+ /etc/kernel/header_postinst.d
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/5.10.52+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=5.10.52+ /etc/kernel/header_postinst.d/5.10.52+
+if [ -d "/etc/kernel/header_postinst.d/5.10.60+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=5.10.60+ /etc/kernel/header_postinst.d/5.10.60+
 fi
 
-if [ -d "/etc/kernel/header_postinst.d/5.10.52-v7+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=5.10.52-v7+ /etc/kernel/header_postinst.d/5.10.52-v7+
+if [ -d "/etc/kernel/header_postinst.d/5.10.60-v7+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=5.10.60-v7+ /etc/kernel/header_postinst.d/5.10.60-v7+
 fi
-if [ -d "/etc/kernel/header_postinst.d/5.10.52-v7l+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=5.10.52-v7l+ /etc/kernel/header_postinst.d/5.10.52-v7l+
+if [ -d "/etc/kernel/header_postinst.d/5.10.60-v7l+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=5.10.60-v7l+ /etc/kernel/header_postinst.d/5.10.60-v7l+
 fi
-if [ -d "/etc/kernel/header_postinst.d/5.10.52-v8+" ]; then
-  run-parts -v --verbose --exit-on-error --arg=5.10.52-v8+ /etc/kernel/header_postinst.d/5.10.52-v8+
+if [ -d "/etc/kernel/header_postinst.d/5.10.60-v8+" ]; then
+  run-parts -v --verbose --exit-on-error --arg=5.10.60-v8+ /etc/kernel/header_postinst.d/5.10.60-v8+
 fi
 #DEBHELPER#

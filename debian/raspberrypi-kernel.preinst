@@ -142,6 +142,10 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/merus-amp.dtbo /boot/overlays/merus-amp.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart0.dtbo /boot/overlays/midi-uart0.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart1.dtbo /boot/overlays/midi-uart1.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart2.dtbo /boot/overlays/midi-uart2.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart3.dtbo /boot/overlays/midi-uart3.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart4.dtbo /boot/overlays/midi-uart4.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart5.dtbo /boot/overlays/midi-uart5.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/minipitft13.dtbo /boot/overlays/minipitft13.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/miniuart-bt.dtbo /boot/overlays/miniuart-bt.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mmc.dtbo /boot/overlays/mmc.dtbo
@@ -263,21 +267,21 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.52+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.52-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.52-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.52-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.60+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.60-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.60-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.60-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.52+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.52+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.10.52+
+if [ -d "/etc/kernel/preinst.d/5.10.60+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.60+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.10.60+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.52-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.52-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.10.52-v7+
+if [ -d "/etc/kernel/preinst.d/5.10.60-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.60-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.10.60-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.52-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.52-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.10.52-v7l+
+if [ -d "/etc/kernel/preinst.d/5.10.60-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.60-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.10.60-v7l+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.52-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.52-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.10.52-v8+
+if [ -d "/etc/kernel/preinst.d/5.10.60-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.60-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.10.60-v8+
 fi
 #DEBHELPER#
