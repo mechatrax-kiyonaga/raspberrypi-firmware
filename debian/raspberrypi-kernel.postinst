@@ -1358,4 +1358,9 @@ fi
 if [ -d /usr/share/rpikernelhack ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
 fi
+
+touch /run/reboot-required
+if ! grep -qs "raspberrypi-kernel" /run/reboot-required.pkgs; then
+  echo "raspberrypi-kernel" >> /run/reboot-required.pkgs
+fi
 #DEBHELPER#
