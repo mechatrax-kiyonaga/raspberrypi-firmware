@@ -1,3 +1,11 @@
+raspberrypi-firmware (1:1.20210831-2) bullseye; urgency=medium
+
+  * Include separate vcdbg package
+  * Remove packages provided by raspberrypi-userland
+  * Signal reboot-required
+
+ -- Serge Schneider <serge@raspberrypi.com>  Mon, 13 Sep 2021 14:30:08 +0100
+
 raspberrypi-firmware (1:1.20210831-1) buster; urgency=medium
 
   * firmware as of 46f356dcecc5204ca9a8cef7e6894e083b231bc7
