@@ -1,3 +1,10 @@
+raspberrypi-firmware (1:1.20210928-1) bullseye; urgency=medium
+
+  * firmware as of 6b855fb1f6e753522d38a121eca9a534bf46081f
+  * Linux version 5.10.63
+
+ -- Serge Schneider <serge@raspberrypi.com>  Tue, 28 Sep 2021 14:18:46 +0100
+
 raspberrypi-firmware (1:1.20210831-3) bullseye; urgency=medium
 
   * Update vchiq udev rule
