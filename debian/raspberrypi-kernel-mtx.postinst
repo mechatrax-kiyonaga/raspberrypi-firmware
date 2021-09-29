@@ -23,7 +23,7 @@ is_pifour() {
   return $?
 }
 
-if [ "$(get_available_space)" -lt "49" ]; then
+if [ "$(get_available_space)" -lt "61" ]; then
   echo "You do not have enough space in /boot to install this package."
   SKIP_FILES=1
   if is_pifour; then
@@ -701,6 +701,11 @@ if [ -f /usr/share/rpikernelhack/overlays/mcp2515-can1.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mcp2515-can1.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/mcp2515.dtbo ]; then
+  rm -f /boot/overlays/mcp2515.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mcp2515.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/mcp251xfd.dtbo ]; then
   rm -f /boot/overlays/mcp251xfd.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mcp251xfd.dtbo
@@ -769,6 +774,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/miniuart-bt.dtbo ]; then
   rm -f /boot/overlays/miniuart-bt.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/miniuart-bt.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/mlx90640.dtbo ]; then
+  rm -f /boot/overlays/mlx90640.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mlx90640.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/mmc.dtbo ]; then
@@ -909,6 +919,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/pwm.dtbo ]; then
   rm -f /boot/overlays/pwm.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/pwm.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/qca7000-uart0.dtbo ]; then
+  rm -f /boot/overlays/qca7000-uart0.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/qca7000-uart0.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/qca7000.dtbo ]; then
@@ -1335,22 +1350,22 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.60-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.60+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.10.60+
+if [ -d "/etc/kernel/postinst.d/5.10.63+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.10.63+
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.60-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.10.60-v7+
+if [ -d "/etc/kernel/postinst.d/5.10.63-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.10.63-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.60-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.10.60-v7l+
+if [ -d "/etc/kernel/postinst.d/5.10.63-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.10.63-v7l+
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.60-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.10.60-v8+
+if [ -d "/etc/kernel/postinst.d/5.10.63-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.10.63-v8+
 fi
 if [ -d /usr/share/rpikernelhack/overlays ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
