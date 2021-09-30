@@ -1,3 +1,12 @@
+raspberrypi-firmware-mtx (1.20210928-1~mtx1) buster; urgency=medium
+
+  * firmware as of ffce5a758c27ab9ad2e8fa1a444d4199c55ee82c
+  * Linux version 5.10.63
+  * Add linux-libc-dev
+  * Update vchiq udev rule
+
+ -- Masahiro Honda <honda@mechatrax.com>  Wed, 29 Sep 2021 17:50:00 +0900
+
 raspberrypi-firmware-mtx (1.20210831-1~mtx1) buster; urgency=medium
 
   * firmware as of 168b8e6e971a41aad85f72429eba225b62ad5b0c
