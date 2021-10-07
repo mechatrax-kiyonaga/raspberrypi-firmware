@@ -1,3 +1,10 @@
+raspberrypi-firmware (1:1.20211007-1) bullseye; urgency=medium
+
+  * firmware as of 0c4fc71befd228419a225c84d316cabbda8633a7
+  * Linux version 5.10.63
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 07 Oct 2021 15:39:28 +0100
+
 raspberrypi-firmware (1:1.20210928-1) bullseye; urgency=medium
 
   * firmware as of 6b855fb1f6e753522d38a121eca9a534bf46081f
