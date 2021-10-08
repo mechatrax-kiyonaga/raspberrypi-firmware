@@ -1865,7 +1865,6 @@
 0x86674c10	sock_no_recvmsg	vmlinux	EXPORT_SYMBOL	
 0x72b02a5f	sk_ns_capable	vmlinux	EXPORT_SYMBOL	
 0x5ff423a9	__iio_device_register	vmlinux	EXPORT_SYMBOL	
-0x95d36f63	rpi_firmware_transaction	vmlinux	EXPORT_SYMBOL_GPL	
 0x816b9971	spi_controller_resume	vmlinux	EXPORT_SYMBOL_GPL	
 0x1598f3c8	devm_regulator_register_notifier	vmlinux	EXPORT_SYMBOL_GPL	
 0xf5fe94be	devm_regulator_bulk_unregister_supply_alias	vmlinux	EXPORT_SYMBOL_GPL	
