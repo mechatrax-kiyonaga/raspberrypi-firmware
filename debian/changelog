@@ -1,7 +1,8 @@
-raspberrypi-firmware (1:1.20211007-2~buster) UNRELEASED; urgency=medium
+raspberrypi-firmware (1:1.20211007-2~buster) buster; urgency=medium
 
   * Remove unnecessary patches
   * Install udev rule through dh_installudev
+  * Update vcio udev rule
 
  -- Serge Schneider <serge@raspberrypi.com>  Tue, 12 Oct 2021 14:40:17 +0100
 
