@@ -1,3 +1,9 @@
+raspberrypi-firmware (1:1.20211007-2) bullseye; urgency=medium
+
+  * Remove unnecessary patches
+
+ -- Serge Schneider <serge@raspberrypi.com>  Tue, 12 Oct 2021 13:58:16 +0100
+
 raspberrypi-firmware (1:1.20211007-1) bullseye; urgency=medium
 
   * firmware as of 0c4fc71befd228419a225c84d316cabbda8633a7
