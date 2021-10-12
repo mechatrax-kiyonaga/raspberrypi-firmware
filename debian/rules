@@ -25,6 +25,9 @@ ifeq (armhf,$(DEB_BUILD_ARCH))
 	rm debian/libraspberrypi0/opt/vc/lib/libGLESv1_CM.so
 endif
 
+override_dh_installudev:
+	dh_installudev --name=local-rpi --priority=10
+
 override_dh_fixperms:
 	dh_fixperms
 ifeq (armhf,$(DEB_BUILD_ARCH))

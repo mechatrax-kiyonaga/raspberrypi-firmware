@@ -3,4 +3,4 @@ boot/bcm271*.dtb
 boot/kernel8.img
 boot/COPYING.linux
 modules/*v8+ /lib/modules/
-etc/default/raspberrypi-kernel
+debian/default etc/
