@@ -36,7 +36,7 @@ KERNEL_COMMIT="$(cat extra/git_hash)"
 dch "firmware as of ${FIRMWARE_COMMIT}"
 dch -v "$DEBVER" -D bullseye --force-distribution "$(cut -f 1 -d'+' extra/uname_string)"
 git commit -a -m "$RELEASE release"
-git tag "$RELEASE" "$FIRMWARE_COMMIT"
+git tag "$RELEASE" "$FIRMWARE_COMMIT" ||:
 
-gbp buildpackage -us -uc -sa -aarmhf
+gbp buildpackage -us -uc -sa -S
 git clean -xdf
