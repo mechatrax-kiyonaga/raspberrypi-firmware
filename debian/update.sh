@@ -16,8 +16,8 @@ git checkout pios/buster
 git merge oldstable --no-edit -Xtheirs
 
 DATE="$(git show -s --format=%ct "$FIRMWARE_COMMIT")"
-RELEASE="$(date -d "@$DATE" -u +1.%Y%m%d)"
-DEBVER="1:${RELEASE}-1~buster"
+RELEASE="$(date -d "@$DATE" -u +1.%Y%m%d)~buster"
+DEBVER="1:${RELEASE}-1"
 
 KERNEL_COMMIT="$(cat extra/git_hash)"
 (
@@ -38,5 +38,5 @@ dch -v "$DEBVER" -D buster --force-distribution "$(cut -f 1 -d'+' extra/uname_st
 git commit -a -m "$RELEASE release"
 git tag "$RELEASE" "$FIRMWARE_COMMIT" ||:
 
-gbp buildpackage -us -uc -sa -aarmhf
+gbp buildpackage -us -uc -sa -S
 git clean -xdf
