@@ -7,13 +7,13 @@ git fetch --all
 if [ -n "$1" ]; then
 	FIRMWARE_COMMIT="$1"
 else
-	FIRMWARE_COMMIT="$(git rev-parse upstream/stable)"
+	FIRMWARE_COMMIT="$(git rev-parse upstream/oldstable)"
 fi
 
-git checkout stable
+git checkout oldstable
 git merge "$FIRMWARE_COMMIT" --no-edit
 git checkout pios/buster
-git merge stable --no-edit -Xtheirs
+git merge oldstable --no-edit -Xtheirs
 
 DATE="$(git show -s --format=%ct "$FIRMWARE_COMMIT")"
 RELEASE="$(date -d "@$DATE" -u +1.%Y%m%d)"
