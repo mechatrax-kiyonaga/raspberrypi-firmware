@@ -1,3 +1,9 @@
+raspberrypi-firmware (1:1.20211118-2) bullseye; urgency=medium
+
+  * Mark raspberrypi-bootloader Multi-Arch: foreign
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 02 Dec 2021 14:44:30 +0000
+
 raspberrypi-firmware (1:1.20211118-1) bullseye; urgency=medium
 
   * firmware as of a60a479844915911901a8ddc36221eddfdded07f

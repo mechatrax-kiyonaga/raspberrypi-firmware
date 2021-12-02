@@ -20,6 +20,7 @@ Description: Tool for debugging VideoCore
 Package: raspberrypi-bootloader
 Section: admin
 Architecture: armel armhf arm64
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Recommends: raspberrypi-kernel
 Description: Raspberry Pi bootloader
