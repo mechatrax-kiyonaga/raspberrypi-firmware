@@ -29,6 +29,7 @@ Description: Raspberry Pi bootloader
 Package: raspberrypi-kernel
 Section: kernel
 Architecture: armel armhf arm64
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Breaks: raspberrypi-bootloader (<<1.20160324-1)
 Replaces: raspberrypi-bootloader (<<1.20160324-1)
