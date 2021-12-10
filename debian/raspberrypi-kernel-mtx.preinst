@@ -23,6 +23,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/b
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/COPYING.linux /boot/COPYING.linux
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/README /boot/overlays/README
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/act-led.dtbo /boot/overlays/act-led.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/adafruit-st7735r.dtbo /boot/overlays/adafruit-st7735r.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/adafruit18.dtbo /boot/overlays/adafruit18.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/adau1977-adc.dtbo /boot/overlays/adau1977-adc.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/adau7002-simple.dtbo /boot/overlays/adau7002-simple.dtbo
@@ -117,6 +118,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/imx290.dtbo /boot/overlays/imx290.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/imx378.dtbo /boot/overlays/imx378.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/imx477.dtbo /boot/overlays/imx477.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/imx519.dtbo /boot/overlays/imx519.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/iqaudio-codec.dtbo /boot/overlays/iqaudio-codec.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/iqaudio-dac.dtbo /boot/overlays/iqaudio-dac.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/iqaudio-dacplus.dtbo /boot/overlays/iqaudio-dacplus.dtbo
@@ -134,6 +136,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp23s17.dtbo /boot/overlays/mcp23s17.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp2515-can0.dtbo /boot/overlays/mcp2515-can0.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp2515-can1.dtbo /boot/overlays/mcp2515-can1.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp2515.dtbo /boot/overlays/mcp2515.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp251xfd.dtbo /boot/overlays/mcp251xfd.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp3008.dtbo /boot/overlays/mcp3008.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mcp3202.dtbo /boot/overlays/mcp3202.dtbo
@@ -148,6 +151,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/midi-uart5.dtbo /boot/overlays/midi-uart5.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/minipitft13.dtbo /boot/overlays/minipitft13.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/miniuart-bt.dtbo /boot/overlays/miniuart-bt.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mlx90640.dtbo /boot/overlays/mlx90640.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mmc.dtbo /boot/overlays/mmc.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mpu6050.dtbo /boot/overlays/mpu6050.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/mz61581.dtbo /boot/overlays/mz61581.dtbo
@@ -176,6 +180,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/pwm-2chan.dtbo /boot/overlays/pwm-2chan.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/pwm-ir-tx.dtbo /boot/overlays/pwm-ir-tx.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/pwm.dtbo /boot/overlays/pwm.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/qca7000-uart0.dtbo /boot/overlays/qca7000-uart0.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/qca7000.dtbo /boot/overlays/qca7000.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rotary-encoder.dtbo /boot/overlays/rotary-encoder.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/rpi-backlight.dtbo /boot/overlays/rpi-backlight.dtbo
@@ -267,21 +272,21 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.60-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.63-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.60+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.10.60+
+if [ -d "/etc/kernel/preinst.d/5.10.63+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.10.63+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.60-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.10.60-v7+
+if [ -d "/etc/kernel/preinst.d/5.10.63-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.10.63-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.60-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.10.60-v7l+
+if [ -d "/etc/kernel/preinst.d/5.10.63-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.10.63-v7l+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.60-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.60-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.10.60-v8+
+if [ -d "/etc/kernel/preinst.d/5.10.63-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.63-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.10.63-v8+
 fi
 #DEBHELPER#

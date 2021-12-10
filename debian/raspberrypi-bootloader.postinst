@@ -23,7 +23,7 @@ is_pifour() {
   return $?
 }
 
-if [ "$(get_available_space)" -lt "61" ]; then
+if [ "$(get_available_space)" -lt "49" ]; then
   echo "You do not have enough space in /boot to install this package."
   SKIP_FILES=1
   if is_pifour; then
@@ -133,5 +133,10 @@ if [ -f /usr/share/rpikernelhack/LICENCE.broadcom ]; then
 fi
 if [ -d /usr/share/rpikernelhack ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
+fi
+
+touch /run/reboot-required
+if ! grep -qs "raspberrypi-bootloader" /run/reboot-required.pkgs; then
+  echo "raspberrypi-bootloader" >> /run/reboot-required.pkgs
 fi
 #DEBHELPER#
