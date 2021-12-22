@@ -12,7 +12,7 @@ fi
 
 git checkout stable
 git merge "$FIRMWARE_COMMIT" --no-edit
-git checkout debian
+git checkout pios/bullseye
 git merge stable --no-edit -Xtheirs
 
 DATE="$(git show -s --format=%ct "$FIRMWARE_COMMIT")"
@@ -29,13 +29,13 @@ KERNEL_COMMIT="$(cat extra/git_hash)"
 		echo "Compressing linux..."
 		git archive --format=tar --prefix=linux/ HEAD | xz -T0 > "../../raspberrypi-firmware_${RELEASE}.orig-linux.tar.xz"
 	fi
-}
+)
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
 dch "firmware as of ${FIRMWARE_COMMIT}"
-dch -v "$DEBVER" -D buster --force-distribution "$(cut -f 1 -d'+' extra/uname_string)"
+dch -v "$DEBVER" -D bullseye --force-distribution "$(cut -f 1 -d'+' extra/uname_string)"
 git commit -a -m "$DEBVER release"
-git tag "$RELEASE" "$FIRMWARE_COMMIT"
+git tag "$RELEASE" "$FIRMWARE_COMMIT" ||:
 
-gbp buildpackage -us -uc -sa -aarmhf
+gbp buildpackage -us -uc -sa -S
 git clean -xdf

@@ -214,7 +214,17 @@ cat <<EOF | tee -a raspberrypi-kernel-mtx.postinst >> raspberrypi-bootloader.pos
 if [ -d /usr/share/rpikernelhack ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack
 fi
+
+touch /run/reboot-required
 EOF
+
+for pkg in raspberrypi-bootloader raspberrypi-kernel-mtx; do
+cat << EOF >> "${pkg}.postinst"
+if ! grep -qs "$pkg" /run/reboot-required.pkgs; then
+  echo "$pkg" >> /run/reboot-required.pkgs
+fi
+EOF
+done
 
 printf "#DEBHELPER#\n" | tee -a raspberrypi-kernel-mtx.postinst | tee -a raspberrypi-bootloader.postinst | tee -a raspberrypi-kernel-mtx.preinst >> raspberrypi-bootloader.preinst
 

@@ -16,21 +16,12 @@ include /usr/share/dpkg/architecture.mk
 
 override_dh_install:
 	./debian/build_headers.sh
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/
+	cp opt/vc/lib/libelftoolchain.so debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/
 	dh_install
-ifeq (armhf,$(DEB_BUILD_ARCH))
-	rm debian/libraspberrypi0/opt/vc/lib/libEGL.so
-	rm debian/libraspberrypi0/opt/vc/lib/libGLESv2.so
-	rm debian/libraspberrypi0/opt/vc/lib/libOpenVG.so
-	rm debian/libraspberrypi0/opt/vc/lib/libWFC.so
-	rm debian/libraspberrypi0/opt/vc/lib/libGLESv1_CM.so
-endif
 
 override_dh_fixperms:
 	dh_fixperms
-ifeq (armhf,$(DEB_BUILD_ARCH))
-	chown -R :users debian/libraspberrypi-doc/opt/vc/src/hello_pi
-	chmod -R g+w debian/libraspberrypi-doc/opt/vc/src/hello_pi
-endif
 
 override_dh_strip:
 	# don't strip anything

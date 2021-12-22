@@ -69,6 +69,26 @@ for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 	)
 done
 
+# Build linux-libc-dev
+destdir="debian/linux-libc-dev/usr"
+mkdir -p "$destdir"
+(
+	cd linux
+	make headers_check
+	make headers_install INSTALL_HDR_PATH="../$destdir"
+	make distclean
+)
+
+rm -rf "${destdir}/include/drm" "${destdir}/include/scsi"
+find "${destdir}/include" \( -name .install -o -name ..install.cmd \) -execdir rm {} +
+
+# Move include/asm to arch-specific directory
+mkdir -p "${destdir}/include/${DEB_HOST_MULTIARCH}"
+mv "${destdir}/include/asm" "${destdir}/include/${DEB_HOST_MULTIARCH}/"
+if [ -d "${destdir}/include/arch" ]; then
+	mv "${destdir}/include/arch" "${destdir}/include/${DEB_HOST_MULTIARCH}/"
+fi
+
 rm linux/.scmversion
 find debian/raspberrypi-kernel-headers-mtx -name ".git*" -delete
 find debian/raspberrypi-kernel-headers-mtx -type f -name ".*.cmd" -delete

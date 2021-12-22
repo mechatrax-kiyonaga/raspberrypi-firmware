@@ -11,40 +11,11 @@ Homepage: https://github.com/raspberrypi/firmware
 Vcs-Git: https://github.com/mechatrax/raspberrypi-firmware.git
 Vcs-Browser: https://github.com/mechatrax/raspberrpi-firmware
 
-Package: libraspberrypi0
-Section: libs
-Architecture: armel armhf
-Depends: raspberrypi-bootloader (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
-Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV
- This package contains implementations of EGL, OpenGL ES, OpenVG, OpenWF
- Composition, and others for the Raspberry Pi's VideoCore IV multimedia
- processor.
-
-Package: libraspberrypi-dev
-Section: libdevel
-Architecture: armel armhf
-Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}
-Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV (headers)
- This package contains headers and other development files for implementations
- of EGL, OpenGL ES, OpenVG, OpenWF Composition, and others for the Raspberry
- Pi's VideoCore IV multimedia processor.
-
-Package: libraspberrypi-doc
-Section: libdevel
-Architecture: armel armhf
-Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}
-Description: EGL/GLES/OpenVG/etc. libraries for the Raspberry Pi's VideoCore IV (headers)
- This package contains headers, example code, and other development files for
- implementations of EGL, OpenGL ES, OpenVG, OpenWF Composition, and others for
- the Raspberry Pi's VideoCore IV multimedia processor.
-
-Package: libraspberrypi-bin
+Package: vcdbg
 Section: misc
-Architecture: armel armhf
-Depends: libraspberrypi0 (= ${binary:Version}), ${misc:Depends}, device-tree-compiler
-Description: Miscellaneous Raspberry Pi utilities
- This package contains various utilities for interacting with the Raspberry
- Pi's VideoCore IV.
+Architecture: armhf
+Depends: libraspberrypi0, ${shlibs:Depends}, ${misc:Depends}
+Description: Tool for debugging VideoCore
 
 Package: raspberrypi-bootloader
 Section: admin
@@ -76,3 +47,12 @@ Description: Header files for the Raspberry Pi Linux kernel
  the Raspberry Pi Linux kernel, generally used for building out-of-tree
  kernel modules.
 
+Package: linux-libc-dev
+Architecture: armhf arm64
+Section: devel
+Depends: ${misc:Depends}
+Description: Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These
+ headers are used by the installed headers for GNU libc and other system
+ libraries.
+Multi-Arch: same
