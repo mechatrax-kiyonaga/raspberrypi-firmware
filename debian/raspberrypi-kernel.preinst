@@ -265,6 +265,7 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/vc4-kms-v3d.dtbo /boot/overlays/vc4-kms-v3d.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/vc4-kms-vga666.dtbo /boot/overlays/vc4-kms-vga666.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/vga666.dtbo /boot/overlays/vga666.dtbo
+dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/vl805.dtbo /boot/overlays/vl805.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/w1-gpio-pullup.dtbo /boot/overlays/w1-gpio-pullup.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/w1-gpio.dtbo /boot/overlays/w1-gpio.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/w5500.dtbo /boot/overlays/w5500.dtbo
@@ -278,21 +279,21 @@ if [ -f /etc/default/raspberrypi-kernel ]; then
   export RPI_INITRD
 fi
 if [ -d "/etc/kernel/preinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.89+ --arg=/boot/kernel.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.89-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.89-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.89-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.92+ --arg=/boot/kernel.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.92-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.92-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d
+  run-parts -v --report --exit-on-error --arg=5.10.92-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.89+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.89+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.10.89+
+if [ -d "/etc/kernel/preinst.d/5.10.92+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.92+ --arg=/boot/kernel.img /etc/kernel/preinst.d/5.10.92+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.89-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.89-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.10.89-v7+
+if [ -d "/etc/kernel/preinst.d/5.10.92-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.92-v7+ --arg=/boot/kernel7.img /etc/kernel/preinst.d/5.10.92-v7+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.89-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.89-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.10.89-v7l+
+if [ -d "/etc/kernel/preinst.d/5.10.92-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.92-v7l+ --arg=/boot/kernel7l.img /etc/kernel/preinst.d/5.10.92-v7l+
 fi
-if [ -d "/etc/kernel/preinst.d/5.10.89-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.89-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.10.89-v8+
+if [ -d "/etc/kernel/preinst.d/5.10.92-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.10.92-v8+ --arg=/boot/kernel8.img /etc/kernel/preinst.d/5.10.92-v8+
 fi
 #DEBHELPER#
