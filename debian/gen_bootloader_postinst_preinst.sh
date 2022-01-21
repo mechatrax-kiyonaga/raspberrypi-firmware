@@ -148,8 +148,8 @@ EOF
 done
 
 cat <<EOF >> raspberrypi-kernel-mtx.preinst
-if [ -f /etc/default/raspberrypi-kernel ]; then
-  . /etc/default/raspberrypi-kernel
+if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
+  . /etc/default/raspberrypi-kernel-mtx
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -176,8 +176,8 @@ fi
 EOF
 
 cat <<EOF >> raspberrypi-kernel-mtx.postinst
-if [ -f /etc/default/raspberrypi-kernel ]; then
-  . /etc/default/raspberrypi-kernel
+if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
+  . /etc/default/raspberrypi-kernel-mtx
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -233,8 +233,8 @@ printf "#!/bin/sh\n" > raspberrypi-kernel-mtx.postrm
 printf "#!/bin/sh\n" > raspberrypi-kernel-headers-mtx.postinst
 
 cat <<EOF >> raspberrypi-kernel-mtx.prerm
-if [ -f /etc/default/raspberrypi-kernel ]; then
-  . /etc/default/raspberrypi-kernel
+if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
+  . /etc/default/raspberrypi-kernel-mtx
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -262,8 +262,8 @@ fi
 EOF
 
 cat <<EOF >> raspberrypi-kernel-mtx.postrm
-if [ -f /etc/default/raspberrypi-kernel ]; then
-  . /etc/default/raspberrypi-kernel
+if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
+  . /etc/default/raspberrypi-kernel-mtx
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
@@ -291,8 +291,8 @@ fi
 EOF
 
 cat <<EOF >> raspberrypi-kernel-headers-mtx.postinst
-if [ -f /etc/default/raspberrypi-kernel ]; then
-  . /etc/default/raspberrypi-kernel
+if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
+  . /etc/default/raspberrypi-kernel-mtx
   INITRD=\${INITRD:-"No"}
   export INITRD
   RPI_INITRD=\${RPI_INITRD:-"No"}
