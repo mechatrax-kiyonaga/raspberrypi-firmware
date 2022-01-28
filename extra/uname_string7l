@@ -1,1 +1,1 @@
-Linux version 5.10.63-v7l+ (dom@buildbot) (arm-linux-gnueabihf-gcc-8 (Ubuntu/Linaro 8.4.0-3ubuntu1) 8.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #1496 SMP Wed Dec 1 15:58:56 GMT 2021
+Linux version 5.10.63-v7l+ (mtx@ubuntu) (arm-linux-gnueabihf-gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #1 SMP Fri Jan 28 09:12:53 UTC 2022
