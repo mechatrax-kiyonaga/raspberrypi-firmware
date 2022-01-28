@@ -266,8 +266,8 @@ dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/o
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/w5500.dtbo /boot/overlays/w5500.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/wittypi.dtbo /boot/overlays/wittypi.dtbo
 dpkg-divert --package rpikernelhack --rename --divert /usr/share/rpikernelhack/overlays/wm8960-soundcard.dtbo /boot/overlays/wm8960-soundcard.dtbo
-if [ -f /etc/default/raspberrypi-kernel ]; then
-  . /etc/default/raspberrypi-kernel
+if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
+  . /etc/default/raspberrypi-kernel-mtx
   INITRD=${INITRD:-"No"}
   export INITRD
   RPI_INITRD=${RPI_INITRD:-"No"}
