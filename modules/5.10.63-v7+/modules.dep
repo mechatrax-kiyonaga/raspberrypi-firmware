@@ -461,11 +461,15 @@ kernel/drivers/usb/gadget/function/u_serial.ko: kernel/drivers/usb/gadget/udc/ud
 kernel/drivers/usb/gadget/function/usb_f_serial.ko: kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/function/u_serial.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/usb_f_obex.ko: kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/function/u_serial.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/u_ether.ko: kernel/drivers/usb/gadget/udc/udc-core.ko
+kernel/drivers/usb/gadget/function/usb_f_ncm.ko: kernel/drivers/usb/gadget/function/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/usb_f_ecm.ko: kernel/drivers/usb/gadget/function/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
+kernel/drivers/usb/gadget/function/usb_f_eem.ko: kernel/drivers/usb/gadget/function/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/usb_f_ecm_subset.ko: kernel/drivers/usb/gadget/function/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/usb_f_rndis.ko: kernel/drivers/usb/gadget/function/u_ether.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/usb_f_mass_storage.ko: kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
+kernel/drivers/usb/gadget/function/usb_f_fs.ko: kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/u_audio.ko: kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko kernel/sound/core/snd-pcm.ko kernel/sound/core/snd-timer.ko kernel/sound/core/snd.ko
+kernel/drivers/usb/gadget/function/usb_f_uac1.ko: kernel/drivers/usb/gadget/function/u_audio.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko kernel/sound/core/snd-pcm.ko kernel/sound/core/snd-timer.ko kernel/sound/core/snd.ko
 kernel/drivers/usb/gadget/function/usb_f_uac2.ko: kernel/drivers/usb/gadget/function/u_audio.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko kernel/sound/core/snd-pcm.ko kernel/sound/core/snd-timer.ko kernel/sound/core/snd.ko
 kernel/drivers/usb/gadget/function/usb_f_uvc.ko: kernel/drivers/media/common/videobuf2/videobuf2-vmalloc.ko kernel/drivers/media/common/videobuf2/videobuf2-memops.ko kernel/drivers/media/common/videobuf2/videobuf2-v4l2.ko kernel/drivers/media/common/videobuf2/videobuf2-common.ko kernel/drivers/media/v4l2-core/videodev.ko kernel/drivers/media/mc/mc.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko
 kernel/drivers/usb/gadget/function/usb_f_midi.ko: kernel/sound/core/snd-rawmidi.ko kernel/sound/core/snd-seq-device.ko kernel/drivers/usb/gadget/libcomposite.ko kernel/drivers/usb/gadget/udc/udc-core.ko kernel/sound/core/snd.ko
@@ -936,7 +940,7 @@ kernel/drivers/power/supply/ltc2941-battery-gauge.ko:
 kernel/drivers/power/supply/max17040_battery.ko: kernel/drivers/base/regmap/regmap-i2c.ko
 kernel/drivers/hwmon/ds1621.ko:
 kernel/drivers/hwmon/gpio-fan.ko:
-kernel/drivers/hwmon/iio_hwmon.ko:
+kernel/drivers/hwmon/iio_hwmon.ko: kernel/drivers/iio/industrialio.ko
 kernel/drivers/hwmon/ina2xx.ko: kernel/drivers/base/regmap/regmap-i2c.ko
 kernel/drivers/hwmon/jc42.ko:
 kernel/drivers/hwmon/lm75.ko: kernel/drivers/base/regmap/regmap-i2c.ko
@@ -1089,40 +1093,6 @@ kernel/drivers/staging/fbtft/fb_tls8204.ko: kernel/drivers/staging/fbtft/fbtft.k
 kernel/drivers/staging/fbtft/fb_uc1701.ko: kernel/drivers/staging/fbtft/fbtft.ko kernel/drivers/video/fbdev/core/syscopyarea.ko kernel/drivers/video/fbdev/core/sysfillrect.ko kernel/drivers/video/fbdev/core/sysimgblt.ko kernel/drivers/video/fbdev/core/fb_sys_fops.ko
 kernel/drivers/staging/fbtft/fb_upd161704.ko: kernel/drivers/staging/fbtft/fbtft.ko kernel/drivers/video/fbdev/core/syscopyarea.ko kernel/drivers/video/fbdev/core/sysfillrect.ko kernel/drivers/video/fbdev/core/sysimgblt.ko kernel/drivers/video/fbdev/core/fb_sys_fops.ko
 kernel/drivers/staging/fbtft/fb_watterott.ko: kernel/drivers/staging/fbtft/fbtft.ko kernel/drivers/video/fbdev/core/syscopyarea.ko kernel/drivers/video/fbdev/core/sysfillrect.ko kernel/drivers/video/fbdev/core/sysimgblt.ko kernel/drivers/video/fbdev/core/fb_sys_fops.ko
-kernel/drivers/iio/adc/ad_sigma_delta.ko:
-kernel/drivers/iio/adc/ad7124.ko: kernel/drivers/iio/adc/ad_sigma_delta.ko
-kernel/drivers/iio/adc/ad7606_spi.ko: kernel/drivers/iio/adc/ad7606.ko
-kernel/drivers/iio/adc/ad7606.ko:
-kernel/drivers/iio/adc/ad7793.ko: kernel/drivers/iio/adc/ad_sigma_delta.ko
-kernel/drivers/iio/adc/mcp320x.ko:
-kernel/drivers/iio/adc/mcp3422.ko:
-kernel/drivers/iio/adc/ti-ads1015.ko: kernel/drivers/base/regmap/regmap-i2c.ko
-kernel/drivers/iio/chemical/bme680_core.ko:
-kernel/drivers/iio/chemical/bme680_i2c.ko: kernel/drivers/iio/chemical/bme680_core.ko kernel/drivers/base/regmap/regmap-i2c.ko
-kernel/drivers/iio/chemical/bme680_spi.ko: kernel/drivers/iio/chemical/bme680_core.ko
-kernel/drivers/iio/chemical/ccs811.ko:
-kernel/drivers/iio/chemical/sgp30.ko: kernel/lib/crc8.ko
-kernel/drivers/iio/chemical/sps30.ko: kernel/lib/crc8.ko
-kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko:
-kernel/drivers/iio/humidity/dht11.ko:
-kernel/drivers/iio/humidity/hdc100x.ko:
-kernel/drivers/iio/humidity/htu21.ko: kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko
-kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko:
-kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050-i2c.ko: kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko kernel/drivers/i2c/i2c-mux.ko kernel/drivers/base/regmap/regmap-i2c.ko
-kernel/drivers/iio/light/apds9960.ko: kernel/drivers/base/regmap/regmap-i2c.ko
-kernel/drivers/iio/light/bh1750.ko:
-kernel/drivers/iio/light/tsl4531.ko:
-kernel/drivers/iio/light/veml6070.ko:
-kernel/drivers/iio/pressure/bmp280.ko:
-kernel/drivers/iio/pressure/bmp280-i2c.ko: kernel/drivers/iio/pressure/bmp280.ko kernel/drivers/base/regmap/regmap-i2c.ko
-kernel/drivers/iio/pressure/bmp280-spi.ko: kernel/drivers/iio/pressure/bmp280.ko
-kernel/drivers/iio/temperature/maxim_thermocouple.ko:
-kernel/drivers/iio/temperature/max31856.ko:
-kernel/drivers/iio/trigger/iio-trig-hrtimer.ko: kernel/drivers/iio/industrialio-sw-trigger.ko
-kernel/drivers/iio/trigger/iio-trig-interrupt.ko:
-kernel/drivers/iio/trigger/iio-trig-sysfs.ko:
-kernel/drivers/iio/trigger/iio-trig-loop.ko: kernel/drivers/iio/industrialio-sw-trigger.ko
-kernel/drivers/iio/industrialio-sw-trigger.ko:
 kernel/drivers/perf/raspberrypi_axi_monitor.ko:
 kernel/drivers/connector/cn.ko:
 kernel/drivers/mtd/parsers/ofpart.ko: kernel/drivers/mtd/mtd.ko
@@ -1179,6 +1149,34 @@ kernel/drivers/ssb/ssb.ko:
 kernel/drivers/bcma/bcma.ko:
 kernel/drivers/extcon/extcon-core.ko:
 kernel/drivers/extcon/extcon-arizona.ko: kernel/drivers/extcon/extcon-core.ko kernel/sound/soc/snd-soc-core.ko kernel/sound/core/snd-compress.ko kernel/sound/core/snd-pcm-dmaengine.ko kernel/sound/core/snd-pcm.ko kernel/sound/core/snd-timer.ko kernel/sound/core/snd.ko
+kernel/drivers/iio/adc/mcp320x.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/adc/mcp3422.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/adc/ti-ads1015.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko kernel/drivers/base/regmap/regmap-i2c.ko
+kernel/drivers/iio/buffer/industrialio-buffer-cb.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko: kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/buffer/kfifo_buf.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/chemical/bme680_core.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/chemical/bme680_i2c.ko: kernel/drivers/iio/chemical/bme680_core.ko kernel/drivers/iio/industrialio.ko kernel/drivers/base/regmap/regmap-i2c.ko
+kernel/drivers/iio/chemical/bme680_spi.ko: kernel/drivers/iio/chemical/bme680_core.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/chemical/ccs811.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/chemical/sgp30.ko: kernel/lib/crc8.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/chemical/sps30.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/lib/crc8.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko:
+kernel/drivers/iio/humidity/dht11.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/humidity/hdc100x.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/humidity/htu21.ko: kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050-i2c.ko: kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko kernel/drivers/i2c/i2c-mux.ko kernel/drivers/base/regmap/regmap-i2c.ko
+kernel/drivers/iio/light/apds9960.ko: kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko kernel/drivers/base/regmap/regmap-i2c.ko
+kernel/drivers/iio/light/bh1750.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/light/tsl4531.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/light/veml6070.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/pressure/bmp280.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/pressure/bmp280-i2c.ko: kernel/drivers/iio/pressure/bmp280.ko kernel/drivers/iio/industrialio.ko kernel/drivers/base/regmap/regmap-i2c.ko
+kernel/drivers/iio/pressure/bmp280-spi.ko: kernel/drivers/iio/pressure/bmp280.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/temperature/maxim_thermocouple.ko: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko kernel/drivers/iio/buffer/kfifo_buf.ko kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/temperature/max31856.ko: kernel/drivers/iio/industrialio.ko
+kernel/drivers/iio/industrialio.ko:
 kernel/drivers/mux/mux-core.ko:
 kernel/sound/core/oss/snd-pcm-oss.ko: kernel/sound/core/snd-pcm.ko kernel/sound/core/snd-timer.ko kernel/sound/core/snd.ko
 kernel/sound/core/snd.ko:
