@@ -7,17 +7,17 @@ git fetch --all
 if [ -n "$1" ]; then
 	FIRMWARE_COMMIT="$1"
 else
-	FIRMWARE_COMMIT="$(git rev-parse upstream/stable)"
+	FIRMWARE_COMMIT="$(git rev-parse upstream/oldstable)"
 fi
 
-git checkout stable
+git checkout oldstable
 git merge "$FIRMWARE_COMMIT" --no-edit
-git checkout debian
-git merge stable --no-edit -Xtheirs
+git checkout pios/buster
+git merge oldstable --no-edit -Xtheirs
 
 DATE="$(git show -s --format=%ct "$FIRMWARE_COMMIT")"
-RELEASE="$(date -d "@$DATE" -u +1.%Y%m%d)"
-DEBVER="${RELEASE}-1~mtx1"
+RELEASE="$(date -d "@$DATE" -u +1.%Y%m%d)~buster"
+DEBVER="1:${RELEASE}-1~mtx1"
 
 KERNEL_COMMIT="$(cat extra/git_hash)"
 (
@@ -33,9 +33,9 @@ KERNEL_COMMIT="$(cat extra/git_hash)"
 
 (cd debian; ./gen_bootloader_postinst_preinst.sh)
 dch "firmware as of ${FIRMWARE_COMMIT}"
-dch -v "$DEBVER" -D pios/buster --force-distribution "$(cut -f 1 -d'+' extra/uname_string)"
+dch -v "$DEBVER" -D buster --force-distribution "$(cut -f 1 -d'+' extra/uname_string)"
 git commit -a -m "$DEBVER release"
-git tag "$RELEASE" "$FIRMWARE_COMMIT"
+git tag $(echo "$RELEASE" | sed 's/~/_/') "$FIRMWARE_COMMIT" ||:
 
-gbp buildpackage -us -uc -sa -aarmhf
+gbp buildpackage -us -uc -sa -S
 git clean -xdf

@@ -63,6 +63,10 @@ for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 		--files-from=<(cd linux; find "arch/${ARCH}/include" Module.symvers .config include scripts -type f) linux/ "$destdir/"
 	rm -f "debian/raspberrypi-kernel-headers-mtx/lib/modules/$version/build"
 	ln -sf "/usr/src/linux-headers-$version" "debian/raspberrypi-kernel-headers-mtx/lib/modules/$version/build"
+	(
+		cd linux
+		make distclean
+	)
 done
 
 # Build linux-libc-dev
