@@ -1,3 +1,17 @@
+raspberrypi-firmware-mtx (1.20220120-1~mtx1) bullseye; urgency=medium
+
+  * firmware as of 2e13ad89560ffa03376e70e820fd6f4a7e948333
+  * Linux version 5.10.92
+
+ -- Masahiro Honda <honda@mechatrax.com>  Mon, 24 Jan 2022 16:36:15 +0900
+
+raspberrypi-firmware-mtx (1.20220106-1~mtx1) bullseye; urgency=medium
+
+  * firmware as of 12e8e371b3ef0d98d1fbee3f077f92374baedfac
+  * Linux version 5.10.89
+
+ -- Masahiro Honda <honda@mechatrax.com>  Wed, 19 Jan 2022 18:31:56 +0900
+
 raspberrypi-firmware-mtx (1.20211118-1~mtx1) bullseye; urgency=medium
 
   * firmware as of c349d2ca0512bdb350b6d69820115df6f9e38e90
