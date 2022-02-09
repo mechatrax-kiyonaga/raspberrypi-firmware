@@ -1,3 +1,9 @@
+raspberrypi-firmware-mtx (1:1.20220120-1~mtx2) bullseye; urgency=medium
+
+  * Update debian/build_headers.sh
+
+ -- Masahiro Honda <honda@mechatrax.com>  Wed, 09 Feb 2022 15:58:05 +0900
+
 raspberrypi-firmware-mtx (1.20220120-1~mtx1) bullseye; urgency=medium
 
   * firmware as of 2e13ad89560ffa03376e70e820fd6f4a7e948333
