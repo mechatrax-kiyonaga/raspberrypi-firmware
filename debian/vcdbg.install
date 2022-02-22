@@ -1,2 +1,2 @@
-hardfp/opt/vc/bin/vcdbg /usr/bin/
-usr/lib/* /usr/lib/
+usr/bin/vcdbg
+usr/lib/*

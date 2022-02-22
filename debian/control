@@ -5,6 +5,7 @@ Build-Depends: debhelper (>= 10),
  bc, flex, bison, libssl-dev, rsync,
  gcc-aarch64-linux-gnu [!arm64 !armhf],
  gcc-arm-linux-gnueabihf [!armhf],
+ patchelf
 Standards-Version: 3.9.8
 Section: libs
 Homepage: https://github.com/raspberrypi/firmware

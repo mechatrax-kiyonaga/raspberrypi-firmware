@@ -1,3 +1,11 @@
+raspberrypi-firmware (1:1.20220120-2) bullseye; urgency=medium
+
+  * Patch vcdbg to use libdebug_sym.so.0
+    - Avoids dependency on libraspberrypi-dev
+  * Re-enable dh_shlibdeps
+
+ -- Serge Schneider <serge@raspberrypi.com>  Tue, 22 Feb 2022 13:46:41 +0000
+
 raspberrypi-firmware (1:1.20220120-1) bullseye; urgency=medium
 
   * firmware as of c6d56567ff6ef17fd85159770f22abcf2c5953ed
