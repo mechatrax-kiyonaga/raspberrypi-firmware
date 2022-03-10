@@ -6,17 +6,16 @@ echo "+" > linux/.scmversion
 export ARCH CROSS_COMPILE
 for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 	if [ "$DEB_BUILD_ARCH" != "armhf" ]; then
-		CROSS_COMPILE="arm-linux-gnueabihf-"
+		TARGET="arm-linux-gnueabihf"
+		CROSS_COMPILE="${TARGET}-"
 	else
 		CROSS_COMPILE=""
 	fi
 	case $version in
 	*-v8+)
-		if [ "$DEB_TARGET_ARCH" == "armhf" ]; then
-			continue
-		fi
 		if [ "$DEB_BUILD_ARCH" != "arm64" ]; then
-			CROSS_COMPILE="aarch64-linux-gnu-"
+			TARGET="aarch64-linux-gnu"
+			CROSS_COMPILE="${TARGET}-"
 		else
 			CROSS_COMPILE=""
 		fi
@@ -25,25 +24,16 @@ for version in $(cut -d ' ' -f 3 extra/uname_string*); do
 		VER="8"
 		;;
 	*-v7l+)
-		if [ "$DEB_TARGET_ARCH" == "arm64" ]; then
-			continue
-		fi
 		ARCH="arm"
 		DEFCONFIG="bcm2711_defconfig"
 		VER="7l"
 		;;
 	*-v7+)
-		if [ "$DEB_TARGET_ARCH" == "arm64" ]; then
-			continue
-		fi
 		ARCH="arm"
 		DEFCONFIG="bcm2709_defconfig"
 		VER="7"
 		;;
 	*+)
-		if [ "$DEB_TARGET_ARCH" == "arm64" ]; then
-			continue
-		fi
 		ARCH="arm"
 		DEFCONFIG="bcmrpi_defconfig"
 		VER=""
