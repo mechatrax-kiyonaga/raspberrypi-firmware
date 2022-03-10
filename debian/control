@@ -5,6 +5,8 @@ Build-Depends: debhelper (>= 10),
  bc, flex, bison, libssl-dev, rsync,
  gcc-aarch64-linux-gnu [!arm64 !armhf],
  gcc-arm-linux-gnueabihf [!armhf],
+ libraspberrypi-dev [armhf arm64],
+ patchelf
 Standards-Version: 3.9.8
 Section: libs
 Homepage: https://github.com/raspberrypi/firmware
@@ -14,7 +16,7 @@ Vcs-Browser: https://github.com/mechatrax/raspberrpi-firmware
 Package: vcdbg
 Section: misc
 Architecture: armhf
-Depends: libraspberrypi0, ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Tool for debugging VideoCore
 
 Package: raspberrypi-bootloader
