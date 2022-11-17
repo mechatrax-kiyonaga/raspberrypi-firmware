@@ -961,7 +961,7 @@ kernel/drivers/hwmon/aht10.ko.xz:
 kernel/drivers/hwmon/ds1621.ko.xz:
 kernel/drivers/hwmon/emc2305.ko.xz:
 kernel/drivers/hwmon/gpio-fan.ko.xz:
-kernel/drivers/hwmon/iio_hwmon.ko.xz: kernel/drivers/iio/industrialio.ko.xz
+kernel/drivers/hwmon/iio_hwmon.ko.xz:
 kernel/drivers/hwmon/ina2xx.ko.xz: kernel/drivers/base/regmap/regmap-i2c.ko.xz
 kernel/drivers/hwmon/jc42.ko.xz:
 kernel/drivers/hwmon/lm75.ko.xz: kernel/drivers/base/regmap/regmap-i2c.ko.xz
@@ -1116,6 +1116,42 @@ kernel/drivers/staging/fbtft/fb_tls8204.ko.xz: kernel/drivers/staging/fbtft/fbtf
 kernel/drivers/staging/fbtft/fb_uc1701.ko.xz: kernel/drivers/staging/fbtft/fbtft.ko.xz kernel/drivers/video/fbdev/core/syscopyarea.ko.xz kernel/drivers/video/fbdev/core/sysfillrect.ko.xz kernel/drivers/video/fbdev/core/sysimgblt.ko.xz kernel/drivers/video/fbdev/core/fb_sys_fops.ko.xz kernel/drivers/video/backlight/backlight.ko.xz
 kernel/drivers/staging/fbtft/fb_upd161704.ko.xz: kernel/drivers/staging/fbtft/fbtft.ko.xz kernel/drivers/video/fbdev/core/syscopyarea.ko.xz kernel/drivers/video/fbdev/core/sysfillrect.ko.xz kernel/drivers/video/fbdev/core/sysimgblt.ko.xz kernel/drivers/video/fbdev/core/fb_sys_fops.ko.xz kernel/drivers/video/backlight/backlight.ko.xz
 kernel/drivers/staging/fbtft/fb_watterott.ko.xz: kernel/drivers/staging/fbtft/fbtft.ko.xz kernel/drivers/video/fbdev/core/syscopyarea.ko.xz kernel/drivers/video/fbdev/core/sysfillrect.ko.xz kernel/drivers/video/fbdev/core/sysimgblt.ko.xz kernel/drivers/video/fbdev/core/fb_sys_fops.ko.xz kernel/drivers/video/backlight/backlight.ko.xz
+kernel/drivers/iio/adc/ad_sigma_delta.ko.xz:
+kernel/drivers/iio/adc/ad7124.ko.xz: kernel/drivers/iio/adc/ad_sigma_delta.ko.xz
+kernel/drivers/iio/adc/ad7793.ko.xz: kernel/drivers/iio/adc/ad_sigma_delta.ko.xz
+kernel/drivers/iio/adc/mcp320x.ko.xz:
+kernel/drivers/iio/adc/mcp3422.ko.xz:
+kernel/drivers/iio/adc/ti-ads1015.ko.xz: kernel/drivers/base/regmap/regmap-i2c.ko.xz
+kernel/drivers/iio/buffer/industrialio-buffer-dma.ko.xz:
+kernel/drivers/iio/buffer/industrialio-buffer-dmaengine.ko.xz: kernel/drivers/iio/buffer/industrialio-buffer-dma.ko.xz
+kernel/drivers/iio/chemical/bme680_core.ko.xz:
+kernel/drivers/iio/chemical/bme680_i2c.ko.xz: kernel/drivers/iio/chemical/bme680_core.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
+kernel/drivers/iio/chemical/bme680_spi.ko.xz: kernel/drivers/iio/chemical/bme680_core.ko.xz
+kernel/drivers/iio/chemical/ccs811.ko.xz:
+kernel/drivers/iio/chemical/sgp30.ko.xz: kernel/lib/crc8.ko.xz
+kernel/drivers/iio/chemical/sps30.ko.xz:
+kernel/drivers/iio/chemical/sps30_i2c.ko.xz: kernel/drivers/iio/chemical/sps30.ko.xz kernel/lib/crc8.ko.xz
+kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko.xz:
+kernel/drivers/iio/health/max30102.ko.xz: kernel/drivers/base/regmap/regmap-i2c.ko.xz
+kernel/drivers/iio/humidity/dht11.ko.xz:
+kernel/drivers/iio/humidity/hdc100x.ko.xz:
+kernel/drivers/iio/humidity/htu21.ko.xz: kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko.xz
+kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko.xz:
+kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050-i2c.ko.xz: kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko.xz kernel/drivers/i2c/i2c-mux.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
+kernel/drivers/iio/light/apds9960.ko.xz: kernel/drivers/base/regmap/regmap-i2c.ko.xz
+kernel/drivers/iio/light/bh1750.ko.xz:
+kernel/drivers/iio/light/tsl4531.ko.xz:
+kernel/drivers/iio/light/veml6070.ko.xz:
+kernel/drivers/iio/pressure/bmp280.ko.xz:
+kernel/drivers/iio/pressure/bmp280-i2c.ko.xz: kernel/drivers/iio/pressure/bmp280.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
+kernel/drivers/iio/pressure/bmp280-spi.ko.xz: kernel/drivers/iio/pressure/bmp280.ko.xz
+kernel/drivers/iio/temperature/maxim_thermocouple.ko.xz:
+kernel/drivers/iio/temperature/max31856.ko.xz:
+kernel/drivers/iio/trigger/iio-trig-hrtimer.ko.xz: kernel/drivers/iio/industrialio-sw-trigger.ko.xz
+kernel/drivers/iio/trigger/iio-trig-interrupt.ko.xz:
+kernel/drivers/iio/trigger/iio-trig-sysfs.ko.xz:
+kernel/drivers/iio/trigger/iio-trig-loop.ko.xz: kernel/drivers/iio/industrialio-sw-trigger.ko.xz
+kernel/drivers/iio/industrialio-sw-trigger.ko.xz:
 kernel/drivers/perf/raspberrypi_axi_monitor.ko.xz:
 kernel/drivers/connector/cn.ko.xz:
 kernel/drivers/mtd/parsers/ofpart.ko.xz: kernel/drivers/mtd/mtd.ko.xz
@@ -1167,41 +1203,6 @@ kernel/drivers/bluetooth/btbcm.ko.xz: kernel/net/bluetooth/bluetooth.ko.xz kerne
 kernel/drivers/bluetooth/btrtl.ko.xz: kernel/net/bluetooth/bluetooth.ko.xz kernel/crypto/ecdh_generic.ko.xz kernel/crypto/ecc.ko.xz kernel/net/rfkill/rfkill.ko.xz kernel/lib/crypto/libaes.ko.xz
 kernel/drivers/ssb/ssb.ko.xz:
 kernel/drivers/bcma/bcma.ko.xz:
-kernel/drivers/iio/adc/mcp320x.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/adc/mcp3422.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/adc/ti-ads1015.ko.xz: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
-kernel/drivers/iio/buffer/industrialio-buffer-cb.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz: kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/buffer/kfifo_buf.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/chemical/bme680_core.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/chemical/bme680_i2c.ko.xz: kernel/drivers/iio/chemical/bme680_core.ko.xz kernel/drivers/iio/industrialio.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
-kernel/drivers/iio/chemical/bme680_spi.ko.xz: kernel/drivers/iio/chemical/bme680_core.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/chemical/ccs811.ko.xz: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/chemical/sgp30.ko.xz: kernel/lib/crc8.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/chemical/sps30.ko.xz: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/chemical/sps30_i2c.ko.xz: kernel/drivers/iio/chemical/sps30.ko.xz kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/lib/crc8.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko.xz:
-kernel/drivers/iio/health/max30102.ko.xz: kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
-kernel/drivers/iio/humidity/dht11.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/humidity/hdc100x.ko.xz: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/humidity/htu21.ko.xz: kernel/drivers/iio/common/ms_sensors/ms_sensors_i2c.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko.xz: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050-i2c.ko.xz: kernel/drivers/iio/imu/inv_mpu6050/inv-mpu6050.ko.xz kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz kernel/drivers/i2c/i2c-mux.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
-kernel/drivers/iio/light/apds9960.ko.xz: kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
-kernel/drivers/iio/light/bh1750.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/light/tsl4531.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/light/veml6070.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/pressure/bmp280.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/pressure/bmp280-i2c.ko.xz: kernel/drivers/iio/pressure/bmp280.ko.xz kernel/drivers/iio/industrialio.ko.xz kernel/drivers/base/regmap/regmap-i2c.ko.xz
-kernel/drivers/iio/pressure/bmp280-spi.ko.xz: kernel/drivers/iio/pressure/bmp280.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/temperature/maxim_thermocouple.ko.xz: kernel/drivers/iio/buffer/industrialio-triggered-buffer.ko.xz kernel/drivers/iio/buffer/kfifo_buf.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/temperature/max31856.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/trigger/iio-trig-hrtimer.ko.xz: kernel/drivers/iio/industrialio-sw-trigger.ko.xz kernel/drivers/iio/industrialio-configfs.ko.xz kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/trigger/iio-trig-interrupt.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/trigger/iio-trig-sysfs.ko.xz: kernel/drivers/iio/industrialio.ko.xz
-kernel/drivers/iio/industrialio.ko.xz:
-kernel/drivers/iio/industrialio-configfs.ko.xz:
-kernel/drivers/iio/industrialio-sw-trigger.ko.xz: kernel/drivers/iio/industrialio-configfs.ko.xz
 kernel/drivers/mux/mux-core.ko.xz:
 kernel/drivers/mux/mux-gpio.ko.xz: kernel/drivers/mux/mux-core.ko.xz
 kernel/sound/core/oss/snd-pcm-oss.ko.xz: kernel/sound/core/snd-pcm.ko.xz kernel/sound/core/snd-timer.ko.xz kernel/sound/core/snd.ko.xz
