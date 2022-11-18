@@ -1,6 +1,6 @@
 Source: raspberrypi-firmware-mtx
 Priority: optional
-Maintainer: Masahiro Honda <honda@mechatrax.com>
+Maintainer: Yuta Kiyonaga <kiyonaga@mechatrax.com>
 Build-Depends: debhelper (>= 10),
  bc, flex, bison, libssl-dev, rsync,
  gcc-aarch64-linux-gnu [!arm64 !armhf],
