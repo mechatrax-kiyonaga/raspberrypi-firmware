@@ -1,3 +1,10 @@
+raspberrypi-firmware-mtx (1:1.20221104-1~mtx1) bullseye; urgency=medium
+
+  * firmware as of f1cf39631ab284c0ca1aca35faa261264034e2f3
+  * Linux version 5.15.76
+
+ -- Yuta Kiyonaga <kiyonaga@mechatrax.com>  Fri, 18 Nov 2022 17:22:12 +0900
+
 raspberrypi-firmware-mtx (1:1.20220308-2~mtx1) bullseye; urgency=medium
 
   * Add libraspberrypi-dev to build dependencies

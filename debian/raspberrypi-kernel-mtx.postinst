@@ -23,7 +23,7 @@ is_pifour() {
   return $?
 }
 
-if [ "$(get_available_space)" -lt "61" ]; then
+if [ "$(get_available_space)" -lt "63" ]; then
   echo "You do not have enough space in /boot to install this package."
   SKIP_FILES=1
   if is_pifour; then
@@ -94,6 +94,11 @@ fi
 if [ -f /usr/share/rpikernelhack/bcm2709-rpi-2-b.dtb ]; then
   rm -f /boot/bcm2709-rpi-2-b.dtb
   dpkg-divert --package rpikernelhack --rename --remove /boot/bcm2709-rpi-2-b.dtb
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/bcm2709-rpi-cm2.dtb ]; then
+  rm -f /boot/bcm2709-rpi-cm2.dtb
+  dpkg-divert --package rpikernelhack --rename --remove /boot/bcm2709-rpi-cm2.dtb
   sync
 fi
 if [ -f /usr/share/rpikernelhack/bcm2710-rpi-2-b.dtb ]; then
@@ -256,6 +261,16 @@ if [ -f /usr/share/rpikernelhack/overlays/applepi-dac.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/applepi-dac.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/arducam-64mp.dtbo ]; then
+  rm -f /boot/overlays/arducam-64mp.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/arducam-64mp.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/arducam-pivariety.dtbo ]; then
+  rm -f /boot/overlays/arducam-pivariety.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/arducam-pivariety.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/at86rf233.dtbo ]; then
   rm -f /boot/overlays/at86rf233.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/at86rf233.dtbo
@@ -264,6 +279,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/audioinjector-addons.dtbo ]; then
   rm -f /boot/overlays/audioinjector-addons.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/audioinjector-addons.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/audioinjector-bare-i2s.dtbo ]; then
+  rm -f /boot/overlays/audioinjector-bare-i2s.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/audioinjector-bare-i2s.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/audioinjector-isolated-soundcard.dtbo ]; then
@@ -296,6 +316,16 @@ if [ -f /usr/share/rpikernelhack/overlays/balena-fin.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/balena-fin.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/camera-mux-2port.dtbo ]; then
+  rm -f /boot/overlays/camera-mux-2port.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/camera-mux-2port.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/camera-mux-4port.dtbo ]; then
+  rm -f /boot/overlays/camera-mux-4port.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/camera-mux-4port.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/cap1106.dtbo ]; then
   rm -f /boot/overlays/cap1106.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/cap1106.dtbo
@@ -304,6 +334,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/chipdip-dac.dtbo ]; then
   rm -f /boot/overlays/chipdip-dac.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/chipdip-dac.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/cirrus-wm5102.dtbo ]; then
+  rm -f /boot/overlays/cirrus-wm5102.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/cirrus-wm5102.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/cma.dtbo ]; then
@@ -316,9 +351,19 @@ if [ -f /usr/share/rpikernelhack/overlays/cutiepi-panel.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/cutiepi-panel.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/dacberry400.dtbo ]; then
+  rm -f /boot/overlays/dacberry400.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/dacberry400.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/dht11.dtbo ]; then
   rm -f /boot/overlays/dht11.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/dht11.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/dionaudio-kiwi.dtbo ]; then
+  rm -f /boot/overlays/dionaudio-kiwi.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/dionaudio-kiwi.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/dionaudio-loco-v2.dtbo ]; then
@@ -406,6 +451,11 @@ if [ -f /usr/share/rpikernelhack/overlays/fsm-demo.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/fsm-demo.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/gc9a01.dtbo ]; then
+  rm -f /boot/overlays/gc9a01.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/gc9a01.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/ghost-amp.dtbo ]; then
   rm -f /boot/overlays/ghost-amp.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ghost-amp.dtbo
@@ -424,6 +474,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/gpio-fan.dtbo ]; then
   rm -f /boot/overlays/gpio-fan.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/gpio-fan.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/gpio-hog.dtbo ]; then
+  rm -f /boot/overlays/gpio-hog.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/gpio-hog.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/gpio-ir-tx.dtbo ]; then
@@ -484,6 +539,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/hifiberry-amp100.dtbo ]; then
   rm -f /boot/overlays/hifiberry-amp100.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/hifiberry-amp100.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/hifiberry-amp3.dtbo ]; then
+  rm -f /boot/overlays/hifiberry-amp3.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/hifiberry-amp3.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/hifiberry-dac.dtbo ]; then
@@ -556,6 +616,11 @@ if [ -f /usr/share/rpikernelhack/overlays/i2c-bcm2708.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/i2c-bcm2708.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/i2c-fan.dtbo ]; then
+  rm -f /boot/overlays/i2c-fan.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/i2c-fan.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/i2c-gpio.dtbo ]; then
   rm -f /boot/overlays/i2c-gpio.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/i2c-gpio.dtbo
@@ -616,6 +681,11 @@ if [ -f /usr/share/rpikernelhack/overlays/i2c6.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/i2c6.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/i2s-dac.dtbo ]; then
+  rm -f /boot/overlays/i2s-dac.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/i2s-dac.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/i2s-gpio28-31.dtbo ]; then
   rm -f /boot/overlays/i2s-gpio28-31.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/i2s-gpio28-31.dtbo
@@ -631,14 +701,34 @@ if [ -f /usr/share/rpikernelhack/overlays/imx219.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx219.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/imx258.dtbo ]; then
+  rm -f /boot/overlays/imx258.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx258.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/imx290.dtbo ]; then
   rm -f /boot/overlays/imx290.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx290.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/imx296.dtbo ]; then
+  rm -f /boot/overlays/imx296.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx296.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/imx327.dtbo ]; then
+  rm -f /boot/overlays/imx327.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx327.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/imx378.dtbo ]; then
   rm -f /boot/overlays/imx378.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx378.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/imx462.dtbo ]; then
+  rm -f /boot/overlays/imx462.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/imx462.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/imx477.dtbo ]; then
@@ -669,6 +759,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/iqaudio-digi-wm8804-audio.dtbo ]; then
   rm -f /boot/overlays/iqaudio-digi-wm8804-audio.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/iqaudio-digi-wm8804-audio.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/iqs550.dtbo ]; then
+  rm -f /boot/overlays/iqs550.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/iqs550.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/irs1125.dtbo ]; then
@@ -811,6 +906,11 @@ if [ -f /usr/share/rpikernelhack/overlays/miniuart-bt.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/miniuart-bt.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/mipi-dbi-spi.dtbo ]; then
+  rm -f /boot/overlays/mipi-dbi-spi.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mipi-dbi-spi.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/mlx90640.dtbo ]; then
   rm -f /boot/overlays/mlx90640.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mlx90640.dtbo
@@ -829,6 +929,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/mz61581.dtbo ]; then
   rm -f /boot/overlays/mz61581.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/mz61581.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/ov2311.dtbo ]; then
+  rm -f /boot/overlays/ov2311.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ov2311.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/ov5647.dtbo ]; then
@@ -941,6 +1046,11 @@ if [ -f /usr/share/rpikernelhack/overlays/pps-gpio.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/pps-gpio.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/proto-codec.dtbo ]; then
+  rm -f /boot/overlays/proto-codec.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/proto-codec.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/pwm-2chan.dtbo ]; then
   rm -f /boot/overlays/pwm-2chan.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/pwm-2chan.dtbo
@@ -966,6 +1076,16 @@ if [ -f /usr/share/rpikernelhack/overlays/qca7000.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/qca7000.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/ramoops-pi4.dtbo ]; then
+  rm -f /boot/overlays/ramoops-pi4.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ramoops-pi4.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/ramoops.dtbo ]; then
+  rm -f /boot/overlays/ramoops.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/ramoops.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/rotary-encoder.dtbo ]; then
   rm -f /boot/overlays/rotary-encoder.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rotary-encoder.dtbo
@@ -976,19 +1096,24 @@ if [ -f /usr/share/rpikernelhack/overlays/rpi-backlight.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-backlight.dtbo
   sync
 fi
-if [ -f /usr/share/rpikernelhack/overlays/rpi-cirrus-wm5102.dtbo ]; then
-  rm -f /boot/overlays/rpi-cirrus-wm5102.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-cirrus-wm5102.dtbo
+if [ -f /usr/share/rpikernelhack/overlays/rpi-codeczero.dtbo ]; then
+  rm -f /boot/overlays/rpi-codeczero.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-codeczero.dtbo
   sync
 fi
-if [ -f /usr/share/rpikernelhack/overlays/rpi-dac.dtbo ]; then
-  rm -f /boot/overlays/rpi-dac.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-dac.dtbo
+if [ -f /usr/share/rpikernelhack/overlays/rpi-dacplus.dtbo ]; then
+  rm -f /boot/overlays/rpi-dacplus.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-dacplus.dtbo
   sync
 fi
-if [ -f /usr/share/rpikernelhack/overlays/rpi-display.dtbo ]; then
-  rm -f /boot/overlays/rpi-display.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-display.dtbo
+if [ -f /usr/share/rpikernelhack/overlays/rpi-dacpro.dtbo ]; then
+  rm -f /boot/overlays/rpi-dacpro.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-dacpro.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/rpi-digiampplus.dtbo ]; then
+  rm -f /boot/overlays/rpi-digiampplus.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-digiampplus.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/rpi-ft5406.dtbo ]; then
@@ -1006,9 +1131,9 @@ if [ -f /usr/share/rpikernelhack/overlays/rpi-poe.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-poe.dtbo
   sync
 fi
-if [ -f /usr/share/rpikernelhack/overlays/rpi-proto.dtbo ]; then
-  rm -f /boot/overlays/rpi-proto.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-proto.dtbo
+if [ -f /usr/share/rpikernelhack/overlays/rpi-sense-v2.dtbo ]; then
+  rm -f /boot/overlays/rpi-sense-v2.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-sense-v2.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/rpi-sense.dtbo ]; then
@@ -1019,11 +1144,6 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/rpi-tv.dtbo ]; then
   rm -f /boot/overlays/rpi-tv.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpi-tv.dtbo
-  sync
-fi
-if [ -f /usr/share/rpikernelhack/overlays/rpivid-v4l2.dtbo ]; then
-  rm -f /boot/overlays/rpivid-v4l2.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/rpivid-v4l2.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/rra-digidac1-wm8741-audio.dtbo ]; then
@@ -1114,6 +1234,11 @@ fi
 if [ -f /usr/share/rpikernelhack/overlays/spi-rtc.dtbo ]; then
   rm -f /boot/overlays/spi-rtc.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi-rtc.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/spi0-0cs.dtbo ]; then
+  rm -f /boot/overlays/spi0-0cs.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/spi0-0cs.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/spi0-1cs.dtbo ]; then
@@ -1306,14 +1431,29 @@ if [ -f /usr/share/rpikernelhack/overlays/vc4-fkms-v3d.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-fkms-v3d.dtbo
   sync
 fi
-if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dpi-at056tn53v1.dtbo ]; then
-  rm -f /boot/overlays/vc4-kms-dpi-at056tn53v1.dtbo
-  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-kms-dpi-at056tn53v1.dtbo
-  sync
-fi
 if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dpi-generic.dtbo ]; then
   rm -f /boot/overlays/vc4-kms-dpi-generic.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-kms-dpi-generic.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dpi-hyperpixel2r.dtbo ]; then
+  rm -f /boot/overlays/vc4-kms-dpi-hyperpixel2r.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-kms-dpi-hyperpixel2r.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dpi-hyperpixel4.dtbo ]; then
+  rm -f /boot/overlays/vc4-kms-dpi-hyperpixel4.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-kms-dpi-hyperpixel4.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dpi-hyperpixel4sq.dtbo ]; then
+  rm -f /boot/overlays/vc4-kms-dpi-hyperpixel4sq.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-kms-dpi-hyperpixel4sq.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dpi-panel.dtbo ]; then
+  rm -f /boot/overlays/vc4-kms-dpi-panel.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/vc4-kms-dpi-panel.dtbo
   sync
 fi
 if [ -f /usr/share/rpikernelhack/overlays/vc4-kms-dsi-7inch.dtbo ]; then
@@ -1376,6 +1516,21 @@ if [ -f /usr/share/rpikernelhack/overlays/w5500.dtbo ]; then
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/w5500.dtbo
   sync
 fi
+if [ -f /usr/share/rpikernelhack/overlays/watterott-display.dtbo ]; then
+  rm -f /boot/overlays/watterott-display.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/watterott-display.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/waveshare-can-fd-hat-mode-a.dtbo ]; then
+  rm -f /boot/overlays/waveshare-can-fd-hat-mode-a.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/waveshare-can-fd-hat-mode-a.dtbo
+  sync
+fi
+if [ -f /usr/share/rpikernelhack/overlays/waveshare-can-fd-hat-mode-b.dtbo ]; then
+  rm -f /boot/overlays/waveshare-can-fd-hat-mode-b.dtbo
+  dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/waveshare-can-fd-hat-mode-b.dtbo
+  sync
+fi
 if [ -f /usr/share/rpikernelhack/overlays/wittypi.dtbo ]; then
   rm -f /boot/overlays/wittypi.dtbo
   dpkg-divert --package rpikernelhack --rename --remove /boot/overlays/wittypi.dtbo
@@ -1395,22 +1550,22 @@ if [ -f /etc/default/raspberrypi-kernel-mtx ]; then
 
 fi
 if [ -d "/etc/kernel/postinst.d" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.103+ --arg=/boot/kernel.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.103-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.103-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
-  run-parts -v --report --exit-on-error --arg=5.10.103-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.15.76+ --arg=/boot/kernel.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.15.76-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.15.76-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d
+  run-parts -v --report --exit-on-error --arg=5.15.76-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.103+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.103+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.10.103+
+if [ -d "/etc/kernel/postinst.d/5.15.76+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.15.76+ --arg=/boot/kernel.img /etc/kernel/postinst.d/5.15.76+
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.103-v7+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.103-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.10.103-v7+
+if [ -d "/etc/kernel/postinst.d/5.15.76-v7+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.15.76-v7+ --arg=/boot/kernel7.img /etc/kernel/postinst.d/5.15.76-v7+
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.103-v7l+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.103-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.10.103-v7l+
+if [ -d "/etc/kernel/postinst.d/5.15.76-v7l+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.15.76-v7l+ --arg=/boot/kernel7l.img /etc/kernel/postinst.d/5.15.76-v7l+
 fi
-if [ -d "/etc/kernel/postinst.d/5.10.103-v8+" ]; then
-  run-parts -v --report --exit-on-error --arg=5.10.103-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.10.103-v8+
+if [ -d "/etc/kernel/postinst.d/5.15.76-v8+" ]; then
+  run-parts -v --report --exit-on-error --arg=5.15.76-v8+ --arg=/boot/kernel8.img /etc/kernel/postinst.d/5.15.76-v8+
 fi
 if [ -d /usr/share/rpikernelhack/overlays ]; then
   rmdir --ignore-fail-on-non-empty /usr/share/rpikernelhack/overlays
